@@ -1,11 +1,13 @@
-export default function SearchResultsView () {
-    
-    
+import "./SearchResultsView.css";
+export default function SearchResultsView() {
     return (
         <>
-        <div>
-            test
-        </div>
+            <div className="srv-header">
+                <input
+                    className="srv-searchbar"
+                    placeholder="Search anime"
+                ></input>
+            </div>
         </>
-    )
+    );
 }
