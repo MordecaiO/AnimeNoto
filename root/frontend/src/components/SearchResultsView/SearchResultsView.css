@@ -1,34 +1,25 @@
-.srv-header{
-    border:solid red 3px;
+.srv-header {
+    border: solid red 3px;
     position: fixed;
-    top:0;
+    top: 0;
     right: 0;
-    left:0;
-    height:10%;
-    display:flex;
-    /* align-items: flex-start; */
+    left: 0;
+    height: 10%;
+    display: flex;
     align-items: center;
-    /* justify-content: flex-start; */
     justify-content: center;
-
 }
-.srv-searchbar{
-    /* justify-self: center;
-    align-self: center; */
-    position:absolute;
-    left:40%;
-    right:40%;
-    /* margin:auto; */
-}
-.srv-lists-button{
+.srv-lists-button {
     align-self: flex-start;
-    /* justify-self: flex-start; */
     margin-right: auto;
 }
-.srv-sort{
+.srv-searchbar {
+    margin: auto;
+}
+.srv-sort {
     align-self: flex-end;
     margin-left: auto;
 }
-.srv-filter{
+.srv-filter {
     align-self: flex-end;
 }
