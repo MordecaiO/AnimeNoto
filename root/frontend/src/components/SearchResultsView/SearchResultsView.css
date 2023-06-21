@@ -4,5 +4,31 @@
     top:0;
     right: 0;
     left:0;
-    height:10%
+    height:10%;
+    display:flex;
+    /* align-items: flex-start; */
+    align-items: center;
+    /* justify-content: flex-start; */
+    justify-content: center;
+
+}
+.srv-searchbar{
+    /* justify-self: center;
+    align-self: center; */
+    position:absolute;
+    left:40%;
+    right:40%;
+    /* margin:auto; */
+}
+.srv-lists-button{
+    align-self: flex-start;
+    /* justify-self: flex-start; */
+    margin-right: auto;
+}
+.srv-sort{
+    align-self: flex-end;
+    margin-left: auto;
+}
+.srv-filter{
+    align-self: flex-end;
 }
