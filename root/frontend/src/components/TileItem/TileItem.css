@@ -1,8 +1,8 @@
 .tile-container{
-    max-height: 180px;
-    max-width: 180px; 
-    border: 3px solid black;
-    border-radius: 2px;
+    max-height: 220px;
+    max-width: 200px; 
+    border: 1px solid black;
+    border-radius: 6px;
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
     display: flex; 
     flex-direction: column; 
@@ -10,8 +10,70 @@
     align-items: center; 
 } 
 
+.tile-content-main{
+width: 100%;
+max-height:60%; 
+ display: flex; 
+ justify-content: space-around; 
+ align-items: center; 
+}
+
 .tile-preview{
-    max-height: 35%;
-    max-width: 80%;
-    object-fit: contain;
+    max-height: auto;
+    max-width: 30%;
+    overflow:clip; 
+    margin-top: 8%;
+} 
+
+.tile-details{
+    max-width: 70%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tile-title{
+    font-family: Verdana;
+    font-size: 0.75em;
+   white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tile-status{
+    font-family: Verdana;
+    font-size: 0.5em;
+    margin:2px;
+}
+
+.tile-content-minor{
+    max-width: 100%;
+  max-height: auto;
+ display: flex; 
+ flex-direction: column;
+ justify-content: space-between; 
+ align-items: center; 
+ 
+}
+
+.tile-genres-container{
+    width:95%;
+    max-height: 20%;
+    border: 0.5px solid red; 
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+span{
+    width: auto;
+    height: 10%;
+    font-size: 0.65em;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px 3px 10px 3px ;
+    padding: 3px 3px; 
 }
