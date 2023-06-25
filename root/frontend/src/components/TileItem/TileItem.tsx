@@ -19,11 +19,11 @@ export const TileItem = ({
           <h4>{listDetails.itemCount}</h4>
         </section>
       ) : (
-        <span>
-          <div></div>
-          <div></div>
-          <div></div>
-        </span>
+        <section>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
       )}
     </article>
   );
