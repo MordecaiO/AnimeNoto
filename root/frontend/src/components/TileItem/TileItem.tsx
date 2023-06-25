@@ -9,8 +9,8 @@ export const TileItem = ({
     <article className="tile-container">
       <section className="tile-content-main">
         <img className="tile-preview" src="" alt="preview" />
-        <h2 className="tile-title"></h2>
-        <h4 className="tile-status"></h4>
+        <h2 className="tile-title">Anime_title</h2>
+        <h4 className="tile-status">"(status)"</h4>
       </section>
       <div className="tile-content-minor"></div>
       {isList ? (
@@ -19,11 +19,12 @@ export const TileItem = ({
           <h4>{listDetails.itemCount}</h4>
         </section>
       ) : (
-        <section>
+        <div className="tile-genres">
           <span></span>
           <span></span>
           <span></span>
-        </section>
+          <button className="tile-button"></button>
+        </div>
       )}
     </article>
   );
