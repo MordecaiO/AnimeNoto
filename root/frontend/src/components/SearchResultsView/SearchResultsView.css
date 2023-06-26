@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: grey; */
 }
 .srv-lists-button {
     align-self: flex-start;
@@ -22,4 +23,7 @@
 }
 .srv-filter {
     align-self: flex-end;
+}
+.srv-results-container {
+    
 }

@@ -1,35 +1,40 @@
-import testImage from "./test.image.jpg";
 import "./TileItem.css";
+import { Both } from "../../vite-env";
 export const TileItem = ({
-  isList,
-  listDetails,
+    isList,
+    details,
 }: {
-  isList: boolean;
-  listDetails: { name: string; items: object[] }[];
+    isList: boolean;
+    details: Both;
 }) => {
-  return (
-    <article className="tile-container">
-      <section className="tile-content-main">
-        <img className="tile-preview" src={testImage} alt="preview" />
-        <div className="tile-details">
-          <h2 className="tile-title">Anime_title</h2>
-          <h4 className="tile-status">Ongoing</h4>
-        </div>
-      </section>
-      <div className="tile-content-minor">
-        {isList ? (
-          <section>
-            <h2>{listDetails[0].name}</h2>
-            <h4>{listDetails[0].items.length}</h4>
-          </section>
-        ) : (
-          <div className="tile-genres-container">
-            <span>Supernatural</span>
-            <span>Action</span>
-            <span>Fantasy</span>
-          </div>
-        )}
-      </div>
-    </article>
-  );
+    const {name,src,...rest} = details
+    return (
+        <article className="tile-container">
+            <section className="tile-content-main">
+                <img
+                    className="tile-preview"
+                    src={`/test.image.jpg`}
+                    alt="preview"
+                />
+                <div className="tile-details">
+                    <h2 className="tile-title">{details.name}</h2>
+                    <h4 className="tile-status">{details.status}</h4>
+                </div>
+            </section>
+            <div className="tile-content-minor">
+                {!details.genres ? (
+                    <section>
+                        <h2>{details.name}</h2>
+                        <h4>{details.numberOfItems}</h4>
+                    </section>
+                ) : (
+                    <div className="tile-genres-container">
+                        {details.genres.map((g) => {
+                            return <span>{g}</span>;
+                        })}
+                    </div>
+                )}
+            </div>
+        </article>
+    );
 };
