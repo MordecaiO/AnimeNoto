@@ -43,7 +43,12 @@ export default function SearchResultsView() {
                 {exampleSearchResults.map((e) => {
                     console.log("e ----->", e);
                     console.log(typeof e);
-                    return <TileItem /* isList={false} */ details={e} />;
+                    return <TileItem details={e} />;
+                })}
+                {exampleLists.map((e) => {
+                    console.log("e ----->", e);
+                    console.log(typeof e);
+                    return <TileItem details={e} />;
                 })}
             </section>
         </article>

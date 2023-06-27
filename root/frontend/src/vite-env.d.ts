@@ -22,8 +22,8 @@ type Conditional =
           numberOfItems?: never;
       }
     | {
-          numberOfItems?: number;
-          status?: never;
-          genres?: never;
+        status?: never;
+        genres?: never;
+        numberOfItems?: number;
       };
 export type Both = Common & Conditional;
