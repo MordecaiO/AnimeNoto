@@ -17,13 +17,13 @@ type Common = {
 };
 type Conditional =
     | {
-          status: string;
-          genres: string[];
+          status?: string;
+          genres?: string[];
           numberOfItems?: never;
       }
     | {
+          numberOfItems?: number;
           status?: never;
           genres?: never;
-          numberOfItems: number;
       };
 export type Both = Common & Conditional;
