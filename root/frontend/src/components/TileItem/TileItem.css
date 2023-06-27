@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border: solid 2px red
 }
 
 .context-button {
@@ -32,6 +33,7 @@
 .tile-preview {
   height: 130px;
   width: 100%;
+  position: relative;
 }
 
 img {
@@ -71,4 +73,14 @@ img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.tile-genres-container {
+    border: solid 2px cyan;
+    position: absolute;
+    bottom: 5px;
+}
+.tile-genre {
+    background-color: white;
+    border : solid 2px yellow;
 }

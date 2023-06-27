@@ -9,26 +9,29 @@ export const TileItem = ({ details }: { details: Both }): JSX.Element => {
                 {/* <section className="tile-content-main"> */}
                 <div className="tile-preview">
                     <img src={`/test.image.jpg`} alt="preview" />
-                </div>
-                <div className="tile-details">
-                    <span className="tile-title">{details.name}</span>
-                    <span className="tile-status">{details.status}</span>
-                </div>
-                {/* </section> */}
-                <div className="tile-content-minor">
-                    {!details.genres ? (
-                        <section>
-                            <h2>{details.name}</h2>
-                            <h4>{details.numberOfItems}</h4>
-                        </section>
-                    ) : (
+                    {details.genres && (
                         <div className="tile-genres-container">
                             {details.genres.map((g) => {
-                                return <span>{g}</span>;
+                                return <span className="tile-genre">{g}</span>;
                             })}
                         </div>
                     )}
                 </div>
+                <div className="tile-details">
+                    <span className="tile-title">{details.name}</span>
+                    <span className="tile-status">
+                        {details.status
+                            ? details.status
+                            : details.numberOfItems}
+                    </span>
+                </div>
+                {/* </section> */}
+                {/* <div className="tile-content-minor">
+                    <section>
+                        <h2>{details.name}</h2>
+                        <h4>{details.numberOfItems}</h4>
+                    </section>
+                </div> */}
             </article>
             <button className="context-button">...</button>
         </div>

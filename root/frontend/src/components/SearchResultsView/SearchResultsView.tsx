@@ -1,8 +1,8 @@
 import "./SearchResultsView.css";
 import { TileItem } from "../TileItem/TileItem";
-import { SearchResult,AnimeList, Both } from "../../vite-env";
+import { Both } from "../../vite-env";
 export default function SearchResultsView() {
-    const data: Both[] = [
+    const exampleSearchResults: Both[] = [
         {
             name: "Jujutsu Kaisen",
             src: "Jikan path",
@@ -16,7 +16,7 @@ export default function SearchResultsView() {
             genres: ["action", "adventure"],
         },
     ];
-    const listOfLists: AnimeList[] = [
+    const exampleLists: Both[] = [
         {
             name: "Watching",
             src: "some string",
@@ -24,7 +24,7 @@ export default function SearchResultsView() {
         },
         {
             name: "Watched",
-            src : "some string",
+            src: "some string",
             numberOfItems: 9,
         },
     ];
@@ -40,9 +40,9 @@ export default function SearchResultsView() {
                 <button className="srv-filter">Filter</button>
             </section>
             <section className="srv-results-container">
-                {data.map((e) => {
-                    console.log("e ----->", e)
-                    console.log(typeof e)
+                {exampleSearchResults.map((e) => {
+                    console.log("e ----->", e);
+                    console.log(typeof e);
                     return <TileItem /* isList={false} */ details={e} />;
                 })}
             </section>
