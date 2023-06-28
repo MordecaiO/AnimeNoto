@@ -49,6 +49,7 @@ img {
   justify-content: space-between;
   align-items: center;
   margin: 5px 0 0 0;
+  /* padding: auto 1.5px; */
 }
 
 .tile-title {
@@ -57,6 +58,7 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 18ch;
 }
 
 .tile-status {
@@ -76,17 +78,22 @@ img {
 }
 
 .tile-genres-container {
-    border: solid 2px cyan;
+    /* border: solid 2px cyan; */
     position: absolute;
-    bottom: 5px;
+    bottom: 1.5px;
     display:flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding-top: 1.5px;
 }
 .tile-genre {
     background-color: white;
-    border : solid 2px yellow;
+    /* border : solid 2px yellow; */
+    padding: 1.5px;
+    margin: 1.5px;
     font-family: Verdana;
     font-size: 0.35em;
+    border-radius: 2px;
 }

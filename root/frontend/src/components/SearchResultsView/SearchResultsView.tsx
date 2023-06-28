@@ -7,7 +7,7 @@ export default function SearchResultsView() {
             name: "Jujutsu Kaisen",
             src: "Jikan path",
             status: "airing",
-            genres: ["supernatural", "horror"],
+            genres: ["horror", "supernatural"],
         },
         {
             name: "86",
@@ -15,19 +15,37 @@ export default function SearchResultsView() {
             status: "aired",
             genres: ["action", "adventure"],
         },
-    ];
-    const exampleLists: Both[] = [
         {
-            name: "Watching",
-            src: "some string",
-            numberOfItems: 5, // list.length
+            name: "Planetes",
+            src: "Jikan path",
+            status: "aired",
+            genres: ["action", "romance", "slice of life"],
         },
         {
-            name: "Watched",
-            src: "some string",
-            numberOfItems: 9,
+            name: "The Familiar of Zero",
+            src: "Jikan path",
+            status: "aired",
+            genres: ["adventure", "romance"],
+        },
+        {
+            name: "That Time I Got Reincarnated as a Slime",
+            src: "Jikan path",
+            status: "aired",
+            genres: ["action", "adventure", "comedy", "fantasy"],
         },
     ];
+    // const exampleLists: Both[] = [
+    //     {
+    //         name: "Watching",
+    //         src: "some string",
+    //         numberOfItems: 5, // list.length
+    //     },
+    //     {
+    //         name: "Watched",
+    //         src: "some string",
+    //         numberOfItems: 9,
+    //     },
+    // ];
     return (
         <article>
             <section className="srv-header">
@@ -45,11 +63,11 @@ export default function SearchResultsView() {
                     console.log(typeof e);
                     return <TileItem details={e} />;
                 })}
-                {exampleLists.map((e) => {
+                {/*         {exampleLists.map((e) => {
                     console.log("e ----->", e);
                     console.log(typeof e);
                     return <TileItem details={e} />;
-                })}
+                })} */}
             </section>
         </article>
     );
