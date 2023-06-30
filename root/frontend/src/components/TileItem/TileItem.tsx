@@ -3,7 +3,7 @@ import "./TileItem.css";
 import { Both } from "../../vite-env";
 export const TileItem = ({ details }: { details: Both }): JSX.Element => {
     // const {name,src,...rest} = details
-    const {name,src,status, genres, numberOfItems,} = details
+    const {name,/* src, */status, genres, numberOfItems,} = details
     return (
         <div className="menu-container">
             <article className="tile-container">

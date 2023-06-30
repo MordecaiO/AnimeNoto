@@ -53,22 +53,20 @@ export default function SearchResultsView() {
                 <input
                     className="srv-searchbar"
                     placeholder="Search catalogue"
+                    type="search"
                 />
                 <button className="srv-sort">Sort</button>
                 <button className="srv-filter">Filter</button>
             </section>
             <section className="srv-results-container">
                 {exampleSearchResults.map((e) => {
-                    console.log("e ----->", e);
-                    console.log(typeof e);
                     return <TileItem details={e} />;
                 })}
                 {/*         {exampleLists.map((e) => {
-                    console.log("e ----->", e);
-                    console.log(typeof e);
                     return <TileItem details={e} />;
                 })} */}
             </section>
+            <button className="srv-top-button">Back to top</button>
         </article>
     );
 }
