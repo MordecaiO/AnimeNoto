@@ -1,38 +1,48 @@
 .srv-header {
-    border: solid red 3px;
-    position: fixed;
+    border: solid red 2px;
+    position: sticky;
     top: 0;
     right: 0;
     left: 0;
+    margin-top: -50px;
+    margin-left: -8px;
+    margin-right: -8px;
     height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    /* background-color: grey; */
 }
 .srv-lists-button {
     align-self: flex-start;
     margin-right: auto;
     margin-left: 2.5vh;
     margin-top: 2.5vh;
-    cursor:pointer;
+    cursor: pointer;
 }
 .srv-searchbar {
     margin: auto;
     /* Does nothing but may be needed in future */
+    text-align: center;
+}
+.icon {
+    position: absolute;
+    padding: 10px;
+    min-width: 40px;
+    /* z-index: 1000; */
 }
 .srv-sort {
     align-self: flex-end;
     margin-right: 1.5vh;
     margin-left: auto;
     margin-bottom: 2.5vh;
-    cursor:pointer;
+    cursor: pointer;
 }
 .srv-filter {
     align-self: flex-end;
     margin-right: 2.5vh;
     margin-bottom: 2.5vh;
-    cursor:pointer;
+    cursor: pointer;
 }
 .srv-results-container {
     display: flex;
@@ -47,7 +57,7 @@
     outline: none;
     background-color: lightgrey;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
     font-family: Verdana;
     border-radius: 7px;
     padding: 5px;
