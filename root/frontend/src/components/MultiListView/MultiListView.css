@@ -1,0 +1,26 @@
+.mlv-header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: -50px;
+    margin-left: -16px;
+    margin-right: -16px;
+    height: 15vh;
+    max-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px cyan;
+    font-size: 2em;
+    overflow: hidden;
+    z-index: 999;
+}
+.mlv-lists-container {
+    border: solid 2px red; 
+    position:absolute;
+    display: flex;
+    flex-wrap: wrap;    
+    top: (max(15vh,125px));
+    /* top: 500px; */
+}
