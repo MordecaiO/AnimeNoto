@@ -8,6 +8,7 @@
     margin-left: -8px;
     margin-right: -8px;
     height: 15vh;
+    /* max-height: 100px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,11 +25,14 @@
     margin: auto;
     /* Does nothing but may be needed in future */
     text-align: center;
+
 }
 .icon {
     position: absolute;
     padding: 10px;
     min-width: 40px;
+    left:-15px;
+    top:-7px
     /* z-index: 1000; */
 }
 .srv-sort {
@@ -44,9 +48,28 @@
     margin-bottom: 2.5vh;
     cursor: pointer;
 }
+.srv-buttons {
+    align-self: flex-end;
+    margin-left: auto;
+}
 .srv-results-container {
     display: flex;
     flex-wrap: wrap;
+}
+.left.inner-wrapper, .right.inner-wrapper {
+    flex:1;
+    display:flex;
+}
+.left.inner-wrapper {
+    align-self: flex-start;
+    margin-right: auto;
+}
+.right.inner-wrapper {
+    align-self: flex-end;
+    /* margin-left: auto; */
+}
+.centre.inner-wrapper {
+    position:relative;
 }
 .srv-top-button {
     position: fixed;
