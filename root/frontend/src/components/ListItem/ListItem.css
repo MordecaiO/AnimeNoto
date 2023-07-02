@@ -1,0 +1,29 @@
+.item-container {
+    background: lightgrey;
+    display:flex;
+    /* margin-left: 5vw; */
+    width: 80vw;
+    margin:auto;
+    align-items: center;
+    justify-content: space-around;
+}
+.item-container:hover {
+    background: white;
+}
+.xcenter {
+    display: flex;
+    align-items: center;
+}
+.xright {
+    display:flex;
+    align-content: space-between;
+}
+.item-description {
+    white-space: initial;
+    line-height: 1.2em;
+    height: 6em;  
+    max-width:150ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
