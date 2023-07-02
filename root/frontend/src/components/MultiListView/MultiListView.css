@@ -4,23 +4,30 @@
     right: 0;
     left: 0;
     margin-top: -50px;
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -8px;
+    margin-right: -8px;
     height: 15vh;
-    max-height: 125px;
+    max-height: 100px;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: solid 2px cyan;
-    font-size: 2em;
+    font-size: 1.5em;
     overflow: hidden;
     z-index: 999;
+    margin-bottom: 20px;
 }
 .mlv-lists-container {
-    border: solid 2px red; 
-    position:absolute;
+    border: solid 2px red;
+    position: absolute;
     display: flex;
-    flex-wrap: wrap;    
-    top: (max(15vh,125px));
+    flex-wrap: wrap;
+    top: (max(15vh, 125px));
+    left: 2.5vh;
+    right: 2.5vh;
     /* top: 500px; */
+}
+.mlv-title {
+    font-family: Verdana;
 }

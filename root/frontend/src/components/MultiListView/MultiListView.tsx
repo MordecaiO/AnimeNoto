@@ -18,7 +18,7 @@ export default function MultiListView(): JSX.Element {
     return (
         <article>
             <section className="mlv-header">
-                <h2>Lists</h2>
+                <h2 className="mlv-title">Lists</h2>
             </section>
             <section className="mlv-lists-container">
                 {exampleLists.map((e) => {

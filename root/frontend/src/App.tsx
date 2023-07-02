@@ -1,11 +1,13 @@
 import "./App.css";
-import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
+import MultiListView from "./components/MultiListView/MultiListView";
+// import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
 function App() {
 
     return (
         <div>
             <p>Robert</p>
-            <SearchResultsView/>
+            {/* <SearchResultsView/> */}
+            <MultiListView/>
         </div>
     );
 }
