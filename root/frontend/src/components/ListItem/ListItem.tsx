@@ -5,12 +5,12 @@ export default function ListItem({
 }: {
     details: ListItemType;
 }): JSX.Element {
-    const { name, status, description, genres, index } = details;
+    const { name, src, status, description, genres, index } = details;
     return (
         <article className="item-container">
             <div className="xleft inner-item-wrapper">
                 <p>{index}</p>
-                <img></img>
+                <img src={src} className="item-image"></img>
             </div>
             <div className="xcenter inner-item-wrapper">
                 <span>{name}</span>
@@ -23,8 +23,8 @@ export default function ListItem({
                 </div>
             </div>
             <div className="xright inner-item-wrapper">
-                <button>X</button>
-                <button>Move to ...</button>
+                <button className="item-delete">X</button>
+                <button className="item-move">Move to ...</button>
             </div>
         </article>
     );

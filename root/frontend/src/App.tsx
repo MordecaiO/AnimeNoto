@@ -10,7 +10,7 @@ function App() {
         
         As more sentient dolls end up taking residence in Jun's house, and a foe from Shinku's past makes her appearance, Jun's life becomes far more complicated than he ever thought possible.
         `,
-        src: "test src",
+        src: "https://cdn.myanimelist.net/images/anime/1424/108431l.jpg",
         genres: ["action", "comedy", "drama"],
         index: 0,
     };
