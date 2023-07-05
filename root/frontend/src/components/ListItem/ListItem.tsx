@@ -9,16 +9,16 @@ export default function ListItem({
     return (
         <article className="item-container">
             <div className="xleft inner-item-wrapper">
-                <p>{index}</p>
+                <p className="item-index">{`# ${index}`}</p>
                 <img src={src} className="item-image"></img>
             </div>
             <div className="xcenter inner-item-wrapper">
-                <span>{name}</span>
-                <span>{status}</span>
+                <span className="item-name">{name}</span>
+                <span className="item-status">{status}</span>
                 <span className="item-description">{description}</span>
-                <div>
+                <div className="item-genres">
                     {genres.map((g) => {
-                        return <span>{g}</span>;
+                        return <span className="item-genre">{g}</span>;
                     })}
                 </div>
             </div>
