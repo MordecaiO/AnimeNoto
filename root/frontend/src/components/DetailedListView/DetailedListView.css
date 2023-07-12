@@ -1,0 +1,46 @@
+* {
+  font-family: Verdana;
+}
+.dlv-header {
+  height: 30vh;
+  display: flex;
+  border: 2px solid red;
+}
+
+.img-container {
+  border: 2px solid;
+  width: 250px;
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+
+.header-items {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.list-type {
+  align-self: flex-start;
+}
+
+.details-container {
+  align-self: center;
+  flex: 1;
+}
+
+.list-name {
+  font-size: 70px;
+  margin: 20px;
+}
+
+.list-desc {
+  height: 20%;
+}
+
+.updated-text {
+  align-self: flex-start;
+}

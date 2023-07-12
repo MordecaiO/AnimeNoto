@@ -1,3 +1,4 @@
+import "./DetailedListView.css";
 const DetailedListView = (): JSX.Element => {
   return (
     <div>
@@ -7,8 +8,10 @@ const DetailedListView = (): JSX.Element => {
         </div>
         <section className="header-items">
           <p className="list-type">Default List</p>
-          <h1 className="list-name">List name</h1>
-          <p className="list-desc">List description</p>
+          <div className="details-container">
+            <h1 className="list-name">List name</h1>
+            <p className="list-desc">List description</p>
+          </div>
           <p className="updated-text">Last updated 8/7/23 15:00</p>
         </section>
       </header>
