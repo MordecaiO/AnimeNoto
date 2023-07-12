@@ -20,7 +20,7 @@
 .item-index {
     align-self: flex-start;
     white-space: nowrap;
-    margin: 5px;
+    margin: 5px 10px 0 10px;
 }
 .item-image {
     width: 150px;
@@ -58,7 +58,7 @@
     /* border: 1px solid black; */
 }
 .item-genres-container {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
@@ -69,7 +69,8 @@
     background-color: white;
     border-radius: 6px;
     border: solid 1px black;
-    margin: 5px 10px
+    margin: 5px 10px;
+    padding: 0px 5px;
 }
 .xright {
     /* border: solid 2px yellow; */
@@ -80,9 +81,9 @@
 }
 .item-delete {
     align-self: flex-end;
-    margin: 7.5px;
+    margin: 7.5px 10px 10px;
 }
 .item-move {
     white-space: nowrap;
-    margin: 7.5px 0px 10px;
+    margin: 7.5px 10px 10px;
 }
