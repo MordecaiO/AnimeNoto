@@ -1,15 +1,18 @@
 * {
   font-family: Verdana;
 }
+
 .dlv-header {
-  height: 30vh;
+  height: 275px;
   display: flex;
   border: 2px solid red;
 }
 
 .img-container {
   border: 2px solid;
-  width: 250px;
+  flex-shrink: 0;
+  width: 181px;
+  height: auto;
   box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
 }
 
@@ -24,23 +27,33 @@
 }
 
 .list-type {
+  margin: 10px;
   align-self: flex-start;
 }
 
 .details-container {
-  align-self: center;
+  align-self: stretch;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .list-name {
   font-size: 70px;
-  margin: 20px;
+  margin: 5px;
+  line-height: 0.8;
 }
 
 .list-desc {
   height: 20%;
+  margin: 5px;
+  padding: 5px;
 }
 
 .updated-text {
+  margin: 10px;
   align-self: flex-start;
+  font-size: 80%;
 }
