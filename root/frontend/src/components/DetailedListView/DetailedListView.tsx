@@ -1,4 +1,5 @@
 import "./DetailedListView.css";
+import ListItem from "../ListItem/ListItem";
 
 function DetailedListView(): JSX.Element {
   return (
@@ -19,7 +20,18 @@ function DetailedListView(): JSX.Element {
           <p className="updated-text">Last updated 8/7/23 15:00</p>
         </section>
       </header>
-      <main className="list-items-container">Hello</main>
+      <main className="list-items-container">
+        <ListItem
+          details={{
+            name: "",
+            status: "",
+            description: "",
+            src: "",
+            genres: [],
+            index: 0,
+          }}
+        ></ListItem>
+      </main>
     </div>
   );
 }
