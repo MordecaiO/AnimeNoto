@@ -16,7 +16,7 @@ export default function ListItem({
                 <span className="item-name">{name}</span>
                 <span className="item-status">{status}</span>
                 <span className="item-description">{description}</span>
-                <div className="item-genres">
+                <div className="item-genres-container">
                     {genres.map((g) => {
                         return <span className="item-genre">{g}</span>;
                     })}
