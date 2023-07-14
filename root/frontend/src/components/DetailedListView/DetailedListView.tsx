@@ -2,7 +2,7 @@ import "./DetailedListView.css";
 
 function DetailedListView(): JSX.Element {
   return (
-    <>
+    <div className="dlv-container">
       <header className="dlv-header">
         <div className="img-container">
           <img></img>
@@ -19,8 +19,8 @@ function DetailedListView(): JSX.Element {
           <p className="updated-text">Last updated 8/7/23 15:00</p>
         </section>
       </header>
-      <main className="list-items-container"></main>
-    </>
+      <main className="list-items-container">Hello</main>
+    </div>
   );
 }
 
