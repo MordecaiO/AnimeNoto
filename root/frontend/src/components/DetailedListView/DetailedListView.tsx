@@ -1,6 +1,40 @@
 import "./DetailedListView.css";
 import ListItem from "../ListItem/ListItem";
-
+import { ListItemType } from "../../vite-env";
+const exampleList: ListItemType[] = [
+  {
+    name: "Naruto",
+    status: "airing",
+    description: "The nine-tailed fox",
+    src: "",
+    genres: ["action", "shonen", "ninja"],
+    index: 0,
+  },
+  {
+    name: "Naruto",
+    status: "airing",
+    description: "The nine-tailed fox",
+    src: "",
+    genres: ["action", "shonen", "ninja"],
+    index: 1,
+  },
+  {
+    name: "Naruto",
+    status: "airing",
+    description: "The nine-tailed fox",
+    src: "",
+    genres: ["action", "shonen", "ninja"],
+    index: 2,
+  },
+  {
+    name: "Naruto",
+    status: "airing",
+    description: "The nine-tailed fox",
+    src: "",
+    genres: ["action", "shonen", "ninja"],
+    index: 3,
+  },
+];
 function DetailedListView(): JSX.Element {
   return (
     <div className="dlv-container">
@@ -21,16 +55,9 @@ function DetailedListView(): JSX.Element {
         </section>
       </header>
       <main className="list-items-container">
-        <ListItem
-          details={{
-            name: "",
-            status: "",
-            description: "",
-            src: "",
-            genres: [],
-            index: 0,
-          }}
-        ></ListItem>
+        {exampleList.map((listitem) => {
+          return <ListItem details={listitem} />;
+        })}
       </main>
     </div>
   );
