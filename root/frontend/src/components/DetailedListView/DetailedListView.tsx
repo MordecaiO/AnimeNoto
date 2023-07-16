@@ -40,7 +40,7 @@ function DetailedListView(): JSX.Element {
     <div className="dlv-container">
       <header className="dlv-header">
         <div className="img-container">
-          <img></img>
+          <img className="header_image"></img>
         </div>
         <section className="header-items">
           <p className="list-type">Default List</p>
