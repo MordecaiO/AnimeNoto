@@ -45,7 +45,9 @@ function DetailedListView(): JSX.Element {
         <section className="header-items">
           <p className="list-type">Default List</p>
           <div className="details-container">
-            <h1 className="list-name">List name</h1>
+            <h1 className="list-name">
+              A longer name anime to test how the List name reacts{" "}
+            </h1>
             <p className="list-desc">
               List description. This could be a long description, but it could
               also be short.
