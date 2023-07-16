@@ -61,7 +61,7 @@
   height: 20%;
   margin: 5px;
   padding: 5px;
-  -webkit-line-clamp: 4;
+  flex: 1 0 auto;
 
   overflow: clip;
   text-overflow: ellipsis;
