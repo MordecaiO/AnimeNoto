@@ -78,7 +78,6 @@ img {
 }
 
 .tile-genres-container {
-    /* border: solid 2px cyan; */
     position: absolute;
     bottom: 1.5px;
     display:flex;
@@ -90,7 +89,6 @@ img {
 }
 .tile-genre {
     background-color: white;
-    /* border : solid 2px yellow; */
     padding: 1.5px;
     margin: 1.5px;
     font-family: Verdana;

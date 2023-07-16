@@ -1,15 +1,7 @@
 import "./App.css";
-import MultiListView from "./components/MultiListView/MultiListView";
-// import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
+import DetailedListView from "./components/DetailedListView/DetailedListView.tsx";
 function App() {
-
-    return (
-        <div>
-            <p>Robert</p>
-            {/* <SearchResultsView/> */}
-            <MultiListView/>
-        </div>
-    );
+  return <DetailedListView />;
 }
 
 export default App;

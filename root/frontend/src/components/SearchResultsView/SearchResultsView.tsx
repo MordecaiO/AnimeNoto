@@ -1,6 +1,7 @@
 import "./SearchResultsView.css";
 import { TileItem } from "../TileItem/TileItem";
 import { Both } from "../../vite-env";
+
 export default function SearchResultsView() {
     const exampleSearchResults: Both[] = [
         {
@@ -34,37 +35,38 @@ export default function SearchResultsView() {
             genres: ["action", "adventure", "comedy", "fantasy"],
         },
     ];
-    // const exampleLists: Both[] = [
-    //     {
-    //         name: "Watching",
-    //         src: "some string",
-    //         numberOfItems: 5, // list.length
-    //     },
-    //     {
-    //         name: "Watched",
-    //         src: "some string",
-    //         numberOfItems: 9,
-    //     },
-    // ];
     return (
         <article>
             <section className="srv-header">
-                <button className="srv-lists-button">Lists</button>
-                <input
-                    className="srv-searchbar"
-                    placeholder="Search catalogue"
-                    type="search"
-                />
-                <button className="srv-sort">Sort</button>
-                <button className="srv-filter">Filter</button>
+                <div className="left inner-wrapper">
+                    <button className="srv-lists-button">Lists</button>
+                </div>
+                <div className="centre inner-wrapper">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                    className="icon"
+                >
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                </svg>
+                    <input
+                        className="srv-searchbar"
+                        placeholder="Search catalogue"
+                        type="search"
+                    />
+                </div>
+                <div className="right inner-wrapper">
+                    <div className="srv-buttons">
+                        <button className="srv-sort">Sort</button>
+                        <button className="srv-filter">Filter</button>
+                    </div>
+                </div>
             </section>
             <section className="srv-results-container">
                 {exampleSearchResults.map((e) => {
                     return <TileItem details={e} />;
                 })}
-                {/*         {exampleLists.map((e) => {
-                    return <TileItem details={e} />;
-                })} */}
             </section>
             <button className="srv-top-button">Back to top</button>
         </article>
