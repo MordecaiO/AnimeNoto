@@ -1,7 +1,7 @@
 import "./App.css";
-import DetailedListView from "./components/DetailedListView/DetailedListView.tsx";
+import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
 function App() {
-  return <DetailedListView />;
+    return <SearchResultsView />;
 }
 
 export default App;
