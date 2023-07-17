@@ -41,7 +41,6 @@ export default function SearchResultsView() {
             <section className="srv-header">
                 <div className="left inner-wrapper">
                     <Link to={`lists`}>
-                        {" "}
                         <button className="srv-lists-button">Lists</button>
                     </Link>
                 </div>
