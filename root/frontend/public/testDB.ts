@@ -4,6 +4,9 @@ export const userDoc = {
     lists: [
         {
             name: "Watched",
+            // FIXME:listName: "Watched",
+            // default: true,
+            // lastUpdated: 1902381,
             listDescription: "Anime I've already watched",
             src: "",
             numberOfItems: 2,
@@ -18,7 +21,6 @@ export const userDoc = {
                     A box arrives with a wind up doll inside, but this is no ordinary toy: after Jun winds her up, she begins walking and talking as if a normal person. With a haughty attitude, she introduces herself as Shinku, the fifth doll in the Rozen Maiden collection, a group of special dolls made by the legendary dollmaker Rozen. These sisters must battle each other in a competition called the Alice Game with the help of a human to ensure victory. The winner becomes Alice, a real girl who is worthy of meeting their creator.
             
                     As more sentient dolls end up taking residence in Jun's house, and a foe from Shinku's past makes her appearance, Jun's life becomes far more complicated than he ever thought possible.`,
-                    index:31,
                 },
                 {
                     status: "aired",
@@ -37,12 +39,14 @@ export const userDoc = {
                     When the first year students are required to perform a summoning ritual, Louise's summoning results in a catastrophic explosion! Everyone deems this to be yet another failure, but when the smoke clears, a boy named Saito Hiraga appears. Now Louise's familiar, Saito is treated as a slave, forced to clean her clothes and eat off the ground. But when an unfamiliar brand is found etched on Saito's hand from the summoning ritual, it is believed to be the mark of a powerful familiar named Gandalfr.
                     
                     Wild, adventurous, and explosive, Zero no Tsukaima follows Saito as he comes to terms with his new life and as Louise proves that there is more to her than her nickname suggests.`,
-                    index:32,
                 },
             ],
         },
         {
             name: "A longer list name to test how the List name reacts",
+            // FIXME: listName: "A longer list name to test how the List name reacts",
+            // default: true,
+            // lastUpdated: 1902381,
             listDescription:
                 "List description. This could be a long description, but it could also be short.",
             src: "",
@@ -54,7 +58,6 @@ export const userDoc = {
                     src: "string3",
                     genres: ["action", "shounen", "ninja"],
                     description: "The nine-tailed fox",
-                    index:1,
                 },
             ],
         },

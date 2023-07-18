@@ -1,9 +1,8 @@
 import "./MultiListView.css";
 import { Both } from "../../vite-env";
 import { TileItem } from "../TileItem/TileItem";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { userDoc } from "../../../public/testDB";
-import DetailedListView from "../DetailedListView/DetailedListView";
 export default function MultiListView(): JSX.Element {
     const exampleLists: Both[] = [
         {
@@ -26,7 +25,10 @@ export default function MultiListView(): JSX.Element {
             <section className="mlv-lists-container">
                 {userDoc.lists.map((e) => {
                     return (
-                        <Link to={`${e.name}`} state={{ listDetails: e }}>
+                        <Link
+                            /* FIXME: to={`${e.listName}`} */ to={`${e.name}`}
+                            state={{ listDetails: e }}
+                        >
                             <TileItem details={e} />
                         </Link>
                     );

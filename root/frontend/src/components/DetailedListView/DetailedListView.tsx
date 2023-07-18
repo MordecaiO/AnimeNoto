@@ -37,8 +37,17 @@ const exampleList: ListItemType[] = [
     },
 ];
 function DetailedListView(): JSX.Element {
-    const { listName, listDescription, listItems } =
-        useLocation().state.listDetails;
+    const {
+        name,
+        // FIXME: listName: name,
+        listDescription,
+        listItems,
+    }: {
+        name:string
+        // FIXME: listName: string;
+        listDescription: string;
+        listItems: ListItemType[];
+    } = useLocation().state.listDetails;
     return (
         <div className="dlv-container">
             <header className="dlv-header">
@@ -48,15 +57,15 @@ function DetailedListView(): JSX.Element {
                 <section className="header-items">
                     <p className="list-type">Default List</p>
                     <div className="details-container">
-                        <h1 className="list-name">{listName}</h1>
+                        <h1 className="list-name">{name}</h1>
                         <p className="list-desc">{listDescription}</p>
                     </div>
                     <p className="updated-text">Last updated 8/7/23 15:00</p>
                 </section>
             </header>
             <main className="list-items-container">
-                {listItems.map((listitem) => {
-                    return <ListItem details={listitem} />;
+                {listItems.map((listitem,i) => {
+                    return <ListItem details={{...listitem,index:i}} />;
                 })}
             </main>
         </div>

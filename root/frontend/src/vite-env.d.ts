@@ -18,11 +18,13 @@ type Common = {
 };
 type Conditional =
     | {
+        // FIXME: name:string
           status?: string;
           genres?: string[];
           numberOfItems?: never;
       }
     | {
+        // FIXME: listName:string;
           status?: never;
           genres?: never;
           numberOfItems?: number;
@@ -35,5 +37,5 @@ export type ListItemType = {
     description: string;
     src: string;
     genres: string[];
-    index: number;
+    index?: number;
 };
