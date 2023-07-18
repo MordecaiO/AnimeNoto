@@ -24,21 +24,13 @@ export default function MultiListView(): JSX.Element {
                 <h2 className="mlv-title">Lists</h2>
             </section>
             <section className="mlv-lists-container">
-                {/* <Routes> */}
                 {userDoc.lists.map((e) => {
                     return (
-                        <Link to={`${e.name}`} state={{ x: e.listItems }}>
+                        <Link to={`${e.name}`} state={{ listDetails: e }}>
                             <TileItem details={e} />
                         </Link>
-                        // <Route
-                        //     path={`/lists/${e.name}`}
-                        //     element={
-                        //         <DetailedListView x={ ...e.listItems } />
-                        //     }
-                        // ></Route>
                     );
                 })}
-                {/* </Routes> */}
             </section>
         </article>
     );
