@@ -4,7 +4,7 @@ import { TileItem } from "../TileItem/TileItem";
 import { Link } from "react-router-dom";
 import { userDoc } from "../../../public/testDB";
 export default function MultiListView(): JSX.Element {
-    const exampleLists: Both[] = [
+    /*     const exampleLists: Both[] = [
         {
             name: "Watching",
             src: "some string",
@@ -15,7 +15,7 @@ export default function MultiListView(): JSX.Element {
             src: "some string",
             numberOfItems: 9,
         },
-    ];
+    ]; */
 
     return (
         <article>
@@ -26,6 +26,7 @@ export default function MultiListView(): JSX.Element {
                 {userDoc.lists.map((e) => {
                     return (
                         <Link
+                            className="mlv-link"
                             /* FIXME: to={`${e.listName}`} */ to={`${e.name}`}
                             state={{ listDetails: e }}
                         >

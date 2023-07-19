@@ -1,15 +1,17 @@
-export const userDoc = {
+import { UserDocType } from "../src/vite-env";
+
+export const userDoc:UserDocType = {
     userId: "qwerty",
-    createdAt: "10923801231",
+    createdAt: 10923801231,
     lists: [
         {
             name: "Watched",
             // FIXME:listName: "Watched",
-            // default: true,
-            // lastUpdated: 1902381,
+            dft: true,
             listDescription: "Anime I've already watched",
             src: "",
             numberOfItems: 2,
+            lastUpdated: 1689789836682,
             listItems: [
                 {
                     status: "aired",
@@ -45,8 +47,8 @@ export const userDoc = {
         {
             name: "A longer list name to test how the List name reacts",
             // FIXME: listName: "A longer list name to test how the List name reacts",
-            // default: true,
-            // lastUpdated: 1902381,
+            dft: false,
+            lastUpdated: 1902381029311,
             listDescription:
                 "List description. This could be a long description, but it could also be short.",
             src: "",

@@ -27,3 +27,7 @@
 .mlv-title {
     font-family: Verdana;
 }
+.mlv-link {
+    color: inherit;
+    text-decoration: inherit;
+}

@@ -28,6 +28,7 @@ type Conditional =
           status?: never;
           genres?: never;
           numberOfItems?: number;
+          lastUpdated:number;
       };
 export type Both = Common & Conditional;
 
@@ -39,3 +40,18 @@ export type ListItemType = {
     genres: string[];
     index?: number;
 };
+export type ListType = {
+
+    name:string;
+    dft:boolean;
+    listDescription:string;
+    src:string;
+    lastUpdated:number;
+    listItems:ListItemType[];
+    numberOfItems:number;
+}
+export type UserDocType = {
+    userId:string;
+    createdAt:number;
+    lists:ListType[];
+}
