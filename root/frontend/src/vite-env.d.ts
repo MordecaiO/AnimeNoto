@@ -13,45 +13,71 @@
 // };
 
 type Common = {
-    name: string;
     src: string;
 };
 type Conditional =
     | {
-        // FIXME: name:string
+          listName: never;
+          name: string;
           status?: string;
           genres?: string[];
           numberOfItems?: never;
+          lastUpdated: never;
       }
     | {
-        // FIXME: listName:string;
+          listName: string;
+          dft: boolean;
+          name: never;
           status?: never;
           genres?: never;
           numberOfItems?: number;
-          lastUpdated:number;
+          lastUpdated: number;
       };
+      type Anime = {
+        src: string;
+        name: string;
+        status?: string;
+        genres?: string[];
+      }
 export type Both = Common & Conditional;
+export type Both2 = ListType | ListItemType
 
 export type ListItemType = {
     name: string;
     status: string;
-    description: string;
     src: string;
     genres: string[];
+    description: string;
     index?: number;
+    listName?: never;
+    dft?: never;
+    listDescription?: never;
+    src?: never;
+    lastUpdated?: never;
+    listItems?: never;
+    numberOfItems?: never;
 };
 export type ListType = {
-
-    name:string;
-    dft:boolean;
-    listDescription:string;
-    src:string;
-    lastUpdated:number;
-    listItems:ListItemType[];
-    numberOfItems:number;
-}
+    listName: string;
+    dft: boolean;
+    listDescription: string;
+    src: string;
+    lastUpdated: number;
+    listItems: ListItemType[];
+    numberOfItems: number;
+    name?: never;
+    status?: never;
+    src?: never;
+    genres?: never;
+    description?: never;
+    index?: never;
+};
 export type UserDocType = {
-    userId:string;
-    createdAt:number;
-    lists:ListType[];
-}
+    userId: string;
+    createdAt: number;
+    lists: ListType[];
+};
+
+
+
+

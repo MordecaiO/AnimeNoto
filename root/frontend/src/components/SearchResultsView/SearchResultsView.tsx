@@ -1,39 +1,44 @@
 import "./SearchResultsView.css";
 import { TileItem } from "../TileItem/TileItem";
-import { Both } from "../../vite-env";
+import { Both2} from "../../vite-env";
 import { Link } from "react-router-dom";
 
 export default function SearchResultsView() {
-    const exampleSearchResults: Both[] = [
+    const exampleSearchResults: Both2[] = [
         {
             name: "Jujutsu Kaisen",
             src: "Jikan path",
             status: "airing",
             genres: ["horror", "supernatural"],
+            description:"an anime description",
         },
         {
             name: "86",
             src: "Jikan path",
             status: "aired",
             genres: ["action", "adventure"],
+            description:"an anime description",
         },
         {
             name: "Planetes",
             src: "Jikan path",
             status: "aired",
             genres: ["action", "romance", "slice of life"],
+            description:"an anime description",
         },
         {
             name: "The Familiar of Zero",
             src: "Jikan path",
             status: "aired",
             genres: ["adventure", "romance"],
+            description:"an anime description",
         },
         {
             name: "That Time I Got Reincarnated as a Slime",
             src: "Jikan path",
             status: "aired",
             genres: ["action", "adventure", "comedy", "fantasy"],
+            description:"an anime description",
         },
     ];
     return (

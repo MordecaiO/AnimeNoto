@@ -1,21 +1,8 @@
 import "./MultiListView.css";
-import { Both } from "../../vite-env";
 import { TileItem } from "../TileItem/TileItem";
 import { Link } from "react-router-dom";
 import { userDoc } from "../../../public/testDB";
 export default function MultiListView(): JSX.Element {
-    /*     const exampleLists: Both[] = [
-        {
-            name: "Watching",
-            src: "some string",
-            numberOfItems: 5, // list.length
-        },
-        {
-            name: "Watched",
-            src: "some string",
-            numberOfItems: 9,
-        },
-    ]; */
 
     return (
         <article>
@@ -27,7 +14,7 @@ export default function MultiListView(): JSX.Element {
                     return (
                         <Link
                             className="mlv-link"
-                            /* FIXME: to={`${e.listName}`} */ to={`${e.name}`}
+                            /* FIXME: to={`${e.listName}`} */ to={`${e.listName}`}
                             state={{ listDetails: e }}
                         >
                             <TileItem details={e} />

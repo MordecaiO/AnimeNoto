@@ -39,7 +39,7 @@ const exampleList: ListItemType[] = [
 function DetailedListView(): JSX.Element {
     const {
         // FIXME: listName: name,
-        name,
+        listName,
         dft,
         lastUpdated,
         listDescription,
@@ -57,7 +57,7 @@ function DetailedListView(): JSX.Element {
                         {dft ? "Default List" : "User List"}
                     </p>
                     <div className="details-container">
-                        <h1 className="list-name">{name}</h1>
+                        <h1 className="list-name">{listName}</h1>
                         <p className="list-desc">{listDescription}</p>
                     </div>
                     <p className="updated-text">

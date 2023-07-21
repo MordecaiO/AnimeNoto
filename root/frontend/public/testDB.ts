@@ -5,7 +5,7 @@ export const userDoc:UserDocType = {
     createdAt: 10923801231,
     lists: [
         {
-            name: "Watched",
+            listName: "Watched",
             // FIXME:listName: "Watched",
             dft: true,
             listDescription: "Anime I've already watched",
@@ -45,7 +45,7 @@ export const userDoc:UserDocType = {
             ],
         },
         {
-            name: "A longer list name to test how the List name reacts",
+            listName: "A longer list name to test how the List name reacts",
             // FIXME: listName: "A longer list name to test how the List name reacts",
             dft: false,
             lastUpdated: 1902381029311,

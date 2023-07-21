@@ -1,27 +1,28 @@
 import "./TileItem.css";
 
-import { Both } from "../../vite-env";
-export const TileItem = ({ details }: { details: Both }): JSX.Element => {
-    const {name,/* src, */status, genres, numberOfItems,} = details
+import { Both2 } from "../../vite-env";
+export const TileItem = ({ details }: { details: Both2 }): JSX.Element => {
     return (
         <div className="menu-container">
             <article className="tile-container">
                 <div className="tile-preview">
                     <img src={`/test.image.jpg`} alt="preview" />
-                    {genres && (
+                    {details.genres && (
                         <div className="tile-genres-container">
-                            {genres.map((g) => {
+                            {details.genres.map((g) => {
                                 return <span className="tile-genre">{g}</span>;
                             })}
                         </div>
                     )}
                 </div>
                 <div className="tile-details">
-                    <span className="tile-title">{name}</span>
+                    <span className="tile-title">
+                        {details.name ? details.name : details.listName}
+                    </span>
                     <span className="tile-status">
-                        {status
-                            ? `${status}`
-                            : `${numberOfItems} items`}
+                        {details.status
+                            ? `${details.status}`
+                            : `${details.numberOfItems} items`}
                     </span>
                 </div>
             </article>
