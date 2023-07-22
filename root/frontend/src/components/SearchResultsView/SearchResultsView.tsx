@@ -1,8 +1,9 @@
 import "./SearchResultsView.css";
 import { TileItem } from "../TileItem/TileItem";
 import { Both } from "../../vite-env";
-import fetchResults from "./fetchResults";
+
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export default function SearchResultsView() {
   const exampleSearchResults: Both[] = [
@@ -38,7 +39,30 @@ export default function SearchResultsView() {
     },
   ];
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const results = useQuery({
+    queryKey: ["animes", searchTerm],
+    queryFn: async () => {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime?q=` + searchTerm
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    },
+  });
+
+  const animes: object[] = results?.data ?? [];
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    setSearchTerm(formData.get("search") as string);
+    e.currentTarget.reset();
+    e.currentTarget.focus();
+  };
   return (
     <article>
       <section className="srv-header">
@@ -54,19 +78,13 @@ export default function SearchResultsView() {
           >
             <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
           </svg>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              fetchResults(searchQuery);
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             <input
               className="srv-searchbar"
               placeholder="Search catalogue"
-              name="q"
-              onChange={(e) => setSearchQuery(e.target.value)}
+              name="search"
             />
-            <button id="search">Go</button>
+            <button type="submit">Go</button>
           </form>
         </div>
         <div className="right inner-wrapper">
@@ -77,7 +95,7 @@ export default function SearchResultsView() {
         </div>
       </section>
       <section className="srv-results-container">
-        {exampleSearchResults.map((e) => {
+        {animes.map((e) => {
           return <TileItem details={e} />;
         })}
       </section>
