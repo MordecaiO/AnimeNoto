@@ -1,8 +1,9 @@
 import "./SearchResultsView.css";
 import { TileItem } from "../TileItem/TileItem";
-import { Both } from "../../vite-env";
+
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { AnimeProps } from "../../vite-env";
 
 export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -22,7 +23,7 @@ export default function SearchResultsView() {
     },
   });
 
-  const animes: Both[] = results?.data?.data ?? [];
+  const animes = results?.data?.data ?? [];
   console.log("ani", animes);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -64,11 +65,17 @@ export default function SearchResultsView() {
         </div>
       </section>
       <section className="srv-results-container">
-        try{" "}
-        {animes.map((anime: Both) => {
-          return <TileItem details={anime} key={anime.name} />;
+        {animes.map((anime: AnimeProps) => {
+          return (
+            <TileItem
+              key={anime.mal_id}
+              name={anime.title}
+              status={anime.status}
+              genres={anime.genres}
+              imgUrl={anime.images.jpg.image_url}
+            />
+          );
         })}
-        catch (error) {}
       </section>
       <button className="srv-top-button">Back to top</button>
     </article>

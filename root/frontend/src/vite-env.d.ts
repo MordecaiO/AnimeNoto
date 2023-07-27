@@ -13,27 +13,56 @@
 // };
 
 type Common = {
-    name: string;
-    src: string;
+  name: string;
+  src: string;
 };
 type Conditional =
-    | {
-          status?: string;
-          genres?: string[];
-          numberOfItems?: never;
-      }
-    | {
-          status?: never;
-          genres?: never;
-          numberOfItems?: number;
-      };
+  | {
+      status?: string;
+      genres?: string[];
+      numberOfItems?: never;
+    }
+  | {
+      status?: never;
+      genres?: never;
+      numberOfItems?: number;
+    };
 export type Both = Common & Conditional;
 
 export type ListItemType = {
+  name: string;
+  status: string;
+  description: string;
+  src: string;
+  genres: string[];
+  index: number;
+};
+
+export type TileItemProps = {
+  name: string;
+  genres: {
+    mal_id: number;
+    type: string;
     name: string;
-    status: string;
-    description: string;
-    src: string;
-    genres: string[];
-    index: number;
+    url: string;
+  }[];
+  status: string;
+  imgUrl: string;
+};
+
+export type AnimeProps = {
+  mal_id: number;
+  title: string;
+  status: string;
+  genres: {
+    mal_id: number;
+    name: string;
+    url: string;
+    type: string;
+  }[];
+  images: {
+    jpg: {
+      image_url: string;
+    };
+  };
 };
