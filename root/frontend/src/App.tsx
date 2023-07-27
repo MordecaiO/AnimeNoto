@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SearchResultsView } from "./components/SearchResultsView/SearchResultsView.tsx";
+import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
 
 const queryClient = new QueryClient();
 function App() {

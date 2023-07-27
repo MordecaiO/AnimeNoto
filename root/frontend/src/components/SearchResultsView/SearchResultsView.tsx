@@ -4,7 +4,7 @@ import { Both } from "../../vite-env";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-export function SearchResultsView() {
+export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const results = useQuery({
@@ -17,12 +17,12 @@ export function SearchResultsView() {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      console.log(data);
+
       return data;
     },
   });
 
-  const animes = results?.data;
+  const animes: Both[] = results?.data?.data ?? [];
   console.log("ani", animes);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -64,9 +64,11 @@ export function SearchResultsView() {
         </div>
       </section>
       <section className="srv-results-container">
+        try{" "}
         {animes.map((anime: Both) => {
-          <TileItem details={anime} />;
+          return <TileItem details={anime} key={anime.name} />;
         })}
+        catch (error) {}
       </section>
       <button className="srv-top-button">Back to top</button>
     </article>
