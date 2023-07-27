@@ -6,7 +6,13 @@ export const TileItem = ({ details }: { details: Both2 }): JSX.Element => {
         <div className="menu-container">
             <article className="tile-container">
                 <div className="tile-preview">
-                    <img src={`/test.image.jpg`} alt="preview" />
+                    {(details.listItems && details.listItems.length < 4) ||
+                    details.numberOfItems == undefined ? (
+                        <img src={`/test.image.jpg`} alt="preview" />
+                    ) : (
+                        <></>
+                    )}
+
                     {details.genres && (
                         <div className="tile-genres-container">
                             {details.genres.map((g) => {
