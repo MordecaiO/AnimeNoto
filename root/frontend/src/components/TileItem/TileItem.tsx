@@ -1,4 +1,4 @@
-import { Props } from "../../vite-env";
+import { TileItemProps } from "../../vite-env";
 import "./TileItem.css";
 
 export const TileItem = ({
@@ -7,7 +7,7 @@ export const TileItem = ({
   status,
   imgUrl,
   list,
-}: Props): JSX.Element => {
+}: TileItemProps): JSX.Element => {
   return (
     <div className="menu-container">
       <article className="tile-container">

@@ -37,18 +37,6 @@ export type ListItemType = {
   index: number;
 };
 
-export type TileItemProps = {
-  name: string;
-  genres: {
-    mal_id: number;
-    type: string;
-    name: string;
-    url: string;
-  }[];
-  status: string;
-  imgUrl: string;
-};
-
 export type AnimeProps = {
   mal_id: number;
   title: string;
@@ -66,7 +54,7 @@ export type AnimeProps = {
   };
 };
 
-type Props =
+export type TileItemProps =
   | {
       list: false;
       name: string;
