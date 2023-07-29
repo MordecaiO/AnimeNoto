@@ -73,6 +73,7 @@ export default function SearchResultsView() {
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
+              list={false}
             />
           );
         })}

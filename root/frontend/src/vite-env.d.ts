@@ -14,7 +14,6 @@
 
 type Common = {
   name: string;
-  src: string;
 };
 type Conditional =
   | {
@@ -66,3 +65,26 @@ export type AnimeProps = {
     };
   };
 };
+
+type Props =
+  | {
+      list: false;
+      name: string;
+      items?: never;
+      genres: {
+        mal_id: number;
+        type: string;
+        name: string;
+        url: string;
+      }[];
+      status: string;
+      imgUrl: string;
+    }
+  | {
+      list: true;
+      name: string;
+      items?: AnimeProps[];
+      genres?: never;
+      status?: never;
+      imgUrl?: never;
+    };
