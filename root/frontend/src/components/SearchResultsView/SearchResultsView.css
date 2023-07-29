@@ -1,12 +1,9 @@
 .srv-header {
   border: solid red 2px;
-  position: sticky;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin-top: -50px;
-  margin-left: -8px;
-  margin-right: -8px;
+  position: absolute;
+
+  width: 100%;
+  margin: auto;
   height: 15vh;
   /* max-height: 100px; */
   display: flex;
@@ -53,8 +50,12 @@
   margin-left: auto;
 }
 .srv-results-container {
+  top: 15vh;
+  padding: 15px;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .left.inner-wrapper,
 .right.inner-wrapper {

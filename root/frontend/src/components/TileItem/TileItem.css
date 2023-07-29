@@ -1,12 +1,12 @@
 .menu-container {
   height: 180px;
   width: 120px;
-  margin: 10px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: solid 2px red
+  border: solid 2px red;
 }
 
 .context-button {
@@ -78,20 +78,20 @@ img {
 }
 
 .tile-genres-container {
-    position: absolute;
-    bottom: 1.5px;
-    display:flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 1.5px;
+  position: absolute;
+  bottom: 1.5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 1.5px;
 }
 .tile-genre {
-    background-color: white;
-    padding: 1.5px;
-    margin: 1.5px;
-    font-family: Verdana;
-    font-size: 0.35em;
-    border-radius: 2px;
+  background-color: white;
+  padding: 1.5px;
+  margin: 1.5px;
+  font-family: Verdana;
+  font-size: 0.35em;
+  border-radius: 2px;
 }
