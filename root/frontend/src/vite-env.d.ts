@@ -1,32 +1,33 @@
-/// <reference types="vite/client" />
 
-// export type SearchResult = {
-//     name: string;
-//     src: string;
-//     status: string;
-//     genres: string[];
-// };
-// export type AnimeList = {
-//     name: string;
-//     src: string;
-//     numberOfItems: number;
-// };
 
 type Common = {
-  name: string;
+    src: string;
 };
+
 type Conditional =
-  | {
-      status?: string;
-      genres?: string[];
-      numberOfItems?: never;
-    }
-  | {
-      status?: never;
-      genres?: never;
-      numberOfItems?: number;
-    };
+    | {
+          listName: never;
+          name: string;
+          status?: string;
+          genres?: string[];
+          numberOfItems?: never;
+          lastUpdated: never;
+      }
+    | {
+          listName: string;
+          dft: boolean;
+          name: never;
+          status?: never;
+          genres?: never;
+          numberOfItems?: number;
+          lastUpdated: number;
+      };
+
+ 
+
+
 export type Both = Common & Conditional;
+export type Both2 = ListType | ListItemType
 
 export type ListItemType = {
   name: string;
@@ -37,7 +38,33 @@ export type ListItemType = {
   index: number;
 };
 
-export type AnimeProps = {
+
+export type ListType = {
+    listName: string;
+    dft: boolean;
+    listDescription: string;
+    src: string;
+    lastUpdated: number;
+    listItems: ListItemType[];
+    numberOfItems: number;
+    name?: never;
+    status?: never;
+    src?: never;
+    genres?: never;
+    description?: never;
+    index?: never;
+};
+
+
+export type UserDocType = {
+    userId: string;
+    createdAt: number;
+    lists: ListType[];
+};
+
+
+  
+  export type AnimeProps = {
   mal_id: number;
   title: string;
   status: string;
@@ -76,3 +103,4 @@ export type TileItemProps =
       status?: never;
       imgUrl?: never;
     };
+

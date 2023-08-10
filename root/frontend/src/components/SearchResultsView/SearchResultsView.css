@@ -11,6 +11,7 @@
   justify-content: center;
   z-index: 1;
   /* background-color: grey; */
+
 }
 .srv-lists-button {
   align-self: flex-start;
@@ -30,7 +31,7 @@
   min-width: 40px;
   left: -16px;
   top: -8px;
-  /* z-index: 1000; */
+
 }
 .srv-sort {
   align-self: flex-end;
@@ -56,6 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 .left.inner-wrapper,
 .right.inner-wrapper {
@@ -71,8 +73,14 @@
   /* margin-left: auto; */
 }
 .centre.inner-wrapper {
+
+    position:relative;
+    display:flex;
+
   position: relative;
+
 }
+
 .srv-top-button {
   position: fixed;
   bottom: 20px;
