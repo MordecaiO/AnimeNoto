@@ -50,28 +50,27 @@
   align-self: flex-end;
   margin-left: auto;
 }
+
 .srv-results-container {
   top: 15vh;
   padding: 15px;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
+  
+ 
 }
-.left.inner-wrapper,
+
 .right.inner-wrapper {
   flex: 1;
   display: flex;
 }
+
 .left.inner-wrapper {
   align-self: flex-start;
   margin-right: auto;
 }
-.right.inner-wrapper {
-  align-self: flex-end;
-  /* margin-left: auto; */
-}
+
 .centre.inner-wrapper {
 
     position:relative;

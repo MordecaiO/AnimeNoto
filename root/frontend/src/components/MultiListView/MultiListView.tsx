@@ -1,7 +1,8 @@
 import "./MultiListView.css";
 import { TileItem } from "../TileItem/TileItem";
 import { Link } from "react-router-dom";
-import { userDoc } from "../../../public/testDB";
+import { userDoc } from "./testDB";
+
 export default function MultiListView(): JSX.Element {
 
     return (
@@ -17,7 +18,7 @@ export default function MultiListView(): JSX.Element {
                             /* FIXME: to={`${e.listName}`} */ to={`${e.listName}`}
                             state={{ listDetails: e }}
                         >
-                            <TileItem details={e} />
+                            <TileItem key={e.src} list={true} name={e.listName} items={e.listItems} />
                         </Link>
                     );
                 })}

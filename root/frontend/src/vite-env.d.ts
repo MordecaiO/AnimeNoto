@@ -35,7 +35,7 @@ export type ListItemType = {
   description: string;
   src: string;
   genres: string[];
-  index: number;
+  
 };
 
 
@@ -45,7 +45,7 @@ export type ListType = {
     listDescription: string;
     src: string;
     lastUpdated: number;
-    listItems: ListItemType[];
+    listItems: AnimeProps[];
     numberOfItems: number;
     name?: never;
     status?: never;
