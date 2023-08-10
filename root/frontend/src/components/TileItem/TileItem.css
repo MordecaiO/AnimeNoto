@@ -1,19 +1,18 @@
 .menu-container {
-  height: 180px;
-  width: 120px;
-  margin: 10px;
+  height: 340px;
+  width: 200px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: solid 2px red
 }
 
 .context-button {
-  height: 15px;
-  width: 20px;
+  height: 30px;
+  width: 40px;
   margin: 0 5px 3px 0;
-  font-size: 0.45em;
+  font-size: 0.9em;
   font-weight: bold;
   color: gray;
   padding: 0px;
@@ -23,15 +22,16 @@
 }
 
 .tile-container {
-  height: 160px;
-  width: 100px;
+  height: 320px;
+  width: 200px;
+
   border-radius: 7px;
   box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
   overflow: hidden;
 }
 
 .tile-preview {
-  height: 130px;
+  height: 240px;
   width: 100%;
   position: relative;
   overflow:hidden;
@@ -49,22 +49,22 @@ img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 0 0 0;
-  /* padding: auto 1.5px; */
+  margin: 5px 2px 2px 2px;
 }
 
 .tile-title {
   font-family: Verdana;
-  font-size: 0.5em;
+  font-size: 1em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 18ch;
+  padding: 0 20px;
 }
 
 .tile-status {
   font-family: Verdana;
-  font-size: 0.35em;
+  font-size: 0.7em;
   margin: 2px;
   font-style: oblique 10deg;
 }
@@ -79,20 +79,20 @@ img {
 }
 
 .tile-genres-container {
-    position: absolute;
-    bottom: 1.5px;
-    display:flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 1.5px;
+  position: absolute;
+  bottom: 1.5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 1.5px;
 }
 .tile-genre {
-    background-color: white;
-    padding: 1.5px;
-    margin: 1.5px;
-    font-family: Verdana;
-    font-size: 0.35em;
-    border-radius: 2px;
+  background-color: white;
+  padding: 1.5px;
+  margin: 1.5px;
+  font-family: Verdana;
+  font-size: 0.7em;
+  border-radius: 2px;
 }
