@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeProps } from "../../vite-env";
  import { Link } from "react-router-dom";
+import { TileItem } from "../TileItem/TileItem";
 
 export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
