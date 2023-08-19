@@ -1,3 +1,4 @@
+import "./SearchResultsView.css"
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeProps } from "../../vite-env";
