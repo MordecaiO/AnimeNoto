@@ -45,12 +45,45 @@ function DetailedListView(): JSX.Element {
         listDescription,
         listItems,
     }: ListType = useLocation().state.listDetails;
-    const d = new Date(lastUpdated).toDateString()
+    const d = new Date(lastUpdated).toDateString();
     return (
         <div className="dlv-container">
             <header className="dlv-header">
                 <div className="img-container">
-                    <img className="header_image"></img>
+                    {listItems.length >= 4 ? (
+                        <>
+                            <img
+                                className="header-image-small"
+                                // src={listItems[0].images.jpg.image_url}
+                                src={
+                                    "https://cdn.myanimelist.net/images/anime/1424/108431.jpg"
+                                }
+                            ></img>
+                            <img
+                                className="header-image-small"
+                                // src={listItems[1].images.jpg.image_url}
+                                src={
+                                    "https://cdn.myanimelist.net/images/anime/8/20680.jpg"
+                                }
+                            ></img>
+                            <img
+                                className="header-image-small"
+                                // src={listItems[2].images.jpg.image_url}
+                                src={
+                                    "https://cdn.myanimelist.net/images/anime/1424/108431.jpg"
+                                }
+                            ></img>
+                            <img
+                                className="header-image-small"
+                                // src={listItems[3].images.jpg.image_url}
+                                src={
+                                    "https://cdn.myanimelist.net/images/anime/1424/108431.jpg"
+                                }
+                            ></img>
+                        </>
+                    ) : (
+                        <img className="header_image" src=""></img>
+                    )}
                 </div>
                 <section className="header-items">
                     <p className="list-type">
@@ -60,9 +93,7 @@ function DetailedListView(): JSX.Element {
                         <h1 className="list-name">{listName}</h1>
                         <p className="list-desc">{listDescription}</p>
                     </div>
-                    <p className="updated-text">
-                        {`Last updated: ${d}`}
-                    </p>
+                    <p className="updated-text">{`Last updated: ${d}`}</p>
                 </section>
             </header>
             <main className="list-items-container">
