@@ -1,58 +1,64 @@
 .srv-header {
-    border: solid red 2px;
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background-color: grey; */
-}
-.srv-lists-button {
-    align-self: flex-start;
-    margin-right: auto;
-    margin-left: 2.5vh;
-    margin-top: 2.5vh;
-    cursor: pointer;
-}
-.srv-searchbar {
-    margin: auto;
-    /* Does nothing but may be needed in future */
-    text-align: center;
+  border: solid red 2px;
+  position: absolute;
+
+  width: 100%;
+  margin: auto;
+  height: 15vh;
+  /* max-height: 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  /* background-color: grey; */
 
 }
+.srv-lists-button {
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: 2.5vh;
+  margin-top: 2.5vh;
+  cursor: pointer;
+}
+.srv-searchbar {
+  margin: auto;
+  /* Does nothing but may be needed in future */
+  text-align: center;
+}
 .icon {
-    position: absolute;
-    min-width: 40px;
-    left: -5px;
-    top:3px
+  position: absolute;
+  padding: 10px;
+  min-width: 40px;
+  left: -16px;
+  top: -8px;
+
 }
 .srv-sort {
-    align-self: flex-end;
-    margin-right: 1.5vh;
-    margin-left: auto;
-    margin-bottom: 2.5vh;
-    cursor: pointer;
+  align-self: flex-end;
+  margin-right: 1.5vh;
+  margin-left: auto;
+  margin-bottom: 2.5vh;
+  cursor: pointer;
 }
 .srv-filter {
-    align-self: flex-end;
-    margin-right: 2.5vh;
-    margin-bottom: 2.5vh;
-    cursor: pointer;
+  align-self: flex-end;
+  margin-right: 2.5vh;
+  margin-bottom: 2.5vh;
+  cursor: pointer;
 }
 .srv-buttons {
-    align-self: flex-end;
-    margin-left: auto;
+  align-self: flex-end;
+  margin-left: auto;
 }
+
 .srv-results-container {
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    left: 2.5vh;
-    right: 2.5vh;
+  top: 15vh;
+  padding: 15px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .left.inner-wrapper, .right.inner-wrapper {
     flex:1;
     display:flex;
@@ -69,20 +75,23 @@
     position:relative;
     display:flex;
 }
+
+
+
 .srv-top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: lightgrey;
-    color: white;
-    cursor: pointer;
-    font-family: Verdana;
-    border-radius: 7px;
-    padding: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: lightgrey;
+  color: white;
+  cursor: pointer;
+  font-family: Verdana;
+  border-radius: 7px;
+  padding: 5px;
 }
 .srv-top-button:hover {
-    background-color: grey;
+  background-color: grey;
 }

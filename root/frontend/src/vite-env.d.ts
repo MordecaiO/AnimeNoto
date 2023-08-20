@@ -1,20 +1,9 @@
-/// <reference types="vite/client" />
 
-// export type SearchResult = {
-//     name: string;
-//     src: string;
-//     status: string;
-//     genres: string[];
-// };
-// export type AnimeList = {
-//     name: string;
-//     src: string;
-//     numberOfItems: number;
-// };
 
 type Common = {
     src: string;
 };
+
 type Conditional =
     | {
           listName: never;
@@ -33,37 +22,30 @@ type Conditional =
           numberOfItems?: number;
           lastUpdated: number;
       };
-      type Anime = {
-        src: string;
-        name: string;
-        status?: string;
-        genres?: string[];
-      }
+
+ 
+
+
 export type Both = Common & Conditional;
 export type Both2 = ListType | ListItemType
 
 export type ListItemType = {
-    name: string;
-    status: string;
-    src: string;
-    genres: string[];
-    description: string;
-    index?: number;
-    listName?: never;
-    dft?: never;
-    listDescription?: never;
-    src?: never;
-    lastUpdated?: never;
-    listItems?: never;
-    numberOfItems?: never;
+  name: string;
+  status: string;
+  description: string;
+  src: string;
+  genres: string[];
+  
 };
+
+
 export type ListType = {
     listName: string;
     dft: boolean;
     listDescription: string;
     src: string;
     lastUpdated: number;
-    listItems: ListItemType[];
+    listItems: AnimeProps[];
     numberOfItems: number;
     name?: never;
     status?: never;
@@ -72,6 +54,8 @@ export type ListType = {
     description?: never;
     index?: never;
 };
+
+
 export type UserDocType = {
     userId: string;
     createdAt: number;
@@ -79,5 +63,44 @@ export type UserDocType = {
 };
 
 
+  
+  export type AnimeProps = {
+  mal_id: number;
+  title: string;
+  status: string;
+  genres: {
+    mal_id: number;
+    name: string;
+    url: string;
+    type: string;
+  }[];
+  images: {
+    jpg: {
+      image_url: string;
+    };
+  };
+};
 
+export type TileItemProps =
+  | {
+      list: false;
+      name: string;
+      items?: never;
+      genres: {
+        mal_id: number;
+        type: string;
+        name: string;
+        url: string;
+      }[];
+      status: string;
+      imgUrl: string;
+    }
+  | {
+      list: true;
+      name: string;
+      items?: AnimeProps[];
+      genres?: never;
+      status?: never;
+      imgUrl?: never;
+    };
 

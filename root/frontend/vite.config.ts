@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react({
     // Add this line
     include: "**/*.tsx",
+    
   })]
 })
