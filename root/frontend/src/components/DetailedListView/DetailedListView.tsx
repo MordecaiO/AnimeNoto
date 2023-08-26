@@ -1,7 +1,7 @@
 import "./DetailedListView.css";
 import ListItem from "../ListItem/ListItem";
 import { ListType, ListItemType } from "../../vite-env";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const exampleList: ListItemType[] = [
   {
     name: "Naruto",
@@ -48,6 +48,10 @@ function DetailedListView(): JSX.Element {
   const d = new Date(lastUpdated).toDateString();
   return (
     <div className="container">
+      <Link to={`/lists`}>
+        <button className="back-button">Back to Lists</button>
+      </Link>
+
       <div className="dlv-container">
         <header className="dlv-header">
           <div className="img-container">

@@ -6,6 +6,23 @@
   overflow-x: hidden;
 }
 
+.back-button {
+  position: fixed;
+  right: 0;
+  top: 20%;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #89cff0;
+  border: none;
+}
+
+.back-button:hover {
+  width: 85px;
+}
+
 .dlv-container {
   height: auto;
   display: flex;
