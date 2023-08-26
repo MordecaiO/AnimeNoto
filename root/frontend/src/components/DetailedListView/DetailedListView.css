@@ -1,12 +1,12 @@
 * {
   font-family: Verdana;
-  overflow-x: hidden;
 }
 
 .dlv-container {
   height: auto;
   display: flex;
   flex-flow: column;
+  overflow-x: hidden;
 }
 
 .dlv-header {
