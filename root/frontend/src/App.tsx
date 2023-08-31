@@ -1,7 +1,14 @@
 import "./App.css";
-import DetailedListView from "./components/DetailedListView/DetailedListView.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import SearchResultsView from "./components/SearchResultsView/SearchResultsView.tsx";
+
+const queryClient = new QueryClient();
 function App() {
-  return <DetailedListView />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SearchResultsView />
+    </QueryClientProvider>
+  );
 }
 
 export default App;

@@ -1,30 +1,35 @@
 import "./MultiListView.css";
-import { Both } from "../../vite-env";
 import { TileItem } from "../TileItem/TileItem";
-export default function MultiListView(): JSX.Element {
-    const exampleLists: Both[] = [
-        {
-            name: "Watching",
-            src: "some string",
-            numberOfItems: 5, // list.length
-        },
-        {
-            name: "Watched",
-            src: "some string",
-            numberOfItems: 9,
-        },
-    ];
+import { Link } from "react-router-dom";
+import { userDoc } from "./testDB";
 
-    return (
-        <article>
-            <section className="mlv-header">
-                <h2 className="mlv-title">Lists</h2>
-            </section>
-            <section className="mlv-lists-container">
-                {exampleLists.map((e) => {
-                    return <TileItem details={e} />;
-                })}
-            </section>
-        </article>
-    );
+export default function MultiListView(): JSX.Element {
+  return (
+    <article>
+      <Link to={"/"}>
+        <button className="back-button">Home</button>
+      </Link>
+      <section className="mlv-header">
+        <h2 className="mlv-title">Lists</h2>
+      </section>
+      <section className="mlv-lists-container">
+        {userDoc.lists.map((e) => {
+          return (
+            <Link
+              className="mlv-link"
+              /* FIXME: to={`${e.listName}`} */ to={`${e.listName}`}
+              state={{ listDetails: e }}
+            >
+              <TileItem
+                key={e.src}
+                list={true}
+                name={e.listName}
+                items={e.listItems}
+              />
+            </Link>
+          );
+        })}
+      </section>
+    </article>
+  );
 }
