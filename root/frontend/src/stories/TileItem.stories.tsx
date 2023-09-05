@@ -8,4 +8,8 @@ export default meta ;
 type Story = StoryObj<typeof TileItem> ; 
 export const FirstStory : Story = {
     args : {list : false}
+} 
+
+export const SecondStory : Story = {
+    args : {list : true}
 }
