@@ -7,7 +7,18 @@ const meta : Meta<typeof TileItem> = {
 export default meta ; 
 type Story = StoryObj<typeof TileItem> ; 
 export const FirstStory : Story = {
-    args : {list : false}
+    args : {list : false,
+    genres: [{
+        mal_id: 1,
+        type: "PG",
+        name: "Supernatural",
+        url: "google.com"
+      },{
+        mal_id: 1,
+        type: "PG",
+        name: "Supernatural",
+        url: "google.com"
+      }]}
 } 
 
 export const SecondStory : Story = {
