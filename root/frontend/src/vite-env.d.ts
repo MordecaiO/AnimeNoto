@@ -1,3 +1,4 @@
+import { AnimeList } from "./components/AnimeList/AnimeList";
 
 
 type Common = {
@@ -62,7 +63,12 @@ export type UserDocType = {
     lists: ListType[];
 };
 
-
+export type AnimeListProps = {
+  name: string; 
+  items: AnimeProps[]; 
+  lastUpdated?: string | undefined ; 
+  createdAt: string
+}
   
   export type AnimeProps = {
   mal_id: number;
@@ -82,10 +88,8 @@ export type UserDocType = {
 };
 
 export type TileItemProps =
-  | {
-      list: false;
+   {
       name: string;
-      items?: never;
       genres: {
         mal_id: number;
         type: string;
@@ -95,12 +99,5 @@ export type TileItemProps =
       status: string;
       imgUrl: string;
     }
-  | {
-      list: true;
-      name: string;
-      items?: AnimeProps[];
-      genres?: never;
-      status?: never;
-      imgUrl?: never;
-    };
+  
 
