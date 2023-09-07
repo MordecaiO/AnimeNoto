@@ -13,7 +13,7 @@ export const AnimeList = ({
         </div>
         <div className="tile-details">
           <span className="tile-title">{name}</span>
-          <span className="tile-status">{items.length}</span>
+          <span className="tile-status">{items?.length}</span>
           <span className="tile-update">{lastUpdated}</span>
         </div>{" "}
       </article>

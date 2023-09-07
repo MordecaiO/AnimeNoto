@@ -1,6 +1,9 @@
 
 import { AnimeListProps } from "../../vite-env";
 /*export const userDoc:UserDocType = {
+
+
+
     userId: "qwerty",
     createdAt: 10923801231,
     lists: [
@@ -66,9 +69,26 @@ import { AnimeListProps } from "../../vite-env";
     ],
 };
 */
+
+
 export const animeLists : AnimeListProps[] = [{
     name: "Want to Watch",
-    items: [],
+    items: [{mal_id: 3,
+        title: "Naruto Shipudden",
+        status: "Completed",
+        genres: [{
+        mal_id: 27,
+            type: "anime",
+            name: "Shounen", 
+            url: "www.google.com"
+            }],
+        images: {
+          jpg: {
+            image_url: "https://cdn.myanimelist.net/images/anime/2/50745l.jpg"
+          }
+        }
+      }],
+
     lastUpdated: "", 
     createdAt: null
   }, {

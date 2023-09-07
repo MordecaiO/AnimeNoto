@@ -65,7 +65,7 @@ export type UserDocType = {
 
 export type AnimeListProps = {
   name: string; 
-  items: AnimeProps[]; 
+  items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
   createdAt: string | null
 }
