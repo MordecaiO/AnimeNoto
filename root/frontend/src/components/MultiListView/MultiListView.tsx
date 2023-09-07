@@ -1,7 +1,7 @@
 import "./MultiListView.css";
-import { TileItem } from "../TileItem/TileItem";
 import { Link } from "react-router-dom";
-import { userDoc } from "./testDB";
+import { AnimeList } from "../AnimeList/AnimeList";
+import { animeLists } from "./testDB";
 
 export default function MultiListView(): JSX.Element {
   return (
@@ -13,19 +13,14 @@ export default function MultiListView(): JSX.Element {
         <h2 className="mlv-title">Lists</h2>
       </section>
       <section className="mlv-lists-container">
-        {userDoc.lists.map((e) => {
+        {animeLists.map((list) => {
           return (
             <Link
               className="mlv-link"
-              /* FIXME: to={`${e.listName}`} */ to={`${e.listName}`}
-              state={{ listDetails: e }}
+              to={`${list.name}`}
+              state={{ listDetails: list }}
             >
-              <TileItem
-                key={e.src}
-                list={true}
-                name={e.listName}
-                items={e.listItems}
-              />
+              <AnimeList name={list.name} items={list.items} createdAt={null} />
             </Link>
           );
         })}

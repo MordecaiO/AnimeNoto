@@ -67,7 +67,7 @@ export type AnimeListProps = {
   name: string; 
   items: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
-  createdAt: string
+  createdAt: string | null
 }
   
   export type AnimeProps = {

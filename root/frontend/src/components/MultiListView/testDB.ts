@@ -1,6 +1,6 @@
-import { UserDocType } from "../src/vite-env";
 
-export const userDoc:UserDocType = {
+import { AnimeListProps } from "../../vite-env";
+/*export const userDoc:UserDocType = {
     userId: "qwerty",
     createdAt: 10923801231,
     lists: [
@@ -65,3 +65,20 @@ export const userDoc:UserDocType = {
         },
     ],
 };
+*/
+export const animeLists : AnimeListProps[] = [{
+    name: "Want to Watch",
+    items: [],
+    lastUpdated: "", 
+    createdAt: null
+  }, {
+    name: "Currently Watching",
+    items: [],
+    lastUpdated: "", 
+    createdAt: null
+  }, {
+    name: "Completed",
+    items: [],
+    lastUpdated: "", 
+    createdAt: null
+  }]
