@@ -1,45 +1,5 @@
 import { AnimeList } from "./components/AnimeList/AnimeList";
 
-
-type Common = {
-    src: string;
-};
-
-type Conditional =
-    | {
-          listName: never;
-          name: string;
-          status?: string;
-          genres?: string[];
-          numberOfItems?: never;
-          lastUpdated: never;
-      }
-    | {
-          listName: string;
-          dft: boolean;
-          name: never;
-          status?: never;
-          genres?: never;
-          numberOfItems?: number;
-          lastUpdated: number;
-      };
-
- 
-
-
-export type Both = Common & Conditional;
-export type Both2 = ListType | ListItemType
-
-export type ListItemType = {
-  name: string;
-  status: string;
-  description: string;
-  src: string;
-  genres: string[];
-  
-};
-
-
 export type ListType = {
     listName: string;
     dft: boolean;
@@ -63,17 +23,33 @@ export type UserDocType = {
     lists: ListType[];
 };
 
+type ListItemProps = {
+  index: number;
+  src: string;
+  name: string;
+  status: string;
+  description?: string;
+  genres: {
+    mal_id: number;
+    name: string;
+    url: string;
+    type: string;
+  }[];
+};
+
 export type AnimeListProps = {
   name: string; 
   items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
-  createdAt: string | null
+  createdAt: string | null ; 
+  defList: boolean; 
 }
   
   export type AnimeProps = {
   mal_id: number;
   title: string;
   status: string;
+  synopsis?: string;
   genres: {
     mal_id: number;
     name: string;

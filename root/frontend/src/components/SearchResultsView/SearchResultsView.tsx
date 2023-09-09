@@ -1,8 +1,8 @@
-import "./SearchResultsView.css"
+import "./SearchResultsView.css";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeProps } from "../../vite-env";
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TileItem } from "../TileItem/TileItem";
 
 export default function SearchResultsView() {
@@ -38,8 +38,8 @@ export default function SearchResultsView() {
       <section className="srv-header">
         <div className="left inner-wrapper">
           <Link to={`lists`}>
-                        <button className="srv-lists-button">Lists</button>
-                    </Link>
+            <button className="srv-lists-button">Lists</button>
+          </Link>
         </div>
         <div className="centre inner-wrapper">
           <svg
@@ -75,7 +75,6 @@ export default function SearchResultsView() {
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
-              list={false}
             />
           );
         })}
@@ -83,5 +82,4 @@ export default function SearchResultsView() {
       <button className="srv-top-button">Back to top</button>
     </article>
   );
-
 }

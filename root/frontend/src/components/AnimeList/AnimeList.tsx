@@ -4,6 +4,7 @@ export const AnimeList = ({
   name,
   items,
   lastUpdated,
+  defList,
 }: AnimeListProps): JSX.Element => {
   return (
     <div className="menu-container">
@@ -12,7 +13,9 @@ export const AnimeList = ({
           <img src={""} alt="preview" />
         </div>
         <div className="tile-details">
-          <span className="tile-title">{name}</span>
+          <span className="tile-title">
+            {name + defList ? "default list" : ""}
+          </span>
           <span className="tile-status">{items?.length}</span>
           <span className="tile-update">{lastUpdated}</span>
         </div>{" "}

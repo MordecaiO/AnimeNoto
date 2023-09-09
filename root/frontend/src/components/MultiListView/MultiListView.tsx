@@ -18,9 +18,19 @@ export default function MultiListView(): JSX.Element {
             <Link
               className="mlv-link"
               to={`${list.name}`}
-              state={{ listDetails: list }}
+              state={{
+                listItems: list.items,
+                listName: list.name,
+                listLastUpdated: list.lastUpdated,
+                defaultList: list.defList,
+              }}
             >
-              <AnimeList name={list.name} items={list.items} createdAt={null} />
+              <AnimeList
+                name={list.name}
+                items={list.items}
+                createdAt={null}
+                defList={true}
+              />
             </Link>
           );
         })}
