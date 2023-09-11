@@ -10,7 +10,7 @@ export const AnimeTileItem: Story = {
   args: {
     name: "Naruto Shippuden",
     status: "Airing",
-    list: false,
+
     imgUrl: "https://cdn.myanimelist.net/images/anime/2/50745l.jpg",
     genres: [
       {
