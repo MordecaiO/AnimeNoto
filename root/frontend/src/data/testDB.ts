@@ -1,5 +1,5 @@
 
-import { AnimeListProps } from "../../vite-env";
+import { AnimeListProps } from "../vite-env";
 /*export const userDoc:UserDocType = {
 
 
