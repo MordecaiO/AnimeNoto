@@ -90,15 +90,18 @@ export const animeLists : AnimeListProps[] = [{
       }],
 
     lastUpdated: "", 
-    createdAt: null
+    createdAt: null, 
+    defList: true 
   }, {
     name: "Currently Watching",
     items: [],
     lastUpdated: "", 
-    createdAt: null
+    createdAt: null,
+    defList: true
   }, {
     name: "Completed",
     items: [],
     lastUpdated: "", 
-    createdAt: null
+    createdAt: null,
+    defList: true
   }]
