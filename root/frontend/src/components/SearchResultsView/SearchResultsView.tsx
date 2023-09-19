@@ -12,13 +12,13 @@ export default function SearchResultsView() {
   const addToList = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
-    currentLists?: AnimeListProps[]
+    currentLists: AnimeListProps[]
   ): void => {
     const targetListId = targetList.id;
-    let currLists = [...currentLists];
+    const currLists = [...currentLists];
     const listToEdit = currLists.find((x) => (x.id = targetListId));
-    listToEdit?.items?.push(targetAnime) ?? [];
-    currLists = [...currLists, listToEdit];
+    listToEdit?.items?.push(targetAnime);
+    const updatedCurrList = [...currLists, listToEdit];
   };
   const results = useQuery({
     queryKey: ["animes", searchTerm],
