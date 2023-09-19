@@ -1,4 +1,5 @@
 import { TileItemProps } from "../../vite-env";
+import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
 import "./TileItem.css";
 
 export const TileItem = ({
@@ -24,7 +25,7 @@ export const TileItem = ({
           <span className="tile-status">{status}</span>
         </div>{" "}
       </article>
-      <button className="context-button">...</button>
+      <TileItemMenu />
     </div>
   );
 };

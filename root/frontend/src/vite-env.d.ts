@@ -38,6 +38,7 @@ type ListItemProps = {
 };
 
 export type AnimeListProps = {
+  id: number; 
   name: string; 
   items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
@@ -74,6 +75,7 @@ export type TileItemProps =
       }[];
       status: string;
       imgUrl: string;
+      lists:AnimeListProps[]
     }
   
 

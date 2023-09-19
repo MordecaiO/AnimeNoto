@@ -1,13 +1,25 @@
 import "./SearchResultsView.css";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AnimeProps } from "../../vite-env";
+import { AnimeListProps, AnimeProps } from "../../vite-env";
 import { Link } from "react-router-dom";
 import { TileItem } from "../TileItem/TileItem";
-
+import { animeLists } from "../MultiListView/testDB";
 export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [lists, setLists] = useState(animeLists);
 
+  const addToList = (
+    targetList: AnimeListProps,
+    targetAnime: AnimeProps,
+    currentLists?: AnimeListProps[]
+  ): void => {
+    const targetListId = targetList.id;
+    let currLists = [...currentLists];
+    const listToEdit = currLists.find((x) => (x.id = targetListId));
+    listToEdit?.items?.push(targetAnime) ?? [];
+    currLists = [...currLists, listToEdit];
+  };
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
@@ -75,6 +87,7 @@ export default function SearchResultsView() {
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
+              lists={lists}
             />
           );
         })}
