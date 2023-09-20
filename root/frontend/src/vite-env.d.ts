@@ -1,4 +1,4 @@
-import { AnimeList } from "./components/AnimeList/AnimeList";
+
 
 export type ListType = {
     listName: string;

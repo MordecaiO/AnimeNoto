@@ -31,6 +31,25 @@ export default function SearchResultsView() {
     updatedLists[targetListIndex] = updatedList;
     setLists(updatedLists);
   };
+  const removeFromList = (
+    targetList: AnimeListProps,
+    targetAnime: AnimeProps,
+    currLists: AnimeListProps[]
+  ): void => {
+    const updatedLists = [...currLists];
+    const targetListId = targetList.id;
+    const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
+    const updatedList = { ...updatedLists[targetListIndex] };
+    let updatedItems = [...(updatedList.items as [])];
+    const targetAnimeId = targetAnime.mal_id;
+    const targetAnimeIndex = updatedItems.findIndex(
+      (x: AnimeProps) => x.mal_id == targetAnimeId
+    );
+    updatedItems = updatedItems.splice(targetAnimeIndex, 1);
+    updatedList.items = updatedItems;
+    updatedLists[targetListIndex] = updatedList;
+    setLists(updatedLists);
+  };
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
