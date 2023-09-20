@@ -50,6 +50,15 @@ export default function SearchResultsView() {
     updatedLists[targetListIndex] = updatedList;
     setLists(updatedLists);
   };
+  const isAnimeInList = (
+    targetAnime: AnimeProps,
+    targetList: AnimeListProps
+  ): boolean => {
+    const targetAnimeId = targetAnime.mal_id;
+    return targetList.items?.findIndex((x) => x.mal_id == targetAnimeId) != -1
+      ? true
+      : false;
+  };
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
