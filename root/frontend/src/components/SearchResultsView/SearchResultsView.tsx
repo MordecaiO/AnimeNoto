@@ -14,11 +14,22 @@ export default function SearchResultsView() {
     targetAnime: AnimeProps,
     currentLists: AnimeListProps[]
   ): void => {
+    // shallow copy
+    const updatedLists = [...currentLists];
+    // find List we want to update
     const targetListId = targetList.id;
-    const currLists = [...currentLists];
-    const listToEdit = currLists.find((x) => (x.id = targetListId));
-    listToEdit?.items?.push(targetAnime);
-    const updatedCurrList = [...currLists, listToEdit];
+    const targetListIndex = updatedLists.findIndex(
+      (x) => (x.id = targetListId)
+    );
+    //make copy of List
+    const updatedList = { ...updatedLists[targetListIndex] };
+    // make copy of Items in list
+    // casting to arr of AnimeProps
+    const updatedItems = [...(updatedList.items as AnimeProps[])];
+    updatedItems.push(targetAnime);
+    updatedList.items = updatedItems;
+    updatedLists[targetListIndex] = updatedList;
+    setLists(updatedLists);
   };
   const results = useQuery({
     queryKey: ["animes", searchTerm],
