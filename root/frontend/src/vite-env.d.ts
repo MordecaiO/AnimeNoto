@@ -67,6 +67,7 @@ export type AnimeListProps = {
 export type TileItemProps =
    {
     id: number; 
+    anime: AnimeProps; 
       name: string;
       genres: {
         mal_id: number;
@@ -87,5 +88,5 @@ export type TileItemProps =
       handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
       isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
       lists: AnimeListProps[]; 
-      animeId: number; 
+      anime: AnimeProps; 
     }

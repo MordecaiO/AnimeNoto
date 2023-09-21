@@ -122,6 +122,7 @@ export default function SearchResultsView() {
           return (
             <TileItem
               id={anime.mal_id}
+              anime={anime}
               key={anime.mal_id}
               name={anime.title}
               status={anime.status}

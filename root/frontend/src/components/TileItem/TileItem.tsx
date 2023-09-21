@@ -3,7 +3,7 @@ import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
 import "./TileItem.css";
 
 export const TileItem = ({
-  id,
+  anime,
   name,
   genres,
   status,
@@ -31,7 +31,7 @@ export const TileItem = ({
         </div>{" "}
       </article>
       <TileItemMenu
-        animeId={id}
+        anime={anime}
         lists={lists}
         handleAddAnime={handleAddAnime}
         handleDeleteAnime={handleDeleteAnime}

@@ -2,7 +2,7 @@ import { Menu, MenuItem, SubMenu } from "@szhsin/react-menu";
 import { AnimeListProps, TileItemMenuProps } from "../../vite-env";
 
 export const TileItemMenu = ({
-  animeId,
+  anime,
   lists,
   handleAddAnime,
   handleDeleteAnime,
