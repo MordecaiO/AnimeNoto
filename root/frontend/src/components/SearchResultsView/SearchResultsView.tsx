@@ -14,6 +14,7 @@ export default function SearchResultsView() {
     targetAnime: AnimeProps,
     currentLists: AnimeListProps[]
   ): void => {
+    console.log("lists before add function", lists);
     // shallow copy
     const updatedLists = [...currentLists];
     // find List we want to update
@@ -30,31 +31,35 @@ export default function SearchResultsView() {
     updatedList.items = updatedItems;
     updatedLists[targetListIndex] = updatedList;
     setLists(updatedLists);
+    console.log("lists after add function", lists);
   };
   const handleDeleteAnime = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
     currLists: AnimeListProps[]
   ): void => {
+    console.log("lists before del function", lists);
     const updatedLists = [...currLists];
     const targetListId = targetList.id;
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
     const updatedList = { ...updatedLists[targetListIndex] };
-    let updatedItems = [...(updatedList.items as [])];
+    const updatedItems = [...(updatedList.items as [])];
     const targetAnimeId = targetAnime.mal_id;
     const targetAnimeIndex = updatedItems.findIndex(
       (x: AnimeProps) => x.mal_id == targetAnimeId
     );
-    updatedItems = updatedItems.splice(targetAnimeIndex, 1);
+    updatedItems.splice(targetAnimeIndex, 1);
     updatedList.items = updatedItems;
     updatedLists[targetListIndex] = updatedList;
     setLists(updatedLists);
+    console.log("lists after del function", lists);
   };
   const isAnimeInList = (
     targetAnime: AnimeProps,
     targetList: AnimeListProps
   ): boolean => {
     const targetAnimeId = targetAnime.mal_id;
+    console.log("targetAnimeId", targetAnimeId);
     return targetList.items?.findIndex((x) => x.mal_id == targetAnimeId) != -1
       ? true
       : false;

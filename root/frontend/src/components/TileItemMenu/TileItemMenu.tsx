@@ -11,13 +11,18 @@ export const TileItemMenu = ({
   return (
     <Menu menuButton={<button className="context-button">...</button>}>
       <MenuItem>More Info</MenuItem>
-      <SubMenu label="Add to List">
-        <SubMenu label="Default Lists">
-          {lists.map((list: AnimeListProps) => {
-            return <MenuItem>{list.name}</MenuItem>;
-          })}
-        </SubMenu>
-        <SubMenu label="Other Lists"></SubMenu>
+      <SubMenu label="Add/Delete from List">
+        {lists.map((list: AnimeListProps) => {
+          return !isAnimeInList(anime, list) ? (
+            <MenuItem onClick={() => handleAddAnime(list, anime, lists)}>
+              Add to {list.name}
+            </MenuItem>
+          ) : (
+            <MenuItem onClick={() => handleDeleteAnime(list, anime, lists)}>
+              Delete from {list.name}
+            </MenuItem>
+          );
+        })}
       </SubMenu>
     </Menu>
   );
