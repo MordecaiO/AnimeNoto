@@ -75,7 +75,10 @@ export type TileItemProps =
       }[];
       status: string;
       imgUrl: string;
-      lists:AnimeListProps[]
+      lists:AnimeListProps[];
+      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean; 
     }
   
 

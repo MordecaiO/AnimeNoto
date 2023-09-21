@@ -127,6 +127,9 @@ export default function SearchResultsView() {
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
               lists={lists}
+              handleAddAnime={handleAddAnime}
+              handleDeleteAnime={handleDeleteAnime}
+              isAnimeInList={isAnimeInList}
             />
           );
         })}
