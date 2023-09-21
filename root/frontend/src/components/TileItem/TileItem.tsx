@@ -3,10 +3,15 @@ import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
 import "./TileItem.css";
 
 export const TileItem = ({
+  id,
   name,
   genres,
   status,
   imgUrl,
+  handleAddAnime,
+  handleDeleteAnime,
+  isAnimeInList,
+  lists,
 }: TileItemProps): JSX.Element => {
   return (
     <div className="menu-container">
@@ -25,7 +30,13 @@ export const TileItem = ({
           <span className="tile-status">{status}</span>
         </div>{" "}
       </article>
-      <TileItemMenu />
+      <TileItemMenu
+        animeId={id}
+        lists={lists}
+        handleAddAnime={handleAddAnime}
+        handleDeleteAnime={handleDeleteAnime}
+        isAnimeInList={isAnimeInList}
+      />
     </div>
   );
 };

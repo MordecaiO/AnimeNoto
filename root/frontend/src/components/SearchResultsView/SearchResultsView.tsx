@@ -121,6 +121,7 @@ export default function SearchResultsView() {
         {animes.map((anime: AnimeProps) => {
           return (
             <TileItem
+              id={anime.mal_id}
               key={anime.mal_id}
               name={anime.title}
               status={anime.status}
