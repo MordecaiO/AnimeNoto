@@ -9,7 +9,7 @@ export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [lists, setLists] = useState(animeLists);
 
-  const addToList = (
+  const handleAddAnime = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
     currentLists: AnimeListProps[]
@@ -31,7 +31,7 @@ export default function SearchResultsView() {
     updatedLists[targetListIndex] = updatedList;
     setLists(updatedLists);
   };
-  const removeFromList = (
+  const handleDeleteAnime = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
     currLists: AnimeListProps[]
