@@ -1,9 +1,11 @@
 import { render } from "@testing-library/react";
 import App from "../App";
-import { describe } from "vitest";
+import { BrowserRouter as Router } from "react-router-dom"; // Import Router
 
-describe("App", () => {
-  it("renders App", () => {
-    render(<App />);
-  });
+test("renders the App component", () => {
+  render(
+    <Router>
+      <App />
+    </Router>
+  );
 });
