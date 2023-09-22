@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeListProps, AnimeProps } from "../../vite-env";
 import { Link } from "react-router-dom";
-import { TileItem } from "../TileItem/TileItem";
+import { TileItem } from "../../components/TileItem/TileItem";
 import { animeLists } from "../MultiListView/testDB";
 export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");

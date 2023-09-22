@@ -1,5 +1,5 @@
 import "./DetailedListView.css";
-import ListItem from "../ListItem/ListItem";
+import ListItem from "../../components/ListItem/ListItem";
 import { AnimeProps } from "../../vite-env";
 import { Link, useLocation } from "react-router-dom";
 

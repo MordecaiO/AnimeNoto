@@ -1,6 +1,6 @@
 import "./MultiListView.css";
 import { Link } from "react-router-dom";
-import { AnimeList } from "../AnimeList/AnimeList";
+import { AnimeList } from "../../components/AnimeList/AnimeList";
 import { animeLists } from "./testDB";
 
 export default function MultiListView(): JSX.Element {
