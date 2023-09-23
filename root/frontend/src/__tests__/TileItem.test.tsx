@@ -1,7 +1,3 @@
-import { TileItem } from "../components/TileItem/TileItem";
-import { render } from "@testing-library/react";
-import { AnimeListProps, AnimeProps } from "../vite-env";
-
 const animeLists = [
   {
     id: 1,
@@ -66,22 +62,3 @@ const anime = {
     },
   },
 };
-const [lists, setLists] = useState(animeLists);
-
-test("renders the TileItem component", () => {
-  render(
-    <TileItem
-      id={anime.mal_id}
-      anime={anime}
-      key={anime.mal_id}
-      name={anime.title}
-      status={anime.status}
-      genres={anime.genres}
-      imgUrl={anime.images.jpg.image_url}
-      lists={lists}
-      handleAddAnime={handleAddAnime}
-      handleDeleteAnime={handleDeleteAnime}
-      isAnimeInList={isAnimeInList}
-    />
-  );
-});

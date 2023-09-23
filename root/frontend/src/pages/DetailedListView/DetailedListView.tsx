@@ -4,7 +4,7 @@ import { AnimeProps } from "../../vite-env";
 import { Link, useLocation } from "react-router-dom";
 
 function DetailedListView(): JSX.Element {
-  let { state } = useLocation();
+  const { state } = useLocation();
   const d = new Date(state.lastUpdated).toDateString();
   return (
     <div className="container">
