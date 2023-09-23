@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import SearchResultsView from "../pages/SearchResultsView/SearchResultsView";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter as Router } from "react-router-dom";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -13,10 +13,10 @@ const queryClient = new QueryClient({
 
 test("render the SearchResultsView page", () => {
   render(
-    <MemoryRouter>
+    <Router>
       <QueryClientProvider client={queryClient}>
         <SearchResultsView />
       </QueryClientProvider>
-    </MemoryRouter>
+    </Router>
   );
 });
