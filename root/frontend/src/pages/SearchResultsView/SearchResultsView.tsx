@@ -3,10 +3,13 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeProps } from "../../vite-env";
 import { Link } from "react-router-dom";
-import { TileItem } from "../TileItem/TileItem";
-import testDB from "../../data/testDB";
+import { TileItem } from "../../components/TileItem/TileItem";
+import { animeLists } from "../MultiListView/testDB";
+import { useLists } from "../../hooks/useLists";
 export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] =
+    useLists(animeLists);
 
   const results = useQuery({
     queryKey: ["animes", searchTerm],
@@ -70,11 +73,17 @@ export default function SearchResultsView() {
         {animes.map((anime: AnimeProps) => {
           return (
             <TileItem
+              id={anime.mal_id}
+              anime={anime}
               key={anime.mal_id}
               name={anime.title}
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
+              lists={lists}
+              handleAddAnime={handleAddAnime}
+              handleDeleteAnime={handleDeleteAnime}
+              isAnimeInList={isAnimeInList}
             />
           );
         })}

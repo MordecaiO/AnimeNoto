@@ -1,11 +1,17 @@
 import { TileItemProps } from "../../vite-env";
+import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
 import "./TileItem.css";
 
 export const TileItem = ({
+  anime,
   name,
   genres,
   status,
   imgUrl,
+  handleAddAnime,
+  handleDeleteAnime,
+  isAnimeInList,
+  lists,
 }: TileItemProps): JSX.Element => {
   return (
     <div className="menu-container">
@@ -24,7 +30,13 @@ export const TileItem = ({
           <span className="tile-status">{status}</span>
         </div>{" "}
       </article>
-      <button className="context-button">...</button>
+      <TileItemMenu
+        anime={anime}
+        lists={lists}
+        handleAddAnime={handleAddAnime}
+        handleDeleteAnime={handleDeleteAnime}
+        isAnimeInList={isAnimeInList}
+      />
     </div>
   );
 };

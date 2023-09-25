@@ -1,4 +1,4 @@
-import { AnimeList } from "./components/AnimeList/AnimeList";
+
 
 export type ListType = {
     listName: string;
@@ -38,6 +38,7 @@ type ListItemProps = {
 };
 
 export type AnimeListProps = {
+  id: number; 
   name: string; 
   items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
@@ -65,6 +66,8 @@ export type AnimeListProps = {
 
 export type TileItemProps =
    {
+    id: number; 
+    anime: AnimeProps; 
       name: string;
       genres: {
         mal_id: number;
@@ -74,6 +77,16 @@ export type TileItemProps =
       }[];
       status: string;
       imgUrl: string;
+      lists:AnimeListProps[];
+      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean; 
     }
   
-
+    type TileItemMenuProps = {
+      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
+      lists: AnimeListProps[]; 
+      anime: AnimeProps; 
+    }
