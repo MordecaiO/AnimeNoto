@@ -10,7 +10,7 @@ export default function SearchResultsView() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] =
     useLists(animeLists);
-
+  console.log("lists", lists);
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
@@ -70,12 +70,12 @@ export default function SearchResultsView() {
         </div>
       </section>
       <section className="srv-results-container">
-        {animes.map((anime: AnimeProps) => {
+        {animes.map((anime: AnimeProps, i: number) => {
           return (
             <TileItem
               id={anime.mal_id}
               anime={anime}
-              key={anime.mal_id}
+              key={i}
               name={anime.title}
               status={anime.status}
               genres={anime.genres}

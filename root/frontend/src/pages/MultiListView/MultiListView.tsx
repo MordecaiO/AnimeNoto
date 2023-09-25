@@ -13,7 +13,7 @@ export default function MultiListView(): JSX.Element {
         <h2 className="mlv-title">Lists</h2>
       </section>
       <section className="mlv-lists-container">
-        {animeLists.map((list) => {
+        {animeLists.map((list, index) => {
           return (
             <Link
               className="mlv-link"
@@ -26,6 +26,7 @@ export default function MultiListView(): JSX.Element {
               }}
             >
               <AnimeList
+                id={index}
                 name={list.name}
                 items={list.items}
                 createdAt={null}

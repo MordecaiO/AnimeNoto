@@ -12,19 +12,24 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     console.log("lists before add function", lists);
     // shallow copy
     const updatedLists = [...currentLists];
+    console.log("updatedLists", updatedLists);
     // find List we want to update
     const targetListId = targetList.id;
-    const targetListIndex = updatedLists.findIndex(
-      (x) => (x.id = targetListId)
-    );
+    console.log("targetListId", targetListId);
+
+    const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
+    console.log("targetListIndex", targetListIndex);
     //make copy of List
     const updatedList = { ...updatedLists[targetListIndex] };
+    // check if List is empty
+
     // make copy of Items in list
     // casting to arr of AnimeProps
     const updatedItems = [...(updatedList.items as AnimeProps[])];
     updatedItems.push(targetAnime);
     updatedList.items = updatedItems;
     updatedLists[targetListIndex] = updatedList;
+
     setLists(updatedLists);
     console.log("lists after add function", lists);
   };
@@ -54,7 +59,7 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     targetList: AnimeListProps
   ): boolean => {
     const targetAnimeId = targetAnime.mal_id;
-    console.log("targetAnimeId", targetAnimeId);
+
     return targetList.items?.findIndex((x) => x.mal_id == targetAnimeId) != -1
       ? true
       : false;
