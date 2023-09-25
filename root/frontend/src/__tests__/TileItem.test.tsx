@@ -1,6 +1,6 @@
 const animeLists = [
   {
-    id: 1,
+    id: 0,
     name: "Want to Watch",
     items: [
       {
@@ -28,7 +28,7 @@ const animeLists = [
     defList: true,
   },
   {
-    id: 2,
+    id: 1,
     name: "Currently Watching",
     items: [],
     lastUpdated: "",
@@ -36,7 +36,7 @@ const animeLists = [
     defList: true,
   },
   {
-    id: 3,
+    id: 2,
     name: "Completed",
     items: [],
     lastUpdated: "",
