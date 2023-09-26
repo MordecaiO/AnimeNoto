@@ -1,0 +1,21 @@
+@keyframes szh-menu-show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes szh-menu-hide {
+  to {
+    opacity: 0;
+  }
+}
+
+.szh-menu {
+  font-family: Verdana, sans-serif;
+  font-size: 0.925rem;
+  user-select: none;
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 6px;
+  min-width: 10rem;
+}
