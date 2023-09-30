@@ -26,6 +26,7 @@ export default function MultiListView(): JSX.Element {
               }}
             >
               <AnimeList
+                key={index}
                 id={index}
                 name={list.name}
                 items={list.items}
