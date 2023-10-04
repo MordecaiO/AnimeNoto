@@ -20,7 +20,7 @@ export const TileItemMenu = ({
         {lists.map((list: AnimeListProps) => {
           return !isAnimeInList(anime, list) ? (
             <MenuItem
-              className="--add"
+              className="add-menu-item"
               onClick={() => handleAddAnime(list, anime, lists)}
             >
               Add to {list.name}
@@ -38,10 +38,26 @@ export const TileItemMenu = ({
             </MenuItem>
           ) : (
             <MenuItem
-              className="--delete"
+              className="delete-menu-item"
               onClick={() => handleDeleteAnime(list, anime, lists)}
             >
               Delete from {list.name}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="delete-icon"
+                height={15}
+                width={15}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </MenuItem>
           );
         })}
