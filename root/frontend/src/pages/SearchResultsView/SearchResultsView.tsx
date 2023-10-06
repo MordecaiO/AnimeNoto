@@ -1,13 +1,19 @@
-import "./SearchResultsView.css"
+import "./SearchResultsView.css";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AnimeProps } from "../../vite-env";
- import { Link } from "react-router-dom";
-import { TileItem } from "../TileItem/TileItem";
+import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
+import { Link } from "react-router-dom";
+import { TileItem } from "../../components/TileItem/TileItem";
 
-export default function SearchResultsView() {
+export default function SearchResultsView({
+  lists,
+  handleAddAnime,
+  handleDeleteAnime,
+  isAnimeInList,
+}: SearchResultsViewProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  console.log("lists", lists);
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
@@ -37,9 +43,14 @@ export default function SearchResultsView() {
     <article>
       <section className="srv-header">
         <div className="left inner-wrapper">
-          <Link to={`lists`}>
-                        <button className="srv-lists-button">Lists</button>
-                    </Link>
+          <Link
+            to="lists"
+            state={{
+              lists: lists,
+            }}
+          >
+            <button className="srv-lists-button">Lists</button>
+          </Link>
         </div>
         <div className="centre inner-wrapper">
           <svg
@@ -67,15 +78,20 @@ export default function SearchResultsView() {
         </div>
       </section>
       <section className="srv-results-container">
-        {animes.map((anime: AnimeProps) => {
+        {animes.map((anime: AnimeProps, i: number) => {
           return (
             <TileItem
-              key={anime.mal_id}
+              id={anime.mal_id}
+              anime={anime}
+              key={i}
               name={anime.title}
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
-              list={false}
+              lists={lists}
+              handleAddAnime={handleAddAnime}
+              handleDeleteAnime={handleDeleteAnime}
+              isAnimeInList={isAnimeInList}
             />
           );
         })}
@@ -83,5 +99,4 @@ export default function SearchResultsView() {
       <button className="srv-top-button">Back to top</button>
     </article>
   );
-
 }

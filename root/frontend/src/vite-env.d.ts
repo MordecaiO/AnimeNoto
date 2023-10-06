@@ -1,44 +1,5 @@
 
 
-type Common = {
-    src: string;
-};
-
-type Conditional =
-    | {
-          listName: never;
-          name: string;
-          status?: string;
-          genres?: string[];
-          numberOfItems?: never;
-          lastUpdated: never;
-      }
-    | {
-          listName: string;
-          dft: boolean;
-          name: never;
-          status?: never;
-          genres?: never;
-          numberOfItems?: number;
-          lastUpdated: number;
-      };
-
- 
-
-
-export type Both = Common & Conditional;
-export type Both2 = ListType | ListItemType
-
-export type ListItemType = {
-  name: string;
-  status: string;
-  description: string;
-  src: string;
-  genres: string[];
-  
-};
-
-
 export type ListType = {
     listName: string;
     dft: boolean;
@@ -62,12 +23,34 @@ export type UserDocType = {
     lists: ListType[];
 };
 
+type ListItemProps = {
+  index: number;
+  src: string;
+  name: string;
+  status: string;
+  description?: string;
+  genres: {
+    mal_id: number;
+    name: string;
+    url: string;
+    type: string;
+  }[];
+};
 
+export type AnimeListProps = {
+  id: number; 
+  name: string; 
+  items?: AnimeProps[]; 
+  lastUpdated?: string | undefined ; 
+  createdAt: string | null ; 
+  defList: boolean; 
+}
   
   export type AnimeProps = {
   mal_id: number;
   title: string;
   status: string;
+  synopsis?: string;
   genres: {
     mal_id: number;
     name: string;
@@ -81,11 +64,19 @@ export type UserDocType = {
   };
 };
 
+export type SearchResultsViewProps = {
+  lists: AnimeListProps[];
+  handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
+  handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
+  isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean
+
+}
+
 export type TileItemProps =
-  | {
-      list: false;
+   {
+    id: number; 
+    anime: AnimeProps; 
       name: string;
-      items?: never;
       genres: {
         mal_id: number;
         type: string;
@@ -94,13 +85,16 @@ export type TileItemProps =
       }[];
       status: string;
       imgUrl: string;
+      lists:AnimeListProps[];
+      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean; 
     }
-  | {
-      list: true;
-      name: string;
-      items?: AnimeProps[];
-      genres?: never;
-      status?: never;
-      imgUrl?: never;
-    };
-
+  
+    type TileItemMenuProps = {
+      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
+      lists: AnimeListProps[]; 
+      anime: AnimeProps; 
+    }
