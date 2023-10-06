@@ -3,3 +3,4 @@ A web app designed to help you keep track of all the anime series you have watch
 
 
 ![AnimeNoto Logo](root/frontend/public/animenoto_logo.png.png)
+
