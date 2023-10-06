@@ -1,16 +1,17 @@
 import "./DetailedListView.css";
 import ListItem from "../../components/ListItem/ListItem";
 import { AnimeProps } from "../../vite-env";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function DetailedListView(): JSX.Element {
+  const navigate = useNavigate();
   const { state } = useLocation();
   const d = new Date(state.lastUpdated).toDateString();
   return (
     <div className="container">
-      <Link to={`/lists`}>
-        <button className="back-button">Back to Lists</button>
-      </Link>
+      <button className="back-button" onClick={() => navigate(-1)}>
+        Back to Lists
+      </button>
 
       <div className="dlv-container">
         <header className="dlv-header">
@@ -29,7 +30,7 @@ function DetailedListView(): JSX.Element {
           </section>
         </header>
         <main className="list-items-container">
-          {state?.listItems.map((listitem: AnimeProps, i: number) => {
+          {state.listItems.map((listitem: AnimeProps, i: number) => {
             return (
               <ListItem
                 index={i}

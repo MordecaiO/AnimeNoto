@@ -1,15 +1,18 @@
 import "./SearchResultsView.css";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AnimeProps } from "../../vite-env";
+import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
 import { Link } from "react-router-dom";
 import { TileItem } from "../../components/TileItem/TileItem";
-import { animeLists } from "../MultiListView/testDB";
-import { useLists } from "../../hooks/useLists";
-export default function SearchResultsView() {
+
+export default function SearchResultsView({
+  lists,
+  handleAddAnime,
+  handleDeleteAnime,
+  isAnimeInList,
+}: SearchResultsViewProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] =
-    useLists(animeLists);
+
   console.log("lists", lists);
   const results = useQuery({
     queryKey: ["animes", searchTerm],
@@ -40,7 +43,12 @@ export default function SearchResultsView() {
     <article>
       <section className="srv-header">
         <div className="left inner-wrapper">
-          <Link to={`lists`}>
+          <Link
+            to="lists"
+            state={{
+              lists: lists,
+            }}
+          >
             <button className="srv-lists-button">Lists</button>
           </Link>
         </div>

@@ -64,6 +64,14 @@ export type AnimeListProps = {
   };
 };
 
+export type SearchResultsViewProps = {
+  lists: AnimeListProps[];
+  handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
+  handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
+  isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean
+
+}
+
 export type TileItemProps =
    {
     id: number; 
