@@ -1,10 +1,6 @@
-import { AnimeListProps, AnimeProps } from "../../vite-env";
+import { AnimeListProps } from "../../vite-env";
+import { CollageImage } from "../CollageImage/CollageImage";
 
-const isCollage = (itemsArr: AnimeProps[] | undefined): string => {
-  if (!itemsArr) return "no items";
-
-  return itemsArr.length > 3 ? "collage" : "non-collage";
-};
 export const AnimeList = ({
   name,
   items,
@@ -15,18 +11,7 @@ export const AnimeList = ({
     <div className="menu-container">
       <article className="tile-container">
         <div className="tile-preview">
-          {isCollage(items) !== "no items" ? (
-            isCollage(items) === "collage" ? (
-              items?.slice(0, 4).map((item) => {
-                return <img src={item.images.jpg.image_url} />;
-              })
-            ) : (
-              <img src={items![0].images.jpg.image_url} />
-            )
-          ) : (
-            <img src="../../public/animenoto_logo.png" />
-          )}
-          <img src={""} alt="preview" />
+          <CollageImage items={items} />
         </div>
         <div className="tile-details">
           <span className="tile-title">
