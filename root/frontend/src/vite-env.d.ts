@@ -98,3 +98,6 @@ export type TileItemProps =
       lists: AnimeListProps[]; 
       anime: AnimeProps; 
     }
+    type CollageImageProps = {
+      items?: AnimeProps[];
+    };

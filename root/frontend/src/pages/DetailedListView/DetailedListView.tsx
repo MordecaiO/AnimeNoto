@@ -1,7 +1,7 @@
 import "./DetailedListView.css";
 import ListItem from "../../components/ListItem/ListItem";
 import { AnimeProps } from "../../vite-env";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function DetailedListView(): JSX.Element {
   const navigate = useNavigate();
