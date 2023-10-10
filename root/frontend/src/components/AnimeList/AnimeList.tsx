@@ -1,4 +1,5 @@
 import { AnimeListProps } from "../../vite-env";
+import { CollageImage } from "../CollageImage/CollageImage";
 
 import "./AnimeList.css";
 export const AnimeList = ({
@@ -10,17 +11,9 @@ export const AnimeList = ({
   return (
     <div className="menu-container">
       <article className="tile-container">
-        {items !== undefined && items.length > 3 ? (
-          <div className="tile-preview-collage">
-            {items?.slice(0, 4)?.map((item) => {
-              return (
-                <img className="collage-img" src={item.images.jpg.image_url} />
-              );
-            })}
-          </div>
-        ) : (
-          <img className="full-img" />
-        )}
+        <div className="tile-preview">
+          <CollageImage items={items} />
+        </div>
         <div className="tile-details">
           <span className="tile-title">
             {name + defList ? "default list" : ""}

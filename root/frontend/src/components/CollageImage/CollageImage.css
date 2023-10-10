@@ -1,4 +1,16 @@
+.collage-img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
 .collage-img {
   height: 120px;
   width: 100px;
+}
+
+.def-img .first-img {
+  height: 240px;
+  width: 100%;
 }

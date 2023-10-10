@@ -38,21 +38,6 @@
   overflow: hidden;
 }
 
-.tile-preview-collage {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-}
-.full-img {
-  height: 240px;
-  width: 100%;
-}
-.collage-img {
-  height: 120px;
-  width: 100px;
-}
-
 .tile-details {
   max-width: 100%;
   display: flex;
