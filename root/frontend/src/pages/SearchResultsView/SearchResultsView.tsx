@@ -30,8 +30,7 @@ export default function SearchResultsView({
   });
 
   const animes = results?.data?.data ?? [];
-  console.log("ani", animes);
-
+  //console.log("ani", animes);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);

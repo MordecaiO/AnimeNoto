@@ -101,3 +101,5 @@ export type TileItemProps =
     type CollageImageProps = {
       items?: AnimeProps[];
     };
+
+
