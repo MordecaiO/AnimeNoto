@@ -1,23 +1,39 @@
+.wrapper {
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1250px;
+  height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0px auto;
+  position: absolute; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .srv-header {
   
-  position: absolute;
-
-  width: 100%;
-  margin: auto;
-  height: 15vh;
-  /* max-height: 100px; */
+  border: 2px solid red;
+  min-width: 80%;
+  min-height: 20vw;
+  padding-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  /* background-color: grey; */
 
 }
 .srv-lists-button {
   align-self: flex-start;
-  margin-right: auto;
-  margin-left: 2.5vh;
-  margin-top: 2.5vh;
+  
   cursor: pointer;
 }
 .srv-searchbar {
@@ -33,49 +49,14 @@
   top: -8px;
 
 }
-.srv-sort {
-  align-self: flex-end;
-  margin-right: 1.5vh;
-  margin-left: auto;
-  margin-bottom: 2.5vh;
-  cursor: pointer;
-}
-.srv-filter {
-  align-self: flex-end;
-  margin-right: 2.5vh;
-  margin-bottom: 2.5vh;
-  cursor: pointer;
-}
-.srv-buttons {
-  align-self: flex-end;
-  margin-left: auto;
-}
+
 
 .srv-results-container {
-  top: 15vh;
-  padding: 15px;
-  position: absolute;
+  height: 100%;
+  width:auto; 
   display: flex;
   flex-wrap: wrap;
 }
-
-.left.inner-wrapper, .right.inner-wrapper {
-    flex:1;
-    display:flex;
-}
-.left.inner-wrapper {
-    align-self: flex-start;
-    margin-right: auto;
-}
-.right.inner-wrapper {
-    align-self: flex-end;
-    /* margin-left: auto; */
-}
-.centre.inner-wrapper {
-    position:relative;
-    display:flex;
-}
-
 
 
 .srv-top-button {
