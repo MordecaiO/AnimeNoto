@@ -40,33 +40,39 @@ export default function SearchResultsView({
     e.currentTarget.focus();
   };
   return (
-    <div className="wrapper">
-      <div className="container">
-      <section className="srv-header">
-        <div className="left inner-wrapper">
+    <div className="main">
+      <header className="header">
+        <div className="logo-wrapper">
+          <img
+            className="anime-noto"
+            src="../../public/animenoto_logo.png"
+            alt="AnimeNoto Logo"
+          ></img>
+        </div>
+        <div className="lists-button-wrapper">
           <Link
             to="lists"
             state={{
               lists: lists,
             }}
           >
-            <button className="srv-lists-button">Lists</button>
+            <button className="lists-button">Lists</button>
           </Link>
         </div>
-        <div className="centre inner-wrapper">
-          
+        <div className="searchbar-wrapper">
           <form onSubmit={handleSubmit}>
             <input
-              className="srv-searchbar"
+              className="searchbar-term"
               placeholder="Search catalogue"
               name="search"
             />
-            <button type="submit">Go</button>
+            <button type="submit" className="searchbar-">
+              Go
+            </button>
           </form>
         </div>
-        
-      </section>
-      <section className="srv-results-container">
+      </header>
+      <section className="results-container">
         {animes.map((anime: AnimeProps, i: number) => {
           return (
             <TileItem
@@ -86,7 +92,6 @@ export default function SearchResultsView({
         })}
       </section>
       {/* <button className="srv-top-button">Back to top</button> */}
-    </div>
     </div>
   );
 }
