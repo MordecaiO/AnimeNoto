@@ -42,35 +42,40 @@ export default function SearchResultsView({
   return (
     <div className="main">
       <header className="header">
-        <div className="logo-wrapper">
-          <img
-            className="anime-noto"
-            src="../../public/animenoto_logo.png"
-            alt="AnimeNoto Logo"
-          ></img>
+        <div className="header-left">
+          <div className="logo-wrapper">
+            <img
+              className="anime-noto"
+              src="../../animenoto_logo.png"
+              alt="AnimeNoto Logo"
+            ></img>
+          </div>
+          <div className="lists-button-wrapper">
+            <Link
+              to="lists"
+              state={{
+                lists: lists,
+              }}
+            >
+              <button className="lists-button">Lists</button>
+            </Link>
+          </div>
         </div>
-        <div className="lists-button-wrapper">
-          <Link
-            to="lists"
-            state={{
-              lists: lists,
-            }}
-          >
-            <button className="lists-button">Lists</button>
-          </Link>
+        <div className="header-right">
+          <div className="searchbar-wrapper">
+            <form onSubmit={handleSubmit} className="searchbar-main">
+              <input
+                className="searchbar-term"
+                placeholder="Search catalogue"
+                name="search"
+              />
+              <button type="submit" className="searchbar-submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-        <div className="searchbar-wrapper">
-          <form onSubmit={handleSubmit}>
-            <input
-              className="searchbar-term"
-              placeholder="Search catalogue"
-              name="search"
-            />
-            <button type="submit" className="searchbar-">
-              Go
-            </button>
-          </form>
-        </div>
+
       </header>
       <section className="results-container">
         {animes.map((anime: AnimeProps, i: number) => {
