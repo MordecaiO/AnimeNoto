@@ -13,7 +13,6 @@ export default function SearchResultsView({
 }: SearchResultsViewProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  console.log("lists", lists);
   const results = useQuery({
     queryKey: ["animes", searchTerm],
     queryFn: async () => {
@@ -30,7 +29,6 @@ export default function SearchResultsView({
   });
 
   const animes = results?.data?.data ?? [];
-  console.log("ani", animes);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
