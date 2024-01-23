@@ -1,5 +1,5 @@
 * {
-  font-family: Verdana;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -76,6 +76,7 @@
   padding: 0px;
   line-height: 0.8;
   overflow: visible;
+  font-family: "Patrick Hand SC", cursive;
 }
 
 .list-desc {

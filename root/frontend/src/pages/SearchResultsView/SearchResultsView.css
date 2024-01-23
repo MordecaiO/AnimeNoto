@@ -93,7 +93,7 @@
   background-color: lightgrey;
   color: white;
   cursor: pointer;
-  font-family: Verdana;
+  /*font-family: Verdana;*/
   border-radius: 7px;
   padding: 5px;
 }
