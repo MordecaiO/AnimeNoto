@@ -73,18 +73,17 @@
 .list-name {
   font-size: 5vw;
   margin: 5px;
-  padding: 5px;
+  padding: 0px;
   line-height: 0.8;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .list-desc {
   height: 20%;
-  margin: 5px;
+  margin: 2px;
   padding: 5px;
   flex: 1 0 auto;
-
-  overflow: clip;
+  overflow: visible;
   text-overflow: ellipsis;
   white-space: pre-wrap;
 }
