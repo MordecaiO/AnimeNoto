@@ -50,22 +50,20 @@
   height: 70%;
   width: 70%;
   cursor: pointer;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
   font-size: medium;
   margin-left: 50px;
 }
 
 .searchbar-wrapper * {
   justify-self: flex-end;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
 }
-
-
 
 .searchbar-term {
   margin: auto;
   text-align: center;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
 }
 
 .icon {
