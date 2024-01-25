@@ -8,8 +8,11 @@ export default function ListItem({
   status,
   description,
   genres,
- handleDeleteAnime,
- isAnimeInList
+  handleDeleteAnime,
+  isAnimeInList,
+  handleAddAnime,
+  lists,
+  listName,
 }: ListItemProps): JSX.Element {
   return (
     <article className="item-container">

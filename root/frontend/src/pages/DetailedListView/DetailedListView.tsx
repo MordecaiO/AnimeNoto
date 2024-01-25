@@ -2,8 +2,14 @@ import "./DetailedListView.css";
 import ListItem from "../../components/ListItem/ListItem";
 import { AnimeProps } from "../../vite-env";
 import { useLocation, useNavigate } from "react-router-dom";
+import { DetailedListViewProps } from "../../vite-env";
 
-function DetailedListView(): JSX.Element {
+function DetailedListView({
+  lists,
+  handleAddAnime,
+  handleDeleteAnime,
+  isAnimeInList,
+}: DetailedListViewProps): JSX.Element {
   const navigate = useNavigate();
   const { state } = useLocation();
   const d = new Date(state.lastUpdated).toDateString();
@@ -39,6 +45,11 @@ function DetailedListView(): JSX.Element {
                 status={listitem.status}
                 description={listitem.synopsis}
                 genres={listitem.genres}
+                lists={lists}
+                listName={state.listName}
+                handleDeleteAnime={handleDeleteAnime}
+                handleAddAnime={handleAddAnime}
+                isAnimeInList={isAnimeInList}
               />
             );
           })}

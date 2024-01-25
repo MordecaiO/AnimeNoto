@@ -34,7 +34,14 @@ function App() {
 
     {
       path: "lists/:listName",
-      element: <DetailedListView />,
+      element: (
+        <DetailedListView
+          lists={lists}
+          handleAddAnime={handleAddAnime}
+          handleDeleteAnime={handleDeleteAnime}
+          isAnimeInList={isAnimeInList}
+        />
+      ),
     },
   ]);
 
