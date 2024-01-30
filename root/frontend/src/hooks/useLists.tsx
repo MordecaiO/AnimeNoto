@@ -3,7 +3,7 @@ import { AnimeListProps, AnimeProps } from "../vite-env";
 
 export const useLists = (animeLists: AnimeListProps[]) => {
   const [lists, setLists] = useState(animeLists);
-
+  // change function params
   const handleAddAnime = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
@@ -33,6 +33,7 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
     console.log("lists after add function", lists);
   };
+  // change function params
   const handleDeleteAnime = (
     targetList: AnimeListProps,
     targetAnime: AnimeProps,
@@ -54,6 +55,7 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
     console.log("lists after del function", lists);
   };
+  // change function params
   const isAnimeInList = (
     targetAnime: AnimeProps,
     targetList: AnimeListProps
