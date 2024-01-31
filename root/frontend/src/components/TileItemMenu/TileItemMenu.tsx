@@ -40,7 +40,7 @@ export const TileItemMenu = ({
           ) : (
             <MenuItem
               className="delete-menu-item"
-              onClick={() => handleDeleteAnime(list, anime, lists)}
+              onClick={() => handleDeleteAnime(list.id, anime, lists)}
             >
               Delete from {list.name}
               <svg

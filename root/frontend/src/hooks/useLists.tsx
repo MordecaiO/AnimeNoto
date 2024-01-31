@@ -33,13 +33,12 @@ export const useLists = (animeLists: AnimeListProps[]) => {
   };
   // change function params
   const handleDeleteAnime = (
-    targetList: AnimeListProps,
+    targetListId: number,
     targetAnime: AnimeProps,
     currLists: AnimeListProps[]
   ): void => {
     console.log("lists before del function", lists);
     const updatedLists = [...currLists];
-    const targetListId = targetList.id;
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
     const updatedList = { ...updatedLists[targetListIndex] };
     const updatedItems = [...(updatedList.items as [])];
