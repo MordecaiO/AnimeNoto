@@ -41,6 +41,7 @@ type ListItemProps = {
   isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
   lists: AnimeListProps[];
   listName: string;
+  listId: number; 
 };
 
 export type AnimeListProps = {
@@ -84,7 +85,12 @@ export type  DetailedListViewProps = {
   handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
   isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean
 
-}
+} 
+export type  MultiListViewProps = {
+  lists: AnimeListProps[];
+
+} 
+
 
 export type TileItemProps =
    {

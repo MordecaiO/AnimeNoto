@@ -36,24 +36,27 @@ function DetailedListView({
           </section>
         </header>
         <main className="list-items-container">
-          {state.listItems.map((listitem: AnimeProps, i: number) => {
-            return (
-              <ListItem
-                index={i}
-                src={listitem.images.jpg.image_url}
-                name={listitem.title}
-                status={listitem.status}
-                description={listitem.synopsis}
-                genres={listitem.genres}
-                lists={lists}
-                anime={listitem}
-                listName={state.listName}
-                handleDeleteAnime={handleDeleteAnime}
-                handleAddAnime={handleAddAnime}
-                isAnimeInList={isAnimeInList}
-              />
-            );
-          })}
+          {lists
+            .filter((list) => list.id == state.listId)[0]
+            .items!.map((listitem: AnimeProps, i: number) => {
+              return (
+                <ListItem
+                  index={i}
+                  src={listitem.images.jpg.image_url}
+                  name={listitem.title}
+                  status={listitem.status}
+                  description={listitem.synopsis}
+                  genres={listitem.genres}
+                  lists={lists}
+                  anime={listitem}
+                  listName={state.listName}
+                  listId={state.listId}
+                  handleDeleteAnime={handleDeleteAnime}
+                  handleAddAnime={handleAddAnime}
+                  isAnimeInList={isAnimeInList}
+                />
+              );
+            })}
         </main>
       </div>
     </div>
