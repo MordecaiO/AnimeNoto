@@ -35,6 +35,7 @@ type ListItemProps = {
     url: string;
     type: string;
   }[];
+  anime: AnimeProps
   handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
   handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
   isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;

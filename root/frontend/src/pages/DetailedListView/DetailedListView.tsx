@@ -46,6 +46,7 @@ function DetailedListView({
                 description={listitem.synopsis}
                 genres={listitem.genres}
                 lists={lists}
+                anime={listitem}
                 listName={state.listName}
                 handleDeleteAnime={handleDeleteAnime}
                 handleAddAnime={handleAddAnime}
