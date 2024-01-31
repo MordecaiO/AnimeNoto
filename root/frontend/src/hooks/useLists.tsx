@@ -5,7 +5,7 @@ export const useLists = (animeLists: AnimeListProps[]) => {
   const [lists, setLists] = useState(animeLists);
   // change function params
   const handleAddAnime = (
-    targetList: AnimeListProps,
+    targetListId: number,
     targetAnime: AnimeProps,
     currentLists: AnimeListProps[]
   ): void => {
@@ -13,8 +13,6 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     // shallow copy
     const updatedLists = [...currentLists];
     console.log("updatedLists", updatedLists);
-    // find List we want to update
-    const targetListId = targetList.id;
     console.log("targetListId", targetListId);
 
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
