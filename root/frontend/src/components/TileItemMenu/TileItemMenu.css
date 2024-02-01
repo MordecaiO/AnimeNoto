@@ -18,6 +18,10 @@
   border-radius: 6px;
   padding: 6px;
   min-width: 10rem;
+  border-style: none;
+}
+button .context-button {
+  font-size: larger;
 }
 .szh-menu--state-closing {
   animation: szh-menu-hide 0.05s ease-out;
@@ -25,7 +29,7 @@
 
 .add-menu-item {
   font-size: 0.75rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .add-icon .delete-icon {

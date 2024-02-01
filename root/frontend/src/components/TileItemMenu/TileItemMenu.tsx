@@ -8,7 +8,6 @@ export const TileItemMenu = ({
   anime,
   lists,
   handleAddAnime,
-  handleDeleteAnime,
   isAnimeInList,
 }: TileItemMenuProps): JSX.Element => {
   return (
@@ -29,7 +28,7 @@ export const TileItemMenu = ({
                 e.keepOpen = false;
               }}
             >
-              Add to {list.name}
+              {list.name}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"

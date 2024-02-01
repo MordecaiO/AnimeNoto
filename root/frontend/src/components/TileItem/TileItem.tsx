@@ -9,7 +9,6 @@ export const TileItem = ({
   status,
   imgUrl,
   handleAddAnime,
-  handleDeleteAnime,
   isAnimeInList,
   lists,
 }: TileItemProps): JSX.Element => {
@@ -34,7 +33,6 @@ export const TileItem = ({
         anime={anime}
         lists={lists}
         handleAddAnime={handleAddAnime}
-        handleDeleteAnime={handleDeleteAnime}
         isAnimeInList={isAnimeInList}
       />
     </div>

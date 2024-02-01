@@ -113,7 +113,6 @@ export type TileItemProps =
   
     type TileItemMenuProps = {
       handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
-      handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
       isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
       lists: AnimeListProps[]; 
       anime: AnimeProps; 

@@ -1,5 +1,6 @@
 import { ListItemProps } from "../../vite-env";
 import "./ListItem.css";
+import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
 
 export default function ListItem({
   index,
@@ -38,7 +39,15 @@ export default function ListItem({
         >
           X
         </button>
-        <button className="item-move">Move to ...</button>
+        <button className="item-move">
+          {" "}
+          <TileItemMenu
+            anime={anime}
+            lists={lists}
+            handleAddAnime={handleAddAnime}
+            isAnimeInList={isAnimeInList}
+          />
+        </button>
       </div>
     </article>
   );
