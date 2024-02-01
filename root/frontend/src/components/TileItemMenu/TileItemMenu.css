@@ -25,6 +25,7 @@
 
 .add-menu-item {
   font-size: 0.75rem;
+  overflow: scroll;
 }
 
 .add-icon .delete-icon {
