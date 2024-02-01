@@ -1,4 +1,5 @@
 .menu-container {
+  font-family: "Montserrat", sans-serif;
   height: 340px;
   width: 200px;
   margin: 25px;
@@ -35,7 +36,7 @@
   height: 240px;
   width: 100%;
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 img {
@@ -45,6 +46,7 @@ img {
 }
 
 .tile-details {
+  font-family: "Montserrat", sans-serif;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,7 +56,7 @@ img {
 }
 
 .tile-title {
-  font-family: Verdana;
+  font-family: "Montserrat", sans-serif;
   font-size: 1em;
   white-space: nowrap;
   overflow: hidden;
@@ -64,7 +66,7 @@ img {
 }
 
 .tile-status {
-  font-family: Verdana;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.7em;
   margin: 2px;
   font-style: oblique 10deg;
@@ -93,7 +95,7 @@ img {
   background-color: white;
   padding: 1.5px;
   margin: 1.5px;
-  font-family: Verdana;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.7em;
   border-radius: 2px;
 }

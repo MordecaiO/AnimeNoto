@@ -8,6 +8,12 @@ export default function ListItem({
   status,
   description,
   genres,
+  handleDeleteAnime,
+  isAnimeInList,
+  handleAddAnime,
+  anime,
+  listId,
+  lists,
 }: ListItemProps): JSX.Element {
   return (
     <article className="item-container">
@@ -26,7 +32,12 @@ export default function ListItem({
         </div>
       </div>
       <div className="xright inner-item-wrapper">
-        <button className="item-delete">X</button>
+        <button
+          className="item-delete"
+          onClick={() => handleDeleteAnime(listId, anime, lists)}
+        >
+          X
+        </button>
         <button className="item-move">Move to ...</button>
       </div>
     </article>

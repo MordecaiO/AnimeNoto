@@ -35,6 +35,13 @@ type ListItemProps = {
     url: string;
     type: string;
   }[];
+  anime: AnimeProps
+  handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
+  handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
+  isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
+  lists: AnimeListProps[];
+  
+  listId: number; 
 };
 
 export type AnimeListProps = {
@@ -66,11 +73,24 @@ export type AnimeListProps = {
 
 export type SearchResultsViewProps = {
   lists: AnimeListProps[];
-  handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
-  handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
+  handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
+  handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
   isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean
 
 }
+
+export type  DetailedListViewProps = {
+  lists: AnimeListProps[];
+  handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void;
+  handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
+  isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean
+
+} 
+export type  MultiListViewProps = {
+  lists: AnimeListProps[];
+
+} 
+
 
 export type TileItemProps =
    {
@@ -86,14 +106,14 @@ export type TileItemProps =
       status: string;
       imgUrl: string;
       lists:AnimeListProps[];
-      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
-      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
       isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean; 
     }
   
     type TileItemMenuProps = {
-      handleAddAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
-      handleDeleteAnime: (targetList: AnimeListProps, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
+      handleAddAnime: (targetListId: number, targetAnime: AnimeProps, currentLists: AnimeListProps[]) => void; 
+      handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void; 
       isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
       lists: AnimeListProps[]; 
       anime: AnimeProps; 

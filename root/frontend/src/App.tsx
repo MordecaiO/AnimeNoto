@@ -29,12 +29,19 @@ function App() {
     },
     {
       path: "lists",
-      element: <MultiListView />,
+      element: <MultiListView lists={lists} />,
     },
 
     {
       path: "lists/:listName",
-      element: <DetailedListView />,
+      element: (
+        <DetailedListView
+          lists={lists}
+          handleAddAnime={handleAddAnime}
+          handleDeleteAnime={handleDeleteAnime}
+          isAnimeInList={isAnimeInList}
+        />
+      ),
     },
   ]);
 

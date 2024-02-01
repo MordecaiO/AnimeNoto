@@ -3,9 +3,9 @@ import { AnimeListProps, AnimeProps } from "../vite-env";
 
 export const useLists = (animeLists: AnimeListProps[]) => {
   const [lists, setLists] = useState(animeLists);
-
+  // change function params
   const handleAddAnime = (
-    targetList: AnimeListProps,
+    targetListId: number,
     targetAnime: AnimeProps,
     currentLists: AnimeListProps[]
   ): void => {
@@ -13,8 +13,6 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     // shallow copy
     const updatedLists = [...currentLists];
     console.log("updatedLists", updatedLists);
-    // find List we want to update
-    const targetListId = targetList.id;
     console.log("targetListId", targetListId);
 
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
@@ -33,14 +31,14 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
     console.log("lists after add function", lists);
   };
+  // change function params
   const handleDeleteAnime = (
-    targetList: AnimeListProps,
+    targetListId: number,
     targetAnime: AnimeProps,
     currLists: AnimeListProps[]
   ): void => {
     console.log("lists before del function", lists);
     const updatedLists = [...currLists];
-    const targetListId = targetList.id;
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
     const updatedList = { ...updatedLists[targetListIndex] };
     const updatedItems = [...(updatedList.items as [])];
@@ -54,6 +52,7 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
     console.log("lists after del function", lists);
   };
+  // change function params
   const isAnimeInList = (
     targetAnime: AnimeProps,
     targetList: AnimeListProps

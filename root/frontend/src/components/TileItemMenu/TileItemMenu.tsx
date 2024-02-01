@@ -22,7 +22,7 @@ export const TileItemMenu = ({
           return !isAnimeInList(anime, list) ? (
             <MenuItem
               className="add-menu-item"
-              onClick={() => handleAddAnime(list, anime, lists)}
+              onClick={() => handleAddAnime(list.id, anime, lists)}
             >
               Add to {list.name}
               <svg
@@ -40,7 +40,7 @@ export const TileItemMenu = ({
           ) : (
             <MenuItem
               className="delete-menu-item"
-              onClick={() => handleDeleteAnime(list, anime, lists)}
+              onClick={() => handleDeleteAnime(list.id, anime, lists)}
             >
               Delete from {list.name}
               <svg

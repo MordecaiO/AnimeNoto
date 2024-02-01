@@ -10,14 +10,14 @@ export const AnimeList = ({
 }: AnimeListProps): JSX.Element => {
   return (
     <div className="menu-container">
-      <article className="tile-container">
-        <div className="tile-preview">
+      <article className="al-tile-container">
+        <div className="al-tile-preview">
           <CollageImage items={items} />
         </div>
-        <div className="tile-details">
-          <span className="tile-title">{name}</span>
-          <span className="tile-status">{items?.length}</span>
-          <span className="tile-update">{lastUpdated}</span>
+        <div className="al-tile-details">
+          <span className="al-tile-title">{name}</span>
+          <span className="al-tile-status">{items?.length}</span>
+          <span className="al-tile-update">{lastUpdated}</span>
         </div>{" "}
       </article>
       <span className="def-list-flag">{defList ? "default list" : ""}</span>

@@ -1,13 +1,1 @@
-body {
-  min-width: 600px;
 
-  margin: 0;
-}
-
-.app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}

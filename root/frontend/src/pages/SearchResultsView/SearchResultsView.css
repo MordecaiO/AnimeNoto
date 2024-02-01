@@ -1,82 +1,87 @@
-.srv-header {
-  
-  position: absolute;
-
+.main {
   width: 100%;
-  margin: auto;
-  height: 15vh;
-  /* max-height: 100px; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 1200px;
+  max-width: 100%;
+  height: 60px;
+  padding: 0px;
+  margin: 25px auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1;
-  /* background-color: grey; */
+  justify-content: flex-start;
+}
 
+.header-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.srv-lists-button {
-  align-self: flex-start;
-  margin-right: auto;
-  margin-left: 2.5vh;
-  margin-top: 2.5vh;
+
+.header-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo-wrapper {
+  height: 100%;
+  width: auto;
+  margin: 10px 25px;
+}
+
+.anime-noto {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.lists-button {
+  height: 70%;
+  width: 70%;
   cursor: pointer;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: medium;
+  margin-left: 50px;
 }
-.srv-searchbar {
+
+.searchbar-wrapper * {
+  justify-self: flex-end;
+  font-family: "Patrick Hand SC", cursive;
+}
+
+.searchbar-term {
   margin: auto;
-  /* Does nothing but may be needed in future */
   text-align: center;
+  font-family: "Patrick Hand SC", cursive;
 }
+
 .icon {
   position: absolute;
   padding: 10px;
   min-width: 40px;
   left: -16px;
   top: -8px;
-
-}
-.srv-sort {
-  align-self: flex-end;
-  margin-right: 1.5vh;
-  margin-left: auto;
-  margin-bottom: 2.5vh;
-  cursor: pointer;
-}
-.srv-filter {
-  align-self: flex-end;
-  margin-right: 2.5vh;
-  margin-bottom: 2.5vh;
-  cursor: pointer;
-}
-.srv-buttons {
-  align-self: flex-end;
-  margin-left: auto;
 }
 
-.srv-results-container {
-  top: 15vh;
-  padding: 15px;
-  position: absolute;
+.results-container {
+  height: 100%;
+  width: 1255px;
+  margin: 0px 250px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
-
-.left.inner-wrapper, .right.inner-wrapper {
-    flex:1;
-    display:flex;
-}
-.left.inner-wrapper {
-    align-self: flex-start;
-    margin-right: auto;
-}
-.right.inner-wrapper {
-    align-self: flex-end;
-    /* margin-left: auto; */
-}
-.centre.inner-wrapper {
-    position:relative;
-    display:flex;
-}
-
-
 
 .srv-top-button {
   position: fixed;
@@ -88,10 +93,11 @@
   background-color: lightgrey;
   color: white;
   cursor: pointer;
-  font-family: Verdana;
+  /*font-family: Verdana;*/
   border-radius: 7px;
   padding: 5px;
 }
+
 .srv-top-button:hover {
   background-color: grey;
 }
