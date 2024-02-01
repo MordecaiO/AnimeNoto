@@ -14,7 +14,6 @@ export default function ListItem({
   anime,
   listId,
   lists,
-  listName,
 }: ListItemProps): JSX.Element {
   return (
     <article className="item-container">

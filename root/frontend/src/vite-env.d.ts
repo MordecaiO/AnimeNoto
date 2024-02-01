@@ -40,7 +40,7 @@ type ListItemProps = {
   handleDeleteAnime: ( targetListId: number, targetAnime: AnimeProps, currLists: AnimeListProps[]) => void;
   isAnimeInList: (targetAnime: AnimeProps, targetList: AnimeListProps) => boolean;
   lists: AnimeListProps[];
-  listName: string;
+  
   listId: number; 
 };
 
