@@ -1,3 +1,15 @@
+@keyframes szh-menu-show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes szh-menu-hide {
+  to {
+    opacity: 0;
+  }
+}
+
 .szh-menu {
   font-family: Verdana, sans-serif;
   font-size: 0.925rem;
@@ -6,6 +18,14 @@
   border-radius: 6px;
   padding: 6px;
   min-width: 10rem;
+}
+.szh-menu--state-closing {
+  animation: szh-menu-hide 0.05s ease-out;
+}
+
+.add-menu-item {
+  font-size: 0.75rem;
+  overflow: scroll;
 }
 
 .add-icon .delete-icon {
