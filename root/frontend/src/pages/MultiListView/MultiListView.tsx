@@ -9,7 +9,6 @@ export default function MultiListView({
   lists,
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
-  const location = useLocation();
   return (
     <article>
       <button className="back-button" onClick={() => navigate("/")}>
