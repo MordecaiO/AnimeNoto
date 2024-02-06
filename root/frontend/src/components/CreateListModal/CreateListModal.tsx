@@ -1,16 +1,19 @@
 export default function CreateListModal(): JSX.Element {
   return (
-    <div className="background">
+    <aside className="background">
       <div className="modal-container">
-        <div className="modal">
-          <h4 className="modal-header"></h4>
+        <section className="modal">
+          <h4 className="modal-header">New List</h4>
           <form className="modal-form">
-            <input className="modal-input"></input>
-            <button className="cancel-btn" />
-            <button className="save-btn" />
+            <input className="name-input"></input>
+            <input className="desc-input"></input>
+            <div className="btn-container">
+              <button className="cancel-btn" />
+              <button className="save-btn" />
+            </div>
           </form>
-        </div>
+        </section>
       </div>
-    </div>
+    </aside>
   );
 }
