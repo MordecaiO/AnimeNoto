@@ -4,13 +4,16 @@ import { AnimeList } from "../../components/AnimeList/AnimeList";
 import { MultiListViewProps } from "../../vite-env";
 
 import { AnimeListProps } from "../../vite-env";
-
+import CreateListModal from "../../components/CreateListModal/CreateListModal";
+import "../../components/CreateListModal/CreateListModal.css";
 export default function MultiListView({
   lists,
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
+  let isOpen = true;
   return (
     <article>
+      {isOpen && <CreateListModal />}
       <button className="back-button" onClick={() => navigate("/")}>
         Home
       </button>
