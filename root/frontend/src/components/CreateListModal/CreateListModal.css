@@ -51,4 +51,14 @@
 .btn-container {
   height: 30px;
   width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  width: 120px;
+}
+
+.save-btn {
+  width: 120px;
 }
