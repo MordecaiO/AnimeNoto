@@ -6,7 +6,7 @@ export default function CreateListModal(): JSX.Element {
           <h4 className="modal-header">New List</h4>
           <form className="modal-form">
             <input className="name-input"></input>
-            <input className="desc-input"></input>
+            <textarea className="desc-input"></textarea>
             <div className="btn-container">
               <button className="cancel-btn" />
               <button className="save-btn" />
