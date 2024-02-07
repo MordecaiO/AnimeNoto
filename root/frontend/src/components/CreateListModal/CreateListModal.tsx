@@ -5,11 +5,17 @@ export default function CreateListModal(): JSX.Element {
         <section className="modal">
           <h4 className="modal-header">New List</h4>
           <form className="modal-form">
-            <input className="name-input"></input>
-            <textarea className="desc-input"></textarea>
+            <input
+              className="name-input"
+              placeholder="Add a name"
+              required={true}
+            ></input>
+            <textarea
+              className="desc-input"
+              placeholder="Add an optional description..."
+            ></textarea>
             <div className="btn-container">
-              <button className="cancel-btn" />
-              <button className="save-btn" />
+              <button className="save-btn">Save</button>
             </div>
           </form>
         </section>
