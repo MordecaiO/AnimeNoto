@@ -43,6 +43,7 @@ export default function MultiListView({
                 key={index}
                 id={index}
                 name={list.name}
+                description=""
                 items={list.items}
                 createdAt={null}
                 defList={true}

@@ -47,6 +47,7 @@ type ListItemProps = {
 export type AnimeListProps = {
   id: number; 
   name: string; 
+  description: string;
   items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
   createdAt: string | null ; 
