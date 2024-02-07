@@ -120,3 +120,8 @@ export type TileItemProps =
     type CollageImageProps = {
       items?: AnimeProps[];
     };
+
+    type CreateListModalProps = {
+      setOpen: Dispatch<SetStateAction<boolean>>; 
+      isOpen: boolean;
+    } 

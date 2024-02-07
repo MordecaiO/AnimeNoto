@@ -1,9 +1,16 @@
-export default function CreateListModal(): JSX.Element {
+import { CreateListModalProps } from "../../vite-env";
+
+export default function CreateListModal({
+  setOpen,
+  isOpen,
+}: CreateListModalProps): JSX.Element {
   return (
     <aside className="background">
       <div className="modal-container">
         <section className="modal">
-          <button className="close-btn">X</button>
+          <button className="close-btn" onClick={() => setOpen(!isOpen)}>
+            X
+          </button>
           <h4 className="modal-header">New List</h4>
           <form className="modal-form">
             <div className="name-group">

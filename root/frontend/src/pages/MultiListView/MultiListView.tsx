@@ -2,20 +2,24 @@ import "./MultiListView.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AnimeList } from "../../components/AnimeList/AnimeList";
 import { MultiListViewProps } from "../../vite-env";
-
 import { AnimeListProps } from "../../vite-env";
 import CreateListModal from "../../components/CreateListModal/CreateListModal";
 import "../../components/CreateListModal/CreateListModal.css";
+import { useState } from "react";
 export default function MultiListView({
   lists,
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
-  let isOpen = true;
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <article>
-      {isOpen && <CreateListModal />}
+      {isOpen && <CreateListModal setOpen={setOpen} isOpen={isOpen} />}
       <button className="back-button" onClick={() => navigate("/")}>
         Home
+      </button>
+      <button className="add-button" onClick={() => setOpen(!isOpen)}>
+        Create List
       </button>
 
       <section className="mlv-header">
