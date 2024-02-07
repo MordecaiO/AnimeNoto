@@ -45,6 +45,7 @@
 }
 
 .modal-header {
+  font-style: oblique;
   margin: 5px;
 }
 
@@ -61,10 +62,15 @@
   margin-left: 15px;
   background-color: white;
 }
+
 .name-input {
   padding-left: 5px;
   margin: 10px;
   width: 250px;
+}
+
+input:enabled {
+  border: solid #327586;
 }
 .desc-label {
   font-size: 12px;
@@ -89,4 +95,10 @@
 .save-btn {
   width: 120px;
   margin-top: 0px;
+  background-color: #005390;
+  color: white;
+  border-radius: 3px;
+}
+.save-btn:hover {
+  background-color: #89cff0;
 }
