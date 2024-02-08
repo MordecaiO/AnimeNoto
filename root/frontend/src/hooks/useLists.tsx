@@ -64,6 +64,26 @@ export const useLists = (animeLists: AnimeListProps[]) => {
       : false;
   };
 
+  const handleCreateList = (
+    currentLists: AnimeListProps[],
+    newListName: string,
+    newListDesc: string
+  ) => {
+    const newList = {
+      id: currentLists.length,
+      name: newListName,
+      description: newListDesc,
+      items: [],
+      lastUpdated: "",
+      createdAt: Date.now().toString(),
+      defList: false,
+    };
+
+    let updatedLists = [...currentLists];
+    updatedLists.push(newList);
+    setLists(updatedLists);
+  };
+
   // const assertion to stop type inference as union type
   return [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] as const;
 };
