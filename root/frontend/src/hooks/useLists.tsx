@@ -84,6 +84,16 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
   };
 
+  const handleDeleteList = (
+    currentLists: AnimeListProps[],
+    targetListId: number
+  ) => {
+    let updatedLists = [...currentLists];
+    const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
+    updatedLists.splice(targetListIndex, 1);
+    setLists(updatedLists);
+  };
+
   // const assertion to stop type inference as union type
   return [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] as const;
 };
