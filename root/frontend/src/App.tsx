@@ -10,8 +10,14 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 const queryClient = new QueryClient();
 
 function App() {
-  const [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] =
-    useLists(animeLists);
+  const [
+    lists,
+    handleAddAnime,
+    handleDeleteAnime,
+    isAnimeInList,
+    handleDeleteList,
+    handleCreateList,
+  ] = useLists(animeLists);
 
   const router = createBrowserRouter([
     {
@@ -29,7 +35,13 @@ function App() {
     },
     {
       path: "lists",
-      element: <MultiListView lists={lists} />,
+      element: (
+        <MultiListView
+          lists={lists}
+          handCreateList={handleCreateList}
+          handleDeleteList={handleDeleteList}
+        />
+      ),
     },
 
     {

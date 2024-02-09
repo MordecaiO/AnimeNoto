@@ -89,6 +89,8 @@ export type  DetailedListViewProps = {
 } 
 export type  MultiListViewProps = {
   lists: AnimeListProps[];
+  handleDeleteList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
+  handCreateList: (currentLists: AnimeListProps[], targetListId: number) => void; 
 
 } 
 
