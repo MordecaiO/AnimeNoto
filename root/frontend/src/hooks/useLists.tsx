@@ -67,13 +67,15 @@ export const useLists = (animeLists: AnimeListProps[]) => {
   const createListId = () => {
     return new Date().valueOf();
   };
+
   const handleCreateList = (
     currentLists: AnimeListProps[],
     newListName: string,
     newListDesc: string
   ) => {
+    const newListId = createListId();
     const newList = {
-      id: currentLists.length,
+      id: newListId,
       name: newListName,
       description: newListDesc,
       items: [],
@@ -98,5 +100,12 @@ export const useLists = (animeLists: AnimeListProps[]) => {
   };
 
   // const assertion to stop type inference as union type
-  return [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] as const;
+  return [
+    lists,
+    handleAddAnime,
+    handleDeleteAnime,
+    isAnimeInList,
+    handleCreateList,
+    handleDeleteList,
+  ] as const;
 };
