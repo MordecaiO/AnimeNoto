@@ -64,6 +64,9 @@ export const useLists = (animeLists: AnimeListProps[]) => {
       : false;
   };
 
+  const createListId = () => {
+    return new Date().valueOf();
+  };
   const handleCreateList = (
     currentLists: AnimeListProps[],
     newListName: string,
