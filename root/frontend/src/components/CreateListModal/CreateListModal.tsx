@@ -17,7 +17,7 @@ export default function CreateListModal({
               <label className="name-label">Name</label>
               <input
                 className="name-input"
-                placeholder="Add name"
+                placeholder="Add List Name"
                 required={true}
               ></input>
             </div>
