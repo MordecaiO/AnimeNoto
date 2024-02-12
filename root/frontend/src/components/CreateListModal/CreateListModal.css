@@ -72,13 +72,13 @@
 input:enabled {
   border: solid #327586;
 }
-.desc-label {
+.description-label {
   font-size: 12px;
   position: absolute;
   margin-left: 15px;
   background-color: white;
 }
-.desc-input {
+.description-input {
   margin: 10px;
   padding-left: 5px;
   height: 48px;
