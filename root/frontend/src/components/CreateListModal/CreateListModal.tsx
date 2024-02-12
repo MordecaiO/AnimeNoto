@@ -24,7 +24,7 @@ export default function CreateListModal({
             <div className="description-group">
               <label className="description-label">Description</label>
               <textarea
-                className="desc-input"
+                className="description-input"
                 placeholder="Add an optional description..."
               ></textarea>
             </div>
