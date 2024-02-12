@@ -21,7 +21,7 @@ export default function CreateListModal({
                 required={true}
               ></input>
             </div>
-            <div className="desc-group">
+            <div className="description-group">
               <label className="desc-label">Description</label>
               <textarea
                 className="desc-input"
