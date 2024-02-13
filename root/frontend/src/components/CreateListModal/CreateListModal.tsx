@@ -3,6 +3,8 @@ import { CreateListModalProps } from "../../vite-env";
 export default function CreateListModal({
   setOpen,
   isOpen,
+  lists,
+  handleCreateList,
 }: CreateListModalProps): JSX.Element {
   return (
     <aside className="background">

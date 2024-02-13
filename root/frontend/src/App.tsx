@@ -38,7 +38,7 @@ function App() {
       element: (
         <MultiListView
           lists={lists}
-          handCreateList={handleCreateList}
+          handleCreateList={handleCreateList}
           handleDeleteList={handleDeleteList}
         />
       ),

@@ -8,13 +8,22 @@ import "../../components/CreateListModal/CreateListModal.css";
 import { useState } from "react";
 export default function MultiListView({
   lists,
+  handleCreateList,
+  handleDeleteList,
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
 
   return (
     <article>
-      {isOpen && <CreateListModal setOpen={setOpen} isOpen={isOpen} />}
+      {isOpen && (
+        <CreateListModal
+          setOpen={setOpen}
+          isOpen={isOpen}
+          lists={lists}
+          handleCreateList={handleCreateList}
+        />
+      )}
       <button className="back-button" onClick={() => navigate("/")}>
         Home
       </button>
