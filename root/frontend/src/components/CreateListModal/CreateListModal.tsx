@@ -1,3 +1,4 @@
+import { SyntheticEvent, useState } from "react";
 import { CreateListModalProps } from "../../vite-env";
 
 export default function CreateListModal({
@@ -6,6 +7,17 @@ export default function CreateListModal({
   lists,
   handleCreateList,
 }: CreateListModalProps): JSX.Element {
+  const [formData, setFormData] = useState({ name: "", description: "" });
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const target = event.currentTarget;
+    const nameData = target.listName.value;
+    const descData = target.listDesc.value;
+    setFormData({ name: nameData, description: descData });
+    console.log("nameData", nameData);
+    console.log("descData", descData);
+    console.log("formData", formData);
+  };
   return (
     <aside className="background">
       <div className="modal-container">
@@ -21,7 +33,7 @@ export default function CreateListModal({
                 className="name-input"
                 placeholder="Add List Name"
                 required={true}
-                name="list-name"
+                name="listName"
               ></input>
             </div>
             <div className="description-group">
@@ -29,12 +41,18 @@ export default function CreateListModal({
               <textarea
                 className="description-input"
                 placeholder="Add an optional description..."
-                name="list-desc"
+                name="listDesc"
               ></textarea>
             </div>
 
             <div className="btn-container">
-              <button className="save-btn">Save</button>
+              <button
+                className="save-btn"
+                type="submit"
+                // onSubmit={(e) => handleSubmit(e)}
+              >
+                Save
+              </button>
             </div>
           </form>
         </section>
