@@ -14,8 +14,7 @@ export default function CreateListModal({
     const nameData = target.listName.value;
     const descData = target.listDesc.value;
     setFormData({ name: nameData, description: descData });
-    console.log("nameData", nameData);
-    console.log("descData", descData);
+
     console.log("formData", formData);
   };
   return (
