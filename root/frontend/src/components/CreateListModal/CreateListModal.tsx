@@ -21,6 +21,7 @@ export default function CreateListModal({
                 className="name-input"
                 placeholder="Add List Name"
                 required={true}
+                name="list-name"
               ></input>
             </div>
             <div className="description-group">
@@ -28,6 +29,7 @@ export default function CreateListModal({
               <textarea
                 className="description-input"
                 placeholder="Add an optional description..."
+                name="list-desc"
               ></textarea>
             </div>
 
