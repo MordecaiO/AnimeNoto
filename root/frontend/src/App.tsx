@@ -15,8 +15,8 @@ function App() {
     handleAddAnime,
     handleDeleteAnime,
     isAnimeInList,
-    handleDeleteList,
     handleCreateList,
+    handleDeleteList,
   ] = useLists(animeLists);
 
   const router = createBrowserRouter([
@@ -38,8 +38,8 @@ function App() {
       element: (
         <MultiListView
           lists={lists}
-          handleDeleteList={handleCreateList}
-          handleCreateList={handleDeleteList}
+          handleDeleteList={handleDeleteList}
+          handleCreateList={handleCreateList}
         />
       ),
     },

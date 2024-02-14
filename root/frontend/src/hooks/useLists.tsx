@@ -79,10 +79,11 @@ export const useLists = (animeLists: AnimeListProps[]) => {
       name: newListName,
       description: newListDesc,
       items: [],
-      lastUpdated: "",
+      lastUpdated: Date.now().toString(),
       createdAt: Date.now().toString(),
       defList: false,
     };
+    console.log(newList);
 
     let updatedLists = [...currentLists];
     updatedLists.push(newList);

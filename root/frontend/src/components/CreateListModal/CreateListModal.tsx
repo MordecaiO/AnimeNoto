@@ -1,4 +1,3 @@
-import { SyntheticEvent, useState } from "react";
 import { CreateListModalProps } from "../../vite-env";
 
 export default function CreateListModal({
@@ -7,7 +6,6 @@ export default function CreateListModal({
   lists,
   handleCreateList,
 }: CreateListModalProps): JSX.Element {
-  const [formData, setFormData] = useState({ name: "", description: "" });
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const target = event.currentTarget;

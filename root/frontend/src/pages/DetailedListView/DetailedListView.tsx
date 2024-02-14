@@ -12,7 +12,7 @@ function DetailedListView({
 }: DetailedListViewProps): JSX.Element {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const d = new Date(state.lastUpdated).toDateString();
+  // const d = new Date(state.lastUpdated).toDateString();
   return (
     <div className="container">
       <button className="back-button" onClick={() => navigate(-1)}>
@@ -26,13 +26,13 @@ function DetailedListView({
           </div>
           <section className="header-items">
             <p className="list-type">
-              {state.defList ? "Default List" : "User List"}
+              {/* {state.defaultList ? "Default List" : "User List"} */}
             </p>
             <div className="details-container">
               <h1 className="list-name">{state.listName}</h1>
               <p className="list-desc">{state.listDescription}</p>
             </div>
-            <p className="updated-text">{`Last updated: ${d}`}</p>
+            <p className="updated-text">{`Last updated: `}</p>
           </section>
         </header>
         <main className="list-items-container">
