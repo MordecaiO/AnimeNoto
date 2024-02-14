@@ -89,9 +89,8 @@ export type  DetailedListViewProps = {
 } 
 export type  MultiListViewProps = {
   lists: AnimeListProps[];
-  handleDeleteList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
-  handleCreateList: (currentLists: AnimeListProps[], targetListId: number) => void; 
-
+  handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
+  handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
 } 
 
 
@@ -128,5 +127,5 @@ export type TileItemProps =
       setOpen: Dispatch<SetStateAction<boolean>>; 
       isOpen: boolean;
       lists: AnimeListProps[];
-      handleCreateList: (currentLists: AnimeListProps[], targetListId: number) => void; 
+      handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
     } 

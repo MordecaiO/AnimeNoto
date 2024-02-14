@@ -38,8 +38,8 @@ function App() {
       element: (
         <MultiListView
           lists={lists}
-          handleCreateList={handleCreateList}
-          handleDeleteList={handleDeleteList}
+          handleDeleteList={handleCreateList}
+          handleCreateList={handleDeleteList}
         />
       ),
     },

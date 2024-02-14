@@ -13,9 +13,11 @@ export default function CreateListModal({
     const target = event.currentTarget;
     const nameData = target.listName.value;
     const descData = target.listDesc.value;
-    setFormData({ name: nameData, description: descData });
-
-    console.log("formData", formData);
+    //setFormData({ name: nameData, description: descData });
+    console.log("descData", descData);
+    console.log("nameData", nameData);
+    handleCreateList(lists, nameData, descData);
+    setOpen(false);
   };
   return (
     <aside className="background">
@@ -25,7 +27,7 @@ export default function CreateListModal({
             X
           </button>
           <h4 className="modal-header">New List</h4>
-          <form className="modal-form">
+          <form className="modal-form" onSubmit={(e) => handleSubmit(e)}>
             <div className="name-group">
               <label className="name-label">Name</label>
               <input
@@ -48,10 +50,9 @@ export default function CreateListModal({
               <button
                 className="save-btn"
                 type="submit"
-                // onSubmit={(e) => handleSubmit(e)}
-              >
-                Save
-              </button>
+                name="submit"
+                value="Save"
+              />
             </div>
           </form>
         </section>
