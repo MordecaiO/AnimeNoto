@@ -11,7 +11,7 @@ function DetailedListView({
   isAnimeInList,
 }: DetailedListViewProps): JSX.Element {
   const navigate = useNavigate();
-  const { state } = useLocation();
+  let { state } = useLocation();
   // const d = new Date(state.lastUpdated).toDateString();
   return (
     <div className="container">
