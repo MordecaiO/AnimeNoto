@@ -38,7 +38,7 @@ export default function MultiListView({
           return (
             <Link
               className="mlv-link"
-              to={`${list.name}`}
+              to={list.name}
               state={{
                 listId: list.id,
                 listItems: list.items,
