@@ -2,17 +2,18 @@
   --item-description-line-height: 1.25em;
 }
 .item-container {
-  background: lightgrey;
+  background: white;
   display: flex;
   width: 80vw;
+  height: 190px;
   margin: 25px auto;
   align-items: stretch;
   justify-content: space-around;
-  border: solid 2px black;
+  /* border: solid 1px black; */
   border-radius: 14px;
 }
 .item-container:hover {
-  background: white;
+  background: #ebeeeb;
 }
 .xleft {
   display: flex;
