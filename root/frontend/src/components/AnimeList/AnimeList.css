@@ -8,9 +8,13 @@
   align-items: center;
   flex-grow: 0;
 }
+.al-link {
+  color: inherit;
+  text-decoration: inherit;
+}
 
 .context-button {
-  height: 20px;
+  height: 15px;
   width: 40px;
   margin: 0 5px 2px 0;
   font-size: 0.9em;

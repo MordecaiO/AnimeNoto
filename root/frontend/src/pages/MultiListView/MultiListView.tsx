@@ -36,28 +36,15 @@ export default function MultiListView({
       <section className="mlv-lists-container">
         {lists.map((list: AnimeListProps, index: number) => {
           return (
-            <Link
-              className="mlv-link"
-              to={list.name}
-              state={{
-                listId: list.id,
-                listItems: list.items,
-                listName: list.name,
-                listLastUpdated: list.lastUpdated,
-                defaultList: list.defList,
-              }}
+            <AnimeList
               key={index}
-            >
-              <AnimeList
-                key={index}
-                id={index}
-                name={list.name}
-                description={list.description}
-                items={list.items}
-                createdAt={list.createdAt}
-                defList={list.defList}
-              />
-            </Link>
+              id={list.id}
+              name={list.name}
+              description={list.description}
+              items={list.items}
+              createdAt={list.createdAt}
+              defList={list.defList}
+            />
           );
         })}
       </section>
