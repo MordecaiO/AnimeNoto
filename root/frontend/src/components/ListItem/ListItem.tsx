@@ -38,16 +38,13 @@ export default function ListItem({
           onClick={() => handleDeleteAnime(listId, anime, lists)}
         >
           X
-        </button>
-        <button className="item-move">
-          {" "}
-          <TileItemMenu
-            anime={anime}
-            lists={lists}
-            handleAddAnime={handleAddAnime}
-            isAnimeInList={isAnimeInList}
-          />
-        </button>
+        </button>{" "}
+        <TileItemMenu
+          anime={anime}
+          lists={lists}
+          handleAddAnime={handleAddAnime}
+          isAnimeInList={isAnimeInList}
+        />
       </div>
     </article>
   );

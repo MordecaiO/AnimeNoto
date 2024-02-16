@@ -1,4 +1,4 @@
-import { Menu, MenuItem, SubMenu } from "@szhsin/react-menu";
+import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/core.css";
 import { AnimeListProps, TileItemMenuProps } from "../../vite-env";
@@ -11,11 +11,7 @@ export const TileItemMenu = ({
   isAnimeInList,
 }: TileItemMenuProps): JSX.Element => {
   return (
-    <Menu
-      transition
-      menuButton={<button className="context-button">...</button>}
-      direction="top"
-    >
+    <Menu transition menuButton={<MenuButton>...</MenuButton>} direction="top">
       <MenuItem>More Info</MenuItem>
       <SubMenu label="Add to List" direction="left">
         {lists.map((list: AnimeListProps) => {
