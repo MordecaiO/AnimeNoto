@@ -19,8 +19,12 @@ export const TileItem = ({
           <img src={imgUrl} alt="preview" />
 
           <div className="tile-genres-container">
-            {genres.map((g) => {
-              return <span className="tile-genre">{g.name}</span>;
+            {genres.map((g, i) => {
+              return (
+                <span className="tile-genre" key={i}>
+                  {g.name}
+                </span>
+              );
             })}
           </div>
         </div>

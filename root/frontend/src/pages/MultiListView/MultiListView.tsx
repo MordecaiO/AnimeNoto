@@ -46,6 +46,7 @@ export default function MultiListView({
                 listLastUpdated: list.lastUpdated,
                 defaultList: list.defList,
               }}
+              key={index}
             >
               <AnimeList
                 key={index}
