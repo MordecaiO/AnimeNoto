@@ -50,7 +50,10 @@ export default function CreateListModal({
                 type="submit"
                 name="submit"
                 value="Save"
-              />
+              >
+                {" "}
+                Save
+              </button>
             </div>
           </form>
         </section>
