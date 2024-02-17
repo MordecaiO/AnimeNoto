@@ -100,6 +100,21 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     setLists(updatedLists);
   };
 
+  const handleEditList = (
+    currentLists: AnimeListProps[],
+    targetListId: number,
+    listNameUpdate: string,
+    listDescUpdate: string
+  ) => {
+    let updatedLists = [...currentLists];
+    const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
+    let updatedList = { ...updatedLists[targetListIndex] };
+    updatedList.name = listNameUpdate;
+    updatedList.description = listDescUpdate;
+    updatedLists.splice(targetListIndex, 1, updatedList);
+    setLists(updatedLists);
+  };
+
   // const assertion to stop type inference as union type
   return [
     lists,
