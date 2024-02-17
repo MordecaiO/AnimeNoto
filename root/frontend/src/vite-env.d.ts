@@ -47,6 +47,7 @@ type ListItemProps = {
 export type AnimeListProps = {
   id: number; 
   name: string; 
+  description: string;
   items?: AnimeProps[]; 
   lastUpdated?: string | undefined ; 
   createdAt: string | null ; 
@@ -88,7 +89,8 @@ export type  DetailedListViewProps = {
 } 
 export type  MultiListViewProps = {
   lists: AnimeListProps[];
-
+  handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
+  handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
 } 
 
 
@@ -120,3 +122,10 @@ export type TileItemProps =
     type CollageImageProps = {
       items?: AnimeProps[];
     };
+
+    type CreateListModalProps = {
+      setOpen: Dispatch<SetStateAction<boolean>>; 
+      isOpen: boolean;
+      lists: AnimeListProps[];
+      handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
+    } 

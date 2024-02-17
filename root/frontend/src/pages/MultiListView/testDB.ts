@@ -5,6 +5,7 @@ import { AnimeListProps } from "../../vite-env";
 export const animeLists : AnimeListProps[] = [{
     id: 0,
     name: "Want to Watch",
+    description: "",
     items: [{mal_id: 3,
         title: "Naruto Shipudden",
         status: "Completed",
@@ -27,6 +28,7 @@ export const animeLists : AnimeListProps[] = [{
   }, {
     id:1,
     name: "Currently Watching",
+    description: "",
     items: [],
     lastUpdated: "", 
     createdAt: null,
@@ -34,6 +36,7 @@ export const animeLists : AnimeListProps[] = [{
   }, {
     id: 2,
     name: "Completed",
+    description: "",
     items: [],
     lastUpdated: "", 
     createdAt: null,

@@ -64,6 +64,49 @@ export const useLists = (animeLists: AnimeListProps[]) => {
       : false;
   };
 
+  const createListId = () => {
+    return new Date().valueOf();
+  };
+
+  const handleCreateList = (
+    currentLists: AnimeListProps[],
+    newListName: string,
+    newListDesc: string
+  ) => {
+    const newListId = createListId();
+    const newList = {
+      id: newListId,
+      name: newListName,
+      description: newListDesc,
+      items: [],
+      lastUpdated: Date.now().toString(),
+      createdAt: Date.now().toString(),
+      defList: false,
+    };
+    console.log(newList);
+
+    let updatedLists = [...currentLists];
+    updatedLists.push(newList);
+    setLists(updatedLists);
+  };
+
+  const handleDeleteList = (
+    currentLists: AnimeListProps[],
+    targetListId: number
+  ) => {
+    let updatedLists = [...currentLists];
+    const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
+    updatedLists.splice(targetListIndex, 1);
+    setLists(updatedLists);
+  };
+
   // const assertion to stop type inference as union type
-  return [lists, handleAddAnime, handleDeleteAnime, isAnimeInList] as const;
+  return [
+    lists,
+    handleAddAnime,
+    handleDeleteAnime,
+    isAnimeInList,
+    handleCreateList,
+    handleDeleteList,
+  ] as const;
 };
