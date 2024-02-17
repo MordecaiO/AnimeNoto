@@ -96,8 +96,11 @@ export const useLists = (animeLists: AnimeListProps[]) => {
   ) => {
     let updatedLists = [...currentLists];
     const targetListIndex = updatedLists.findIndex((x) => x.id == targetListId);
-    updatedLists.splice(targetListIndex, 1);
-    setLists(updatedLists);
+    let targetList = updatedLists[targetListIndex];
+    if (!targetList.defList) {
+      updatedLists.splice(targetListIndex, 1);
+      setLists(updatedLists);
+    }
   };
 
   const handleEditList = (
