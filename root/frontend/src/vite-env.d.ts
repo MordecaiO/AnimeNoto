@@ -52,8 +52,9 @@ export type AnimeListProps = {
   lastUpdated?: string | undefined ; 
   createdAt: string | null ; 
   defList: boolean; 
-}
   
+}
+
   export type AnimeProps = {
   mal_id: number;
   title: string;
@@ -91,6 +92,8 @@ export type  MultiListViewProps = {
   lists: AnimeListProps[];
   handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
   handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
+  handleEditList: (currentLists: AnimeListProps[], targetListId: number, listNameUpdate: string,
+    listDescUpdate: string) => void;
 } 
 
 
@@ -129,3 +132,7 @@ export type TileItemProps =
       lists: AnimeListProps[];
       handleCreateList: (currentLists: AnimeListProps[], newListName: string, newListDesc: string) => void;
     } 
+
+    type AnimeListMenuProps = {
+      lists: AnimeListProps[], listId: number, handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
+    }

@@ -22,8 +22,12 @@
 }
 .szh-menu-button {
   font-size: 1.5em;
+  font-weight: bolder;
   background-color: transparent;
+  padding: 0;
   border: none;
+  align-self: flex-end;
+  height: -15px;
 }
 .szh-menu--state-closing {
   animation: szh-menu-hide 0.05s ease-out;

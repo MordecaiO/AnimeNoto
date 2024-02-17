@@ -9,6 +9,8 @@ import { useState } from "react";
 export default function MultiListView({
   lists,
   handleCreateList,
+  handleDeleteList,
+  handleEditList,
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
@@ -44,6 +46,8 @@ export default function MultiListView({
               items={list.items}
               createdAt={list.createdAt}
               defList={list.defList}
+              handleDeleteList={handleDeleteList}
+              lists={lists}
             />
           );
         })}

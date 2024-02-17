@@ -123,5 +123,6 @@ export const useLists = (animeLists: AnimeListProps[]) => {
     isAnimeInList,
     handleCreateList,
     handleDeleteList,
+    handleEditList,
   ] as const;
 };

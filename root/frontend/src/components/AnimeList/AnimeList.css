@@ -60,7 +60,12 @@
   max-width: 18ch;
   padding: 0 20px;
 }
-
+.al-tile-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .def-list-flag {
   font-size: 0.75em;
   margin: 5px 0px 2px 0px;

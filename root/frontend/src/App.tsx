@@ -17,6 +17,7 @@ function App() {
     isAnimeInList,
     handleCreateList,
     handleDeleteList,
+    handleEditList,
   ] = useLists(animeLists);
 
   const router = createBrowserRouter([
@@ -40,6 +41,7 @@ function App() {
           lists={lists}
           handleDeleteList={handleDeleteList}
           handleCreateList={handleCreateList}
+          handleEditList={handleEditList}
         />
       ),
     },
