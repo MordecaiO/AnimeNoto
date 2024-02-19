@@ -4,61 +4,59 @@ import { CollageImage } from "../CollageImage/CollageImage";
 
 import "./AnimeList.css";
 import { AnimeListMenu } from "../AnimeListMenu/AnimeListMenu";
+import { Dispatch, SetStateAction } from "react";
 
 type AnimeListComponentProps = {
-  id: number;
-  name: string;
-  description: string;
-  items?: AnimeProps[];
-  lastUpdated?: string | undefined;
-  createdAt: string | null;
-  defList: boolean;
+  list: AnimeListProps;
   handleDeleteList: (
     currentLists: AnimeListProps[],
     targetListId: number
   ) => void;
-
+  isEditing: boolean;
+  setEditing: Dispatch<SetStateAction<boolean>>;
   lists: AnimeListProps[];
+  setSelectedList: Dispatch<SetStateAction<AnimeListProps>>;
 };
 export const AnimeList = ({
-  name,
-  items,
-  lastUpdated,
-  defList,
-  id,
+  list,
   handleDeleteList,
   lists,
+  setEditing,
+  setSelectedList,
 }: AnimeListComponentProps): JSX.Element => {
   return (
     <div className="menu-container">
       <Link
         className="al-link"
-        to={name}
+        to={list.name}
         state={{
-          listId: id,
-          listItems: items,
-          listName: name,
-          listLastUpdated: lastUpdated,
-          defaultList: defList,
+          listId: list.id,
+          listItems: list.items,
+          listName: list.name,
+          listLastUpdated: list.lastUpdated,
+          defaultList: list.defList,
         }}
       >
         <article className="al-tile-container">
           <div className="al-tile-preview">
-            <CollageImage items={items} />
+            <CollageImage items={list.items} />
           </div>
           <div className="al-tile-details">
-            <span className="al-tile-title">{name}</span>
-            <span className="al-tile-status">{items?.length}</span>
-            <span className="al-tile-update">{lastUpdated}</span>
+            <span className="al-tile-title">{list.name}</span>
+            <span className="al-tile-status">{list.items?.length}</span>
           </div>{" "}
         </article>
       </Link>
       <div className="al-tile-bottom">
-        <span className="def-list-flag">{defList ? "default list" : ""}</span>
+        <span className="def-list-flag">
+          {list.defList ? "default list" : ""}
+        </span>
         <AnimeListMenu
-          listId={id}
           lists={lists}
           handleDeleteList={handleDeleteList}
+          list={list}
+          setEditing={setEditing}
+          setSelectedList={setSelectedList}
         />
       </div>
     </div>

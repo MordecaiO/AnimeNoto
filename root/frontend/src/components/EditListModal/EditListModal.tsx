@@ -1,11 +1,12 @@
-import { CreateListModalProps } from "../../vite-env";
-import "../CreateListModal/CreateListModal.css";
-export default function CreateListModal({
-  setOpen,
-  isOpen,
+import { EditListModalProps } from "../../vite-env";
+import "../EditListModal/EditListModal.css";
+export default function EditListModal({
+  setEditing,
+  isEditing,
   lists,
-  handleCreateList,
-}: CreateListModalProps): JSX.Element {
+  handleEditList,
+  selectedList,
+}: EditListModalProps): JSX.Element {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const target = event.currentTarget;
@@ -14,17 +15,17 @@ export default function CreateListModal({
     //setFormData({ name: nameData, description: descData });
     console.log("descData", descData);
     console.log("nameData", nameData);
-    handleCreateList(lists, nameData, descData);
-    setOpen(false);
+    handleEditList(lists, selectedList.id, nameData, descData);
+    setEditing(false);
   };
   return (
     <aside className="background">
       <div className="modal-container">
         <section className="modal">
-          <button className="close-btn" onClick={() => setOpen(!isOpen)}>
+          <button className="close-btn" onClick={() => setEditing(!isEditing)}>
             X
           </button>
-          <h4 className="modal-header">New List</h4>
+          <h4 className="modal-header">Edit List</h4>
           <form className="modal-form" onSubmit={(e) => handleSubmit(e)}>
             <div className="name-group">
               <label className="name-label">Name</label>
@@ -33,6 +34,7 @@ export default function CreateListModal({
                 placeholder="Add List Name"
                 required={true}
                 name="listName"
+                defaultValue={selectedList.name}
               ></input>
             </div>
             <div className="description-group">
@@ -41,6 +43,7 @@ export default function CreateListModal({
                 className="description-input"
                 placeholder="Add an optional description..."
                 name="listDesc"
+                defaultValue={selectedList.description}
               ></textarea>
             </div>
 

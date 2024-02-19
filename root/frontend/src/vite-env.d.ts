@@ -134,5 +134,18 @@ export type TileItemProps =
     } 
 
     type AnimeListMenuProps = {
-      lists: AnimeListProps[], listId: number, handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
+      lists: AnimeListProps[];
+      handleDeleteList: (currentLists: AnimeListProps[], targetListId: number) => void; 
+      setEditing:Dispatch<SetStateAction<boolean>>; 
+      setSelectedList: Dispatch<SetStateAction<AnimeListProps>>; 
+      list: AnimeListProps; 
     }
+
+    type EditListModalProps = {
+      isEditing: boolean; 
+      setEditing:Dispatch<SetStateAction<boolean>>; 
+      lists: AnimeListProps[];
+      handleEditList: (currentLists: AnimeListProps[], targetListId: number, listNameUpdate: string,
+        listDescUpdate: string) => void;
+        selectedList: AnimeListProps; 
+    } 

@@ -6,6 +6,8 @@ import { AnimeListProps } from "../../vite-env";
 import CreateListModal from "../../components/CreateListModal/CreateListModal";
 import "../../components/CreateListModal/CreateListModal.css";
 import { useState } from "react";
+import { animeLists } from "./testDB";
+import EditListModal from "../../components/EditListModal/EditListModal";
 export default function MultiListView({
   lists,
   handleCreateList,
@@ -14,9 +16,19 @@ export default function MultiListView({
 }: MultiListViewProps): JSX.Element {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
-
+  const [isEditing, setEditing] = useState(false);
+  const [selectedList, setSelectedList] = useState(animeLists[0]);
   return (
     <article>
+      {isEditing && (
+        <EditListModal
+          isEditing={isEditing}
+          setEditing={setEditing}
+          selectedList={selectedList}
+          handleEditList={handleEditList}
+          lists={lists}
+        />
+      )}
       {isOpen && (
         <CreateListModal
           setOpen={setOpen}
@@ -40,14 +52,12 @@ export default function MultiListView({
           return (
             <AnimeList
               key={index}
-              id={list.id}
-              name={list.name}
-              description={list.description}
-              items={list.items}
-              createdAt={list.createdAt}
-              defList={list.defList}
+              list={list}
               handleDeleteList={handleDeleteList}
+              isEditing={isEditing}
+              setEditing={setEditing}
               lists={lists}
+              setSelectedList={setSelectedList}
             />
           );
         })}

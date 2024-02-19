@@ -6,21 +6,27 @@ import "./AnimeListMenu.css";
 
 export const AnimeListMenu = ({
   lists,
-  listId,
+  list,
   handleDeleteList,
+  setEditing,
+  setSelectedList,
 }: AnimeListMenuProps): JSX.Element => {
+  const handleClick = () => {
+    setSelectedList(list);
+    setEditing(true);
+  };
   return (
     <Menu transition menuButton={<MenuButton>...</MenuButton>} direction="top">
       <MenuItem
         onClick={(e) => {
-          handleDeleteList(lists, listId);
+          handleDeleteList(lists, list.id);
           e.keepOpen = false;
         }}
       >
         Delete List
       </MenuItem>
 
-      <MenuItem>Edit List Details</MenuItem>
+      <MenuItem onClick={handleClick}>Edit List Details</MenuItem>
     </Menu>
   );
 };
