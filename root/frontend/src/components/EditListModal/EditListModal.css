@@ -69,9 +69,6 @@
   width: 250px;
 }
 
-input:enabled {
-  border: solid #327586;
-}
 .description-label {
   font-size: 12px;
   position: absolute;
