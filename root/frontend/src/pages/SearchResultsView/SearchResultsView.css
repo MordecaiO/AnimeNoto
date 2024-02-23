@@ -22,6 +22,7 @@
 .navbar {
   margin: auto;
   max-width: 1400px;
+  min-width: 920px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
