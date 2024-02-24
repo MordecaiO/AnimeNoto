@@ -41,7 +41,7 @@ export default function SearchResultsView({
     <div className="main">
       <header className="header">
         <nav className="navbar">
-          <div className="header-left">
+          <div className="navbar-left">
             <a className="logo-wrapper" href="/">
               <img
                 className="anime-noto"
@@ -51,7 +51,7 @@ export default function SearchResultsView({
               <b className="logo-text">AnimeNoto</b>
             </a>
           </div>
-          <div className="header-right">
+          <div className="navbar-right">
             <div className="searchbar-wrapper">
               <form onSubmit={handleSubmit} className="searchbar-main">
                 <input

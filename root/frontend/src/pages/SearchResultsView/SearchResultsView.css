@@ -1,10 +1,15 @@
 .main {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .header {
@@ -30,7 +35,7 @@
   align-items: center;
 }
 
-.header-left {
+.navbar-left {
   display: flex;
   height: 100%;
   align-items: center;
@@ -38,7 +43,7 @@
   flex: 1;
 }
 
-.header-right {
+.navbar-right {
   display: flex;
   align-items: center;
   flex: 1 0 auto;
@@ -117,12 +122,13 @@
 }
 
 .results-container {
-  height: 100%;
+  height: 80vh;
   width: 1255px;
-  margin: 0px 250px;
+  margin: 20px 250px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .srv-top-button {

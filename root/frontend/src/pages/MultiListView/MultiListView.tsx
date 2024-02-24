@@ -19,7 +19,7 @@ export default function MultiListView({
   const [isEditing, setEditing] = useState(false);
   const [selectedList, setSelectedList] = useState(animeLists[0]);
   return (
-    <article>
+    <div className="mlv-main">
       {isEditing && (
         <EditListModal
           isEditing={isEditing}
@@ -44,9 +44,9 @@ export default function MultiListView({
         Create List
       </button>
 
-      <section className="mlv-header">
+      <header className="mlv-header">
         <h2 className="mlv-title">Lists</h2>
-      </section>
+      </header>
       <section className="mlv-lists-container">
         {lists.map((list: AnimeListProps, index: number) => {
           return (
@@ -62,6 +62,6 @@ export default function MultiListView({
           );
         })}
       </section>
-    </article>
+    </div>
   );
 }
