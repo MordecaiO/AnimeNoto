@@ -19,7 +19,7 @@ export default function MultiListView({
   const [isEditing, setEditing] = useState(false);
   const [selectedList, setSelectedList] = useState(animeLists[0]);
   return (
-    <div className="mlv-main">
+    <div className="mlv main">
       {isEditing && (
         <EditListModal
           isEditing={isEditing}
