@@ -1,5 +1,4 @@
 .mlv.main {
-  height: 100%;
 }
 
 .mlv-header {
@@ -14,9 +13,11 @@
   z-index: 1;
 }
 .mlv-lists-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px 30px;
+  min-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px 0px;
   z-index: 1;
 }
 .mlv-title {
@@ -25,6 +26,19 @@
 .mlv-link {
   color: inherit;
   text-decoration: inherit;
+}
+
+.home-button {
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: large;
+  margin-left: 30px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 30px;
 }
 
 .back-button {

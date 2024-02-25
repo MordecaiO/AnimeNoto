@@ -45,7 +45,23 @@ export default function MultiListView({
       </button>
 
       <header className="mlv-header">
-        <h2 className="mlv-title">Lists</h2>
+        <nav className="navbar">
+          <div className="navbar-left">
+            <a className="logo-wrapper" href="/">
+              <img
+                className="anime-noto"
+                src="../../animenoto_logo.png"
+                alt="AnimeNoto Logo"
+              ></img>
+              <b className="logo-text">AnimeNoto</b>
+            </a>
+          </div>
+          <div className="navbar-right">
+            <button className="home-button">Home</button>
+            <a className="login">Login</a>
+            <a className="sign-up">Sign up</a>
+          </div>
+        </nav>
       </header>
       <section className="mlv-lists-container">
         {lists.map((list: AnimeListProps, index: number) => {
