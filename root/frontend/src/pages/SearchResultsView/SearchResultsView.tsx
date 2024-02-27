@@ -12,23 +12,25 @@ export default function SearchResultsView({
   isAnimeInList,
 }: SearchResultsViewProps) {
   const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const results = useQuery({
-    queryKey: ["animes", searchTerm],
+  const [page, setPage] = useState(0);
+  const { status, data } = useQuery({
+    queryKey: ["animes", searchTerm, page],
     queryFn: async () => {
       const response = await fetch(
-        `https://api.jikan.moe/v4/anime?q=` + searchTerm
+        `https://api.jikan.moe/v4/anime?q=` + searchTerm + "/page=" + page
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const data = await response.json();
-
-      return data;
+      return response.json();
     },
   });
 
-  const animes = results?.data?.data ?? [];
+  if (status === "loading") {
+    return <span>Loading...</span>;
+  }
+
+  const animes = data?.data ?? [];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,6 +39,7 @@ export default function SearchResultsView({
     e.currentTarget.reset();
     e.currentTarget.focus();
   };
+
   return (
     <div className="main">
       <header className="header">
