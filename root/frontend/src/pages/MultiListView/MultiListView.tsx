@@ -37,9 +37,7 @@ export default function MultiListView({
           handleCreateList={handleCreateList}
         />
       )}
-      <button className="back-button" onClick={() => navigate("/")}>
-        Home
-      </button>
+
       <button className="add-button" onClick={() => setOpen(!isOpen)}>
         Create List
       </button>
@@ -56,8 +54,11 @@ export default function MultiListView({
               <b className="logo-text">AnimeNoto</b>
             </a>
           </div>
+          <div className="navbar-middle"></div>
           <div className="navbar-right">
-            <button className="home-button">Home</button>
+            <button className="home-button" onClick={() => navigate("/")}>
+              Home
+            </button>
             <a className="login">Login</a>
             <a className="sign-up">Sign up</a>
           </div>

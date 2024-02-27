@@ -51,7 +51,7 @@ export default function SearchResultsView({
               <b className="logo-text">AnimeNoto</b>
             </a>
           </div>
-          <div className="navbar-right">
+          <div className="navbar-middle">
             <div className="searchbar-wrapper">
               <form onSubmit={handleSubmit} className="searchbar-main">
                 <input
@@ -73,6 +73,8 @@ export default function SearchResultsView({
                 </button>
               </form>
             </div>
+          </div>
+          <div className="navbar-right">
             <div className="lists-button-wrapper">
               <Link
                 to="lists"

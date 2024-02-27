@@ -12,6 +12,29 @@
   top: 0;
   z-index: 1;
 }
+
+.navbar {
+  margin: auto;
+  max-width: 1400px;
+  min-width: 920px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mlv-navbar-right {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.search-placeholder {
+  min-width: 346px;
+  min-height: 33px;
+}
 .mlv-lists-container {
   min-width: 700px;
   display: grid;

@@ -21,7 +21,8 @@
   z-index: 1;
 }
 
-.navbar {
+/* .navbar {
+
   margin: auto;
   max-width: 1400px;
   min-width: 920px;
@@ -38,6 +39,28 @@
   align-items: center;
   min-width: 0;
   flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  justify-content: space-evenly;
+  min-width: 0;
+} */
+
+nav.navbar {
+  max-width: 1400px;
+  min-width: 1060px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar-left {
+}
+
+.navbar-middle {
 }
 
 .navbar-right {
