@@ -13,26 +13,24 @@ export default function SearchResultsView({
 }: SearchResultsViewProps) {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [page, setPage] = useState(0);
-  const { status, data } = useQuery({
-    queryKey: ["animes", searchTerm, page],
+  const [page, setPage] = useState(1);
+  const { data, isPreviousData } = useQuery({
+    queryKey: ["anime", { searchTerm, page }],
     queryFn: async () => {
       const response = await fetch(
-        `https://api.jikan.moe/v4/anime?q=` + searchTerm + "/page=" + page
+        `https://api.jikan.moe/v4/anime?q=` + searchTerm + "&page=" + page
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       return response.json();
     },
+    keepPreviousData: true,
   });
 
-  if (status === "loading") {
-    return <span>Loading...</span>;
-  }
-
   const animes = data?.data ?? [];
-
+  const hasNextPage = data?.pagination?.has_next_page ?? false;
+  console.log(data);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -107,7 +105,23 @@ export default function SearchResultsView({
           );
         })}
       </section>
-      {/* <button className="srv-top-button">Back to top</button> */}
+      <button
+        disabled={page === 1}
+        onClick={() => setPage((old) => Math.max(old - 1, 0))}
+      >
+        Previous Page
+      </button>
+      <span> {page}</span>
+      <button
+        disabled={isPreviousData || !hasNextPage}
+        onClick={() => {
+          if (!isPreviousData && hasNextPage) {
+            setPage((old) => old + 1);
+          }
+        }}
+      >
+        Next Page
+      </button>
     </div>
   );
 }
