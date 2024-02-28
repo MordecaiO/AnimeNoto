@@ -2,7 +2,7 @@ import "./SearchResultsView.css";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { TileItem } from "../../components/TileItem/TileItem";
 
 export default function SearchResultsView({
@@ -11,6 +11,7 @@ export default function SearchResultsView({
   handleDeleteAnime,
   isAnimeInList,
 }: SearchResultsViewProps) {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState(0);
   const { status, data } = useQuery({
@@ -78,16 +79,10 @@ export default function SearchResultsView({
             </div>
           </div>
           <div className="navbar-right">
-            <div className="lists-button-wrapper">
-              <Link
-                to="lists"
-                state={{
-                  lists: lists,
-                }}
-              >
-                <button className="lists-button">Lists</button>
-              </Link>
-            </div>
+            <button onClick={() => navigate("/lists")} className="lists-button">
+              Lists
+            </button>
+
             <a className="login">Login</a>
             <a className="sign-up">Sign up</a>
           </div>
