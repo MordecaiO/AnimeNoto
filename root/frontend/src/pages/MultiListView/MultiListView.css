@@ -1,4 +1,5 @@
 .mlv.main {
+  overflow-y: auto;
 }
 
 .mlv-header {

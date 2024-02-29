@@ -117,6 +117,7 @@ export default function SearchResultsView({
         onClick={() => {
           if (!isPreviousData && hasNextPage) {
             setPage((old) => old + 1);
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }
         }}
       >

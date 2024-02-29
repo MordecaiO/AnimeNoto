@@ -38,10 +38,6 @@ export default function MultiListView({
         />
       )}
 
-      <button className="add-button" onClick={() => setOpen(!isOpen)}>
-        Create List
-      </button>
-
       <header className="mlv-header">
         <nav className="navbar">
           <div className="navbar-left">
@@ -64,6 +60,9 @@ export default function MultiListView({
           </div>
         </nav>
       </header>
+      <button className="add-button" onClick={() => setOpen(!isOpen)}>
+        Create List
+      </button>
       <section className="mlv-lists-container">
         {lists.map((list: AnimeListProps, index: number) => {
           return (
