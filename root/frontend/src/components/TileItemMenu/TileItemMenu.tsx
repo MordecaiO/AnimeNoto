@@ -17,6 +17,7 @@ export const TileItemMenu = ({
         {lists.map((list: AnimeListProps) => {
           return (
             <MenuItem
+              key={list.id}
               className="add-menu-item"
               disabled={isAnimeInList(anime, list)}
               onClick={(e) => {

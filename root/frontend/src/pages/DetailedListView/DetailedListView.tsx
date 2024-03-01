@@ -41,6 +41,7 @@ function DetailedListView({
             .items!.map((listitem: AnimeProps, i: number) => {
               return (
                 <ListItem
+                  key={i}
                   index={i}
                   src={listitem.images.jpg.image_url}
                   name={listitem.title}
