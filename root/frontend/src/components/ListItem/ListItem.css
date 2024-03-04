@@ -29,7 +29,7 @@
 .item-image {
   width: 150px;
   height: 160px;
-  object-fit: cover;
+  object-fit: contain;
   margin: 5px;
 }
 .xcenter {

@@ -3,6 +3,7 @@ import ListItem from "../../components/ListItem/ListItem";
 import { AnimeProps } from "../../vite-env";
 import { useLocation, useNavigate } from "react-router-dom";
 import { DetailedListViewProps } from "../../vite-env";
+import { CollageImage } from "../../components/CollageImage/CollageImage";
 
 function DetailedListView({
   lists,
@@ -22,7 +23,9 @@ function DetailedListView({
       <div className="dlv-container">
         <header className="dlv-header">
           <div className="img-container">
-            <img className="header_image"></img>
+            <CollageImage
+              items={lists.filter((list) => list.id == state.listId)[0].items!}
+            />
           </div>
           <section className="header-items">
             <p className="list-type">
