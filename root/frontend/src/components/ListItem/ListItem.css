@@ -5,6 +5,7 @@
   background: white;
   display: flex;
   width: 80vw;
+  min-width: 500px;
   height: 190px;
   margin: 25px auto;
   align-items: stretch;
@@ -50,7 +51,7 @@
   font-size: 0.75em;
 }
 .item-description {
-  display: -webkit-box;
+  /* display: -webkit-box;
 
   padding-left: 5px;
   padding-right: 5px;
@@ -62,7 +63,7 @@
   margin: 15px 10px;
   font-family: Verdana;
   line-height: var(--item-description-line-height);
-  height: calc(var(--item-description-line-height) * 6);
+  height: calc(var(--item-description-line-height) * 6); */
 }
 .item-genres-container {
   display: flex;
@@ -107,4 +108,8 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+
+.szh-menu-button {
+  margin: 7.5px 15px 10px;
 }
