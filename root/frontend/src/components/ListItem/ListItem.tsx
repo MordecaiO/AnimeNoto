@@ -19,7 +19,7 @@ export default function ListItem({
   return (
     <article className="item-container">
       <div className="xleft inner-item-wrapper">
-        <p className="item-index">{`# ${index}`}</p>
+        <p className="item-index">{`# ${index + 1}`}</p>
         <img src={src} className="item-image"></img>
       </div>
       <div className="xcenter inner-item-wrapper">
