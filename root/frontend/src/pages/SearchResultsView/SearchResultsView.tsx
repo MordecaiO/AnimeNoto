@@ -55,7 +55,11 @@ export default function SearchResultsView({
           </div>
           <div className="navbar-middle">
             <div className="searchbar-wrapper">
-              <form onSubmit={handleSubmit} className="searchbar-main">
+              <form
+                onSubmit={handleSubmit}
+                className="searchbar-main"
+                autoComplete="off"
+              >
                 <input
                   className="searchbar-term"
                   placeholder="Search catalogue"
