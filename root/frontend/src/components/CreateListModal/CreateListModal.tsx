@@ -18,7 +18,7 @@ export default function CreateListModal({
     setOpen(false);
   };
   return (
-    <aside className="background">
+    <div className="background">
       <div className="modal-container">
         <section className="modal">
           <button className="close-btn" onClick={() => setOpen(!isOpen)}>
@@ -58,6 +58,6 @@ export default function CreateListModal({
           </form>
         </section>
       </div>
-    </aside>
+    </div>
   );
 }

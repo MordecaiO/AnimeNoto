@@ -1,5 +1,7 @@
 .mlv.main {
   overflow-y: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .mlv-header {
@@ -93,6 +95,7 @@
   border-bottom-left-radius: 10px;
   background-color: #f61067;
   border: none;
+  /* z-index: 100; */
 }
 
 .add-button:hover {
