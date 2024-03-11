@@ -5,6 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow-x: hidden;
+  overflow-y: hidden;
   margin: 0;
   padding: 0;
 }
@@ -176,4 +177,23 @@ nav.navbar {
 .sign-up {
   font-family: "Patrick Hand SC", cursive;
   display: inline-block;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-btn {
+  height: 30px;
+  width: 90px;
+  cursor: pointer;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: large;
+  margin: 5px 30px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 30px;
 }

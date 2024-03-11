@@ -109,24 +109,28 @@ export default function SearchResultsView({
           );
         })}
       </section>
-      <button
-        disabled={page === 1}
-        onClick={() => setPage((old) => Math.max(old - 1, 0))}
-      >
-        Previous Page
-      </button>
-      <span> {page}</span>
-      <button
-        disabled={isPreviousData || !hasNextPage}
-        onClick={() => {
-          if (!isPreviousData && hasNextPage) {
-            setPage((old) => old + 1);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }
-        }}
-      >
-        Next Page
-      </button>
+      <div className="pagination-container">
+        <button
+          disabled={page === 1}
+          onClick={() => setPage((old) => Math.max(old - 1, 0))}
+          className="pagination-btn"
+        >
+          Previous Page
+        </button>
+        <span> {page}</span>
+        <button
+          disabled={isPreviousData || !hasNextPage}
+          onClick={() => {
+            if (!isPreviousData && hasNextPage) {
+              setPage((old) => old + 1);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="pagination-btn"
+        >
+          Next Page
+        </button>
+      </div>
     </div>
   );
 }
