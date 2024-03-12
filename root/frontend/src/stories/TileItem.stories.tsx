@@ -28,7 +28,3 @@ export const AnimeTileItem: Story = {
     ],
   },
 };
-
-export const ListTileItem: Story = {
-  args: { list: true, name: "Currently Watching" },
-};

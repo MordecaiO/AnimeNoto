@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AnimeListProps, AnimeProps } from "../../vite-env";
+import { AnimeListProps } from "../../vite-env";
 import { CollageImage } from "../CollageImage/CollageImage";
 
 import "./AnimeList.css";

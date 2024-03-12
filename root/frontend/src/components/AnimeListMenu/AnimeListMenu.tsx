@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/core.css";
-import { AnimeListMenuProps, AnimeListProps } from "../../vite-env";
+import { AnimeListMenuProps } from "../../vite-env";
 import "./AnimeListMenu.css";
 
 export const AnimeListMenu = ({

@@ -1,5 +1,5 @@
 import "./MultiListView.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AnimeList } from "../../components/AnimeList/AnimeList";
 import { MultiListViewProps } from "../../vite-env";
 import { AnimeListProps } from "../../vite-env";
