@@ -20,44 +20,47 @@ function App() {
     handleEditList,
   ] = useLists(animeLists);
 
-  const router = createHashRouter([
-    {
-      path: "/",
-      element: (
-        <QueryClientProvider client={queryClient}>
-          <SearchResultsView
+  const router = createHashRouter(
+    [
+      {
+        path: "/",
+        element: (
+          <QueryClientProvider client={queryClient}>
+            <SearchResultsView
+              lists={lists}
+              handleAddAnime={handleAddAnime}
+              handleDeleteAnime={handleDeleteAnime}
+              isAnimeInList={isAnimeInList}
+            />
+          </QueryClientProvider>
+        ),
+      },
+      {
+        path: "lists",
+        element: (
+          <MultiListView
+            lists={lists}
+            handleDeleteList={handleDeleteList}
+            handleCreateList={handleCreateList}
+            handleEditList={handleEditList}
+          />
+        ),
+      },
+
+      {
+        path: "lists/:listName",
+        element: (
+          <DetailedListView
             lists={lists}
             handleAddAnime={handleAddAnime}
             handleDeleteAnime={handleDeleteAnime}
             isAnimeInList={isAnimeInList}
           />
-        </QueryClientProvider>
-      ),
-    },
-    {
-      path: "lists",
-      element: (
-        <MultiListView
-          lists={lists}
-          handleDeleteList={handleDeleteList}
-          handleCreateList={handleCreateList}
-          handleEditList={handleEditList}
-        />
-      ),
-    },
-
-    {
-      path: "lists/:listName",
-      element: (
-        <DetailedListView
-          lists={lists}
-          handleAddAnime={handleAddAnime}
-          handleDeleteAnime={handleDeleteAnime}
-          isAnimeInList={isAnimeInList}
-        />
-      ),
-    },
-  ]);
+        ),
+      },
+    ],
+    { basename: "AnimeNoto/" }
+  );
 
   return <RouterProvider router={router} />;
 }
