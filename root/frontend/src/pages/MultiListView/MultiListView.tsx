@@ -44,7 +44,7 @@ export default function MultiListView({
             <a className="logo-wrapper" href="/">
               <img
                 className="anime-noto"
-                src="../../animenoto_logo.png"
+                src="/animenoto_logo.png"
                 alt="AnimeNoto Logo"
               ></img>
               <b className="logo-text">AnimeNoto</b>

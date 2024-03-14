@@ -25,7 +25,11 @@ export default function CreateListModal({
             X
           </button>
           <h4 className="modal-header">New List</h4>
-          <form className="modal-form" onSubmit={(e) => handleSubmit(e)}>
+          <form
+            className="modal-form"
+            onSubmit={(e) => handleSubmit(e)}
+            autoComplete="off"
+          >
             <div className="name-group">
               <label className="name-label">Name</label>
               <input
