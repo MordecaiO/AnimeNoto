@@ -5,7 +5,7 @@ import { useLists } from "./hooks/useLists.tsx";
 import { animeLists } from "./pages/MultiListView/testDB.ts";
 import MultiListView from "./pages/MultiListView/MultiListView.tsx";
 import DetailedListView from "./pages/DetailedListView/DetailedListView.tsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +20,7 @@ function App() {
     handleEditList,
   ] = useLists(animeLists);
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: (
