@@ -3,7 +3,9 @@ import "./CollageImage.css";
 export const CollageImage = ({ items }: CollageImageProps) => {
   let image;
   if (items?.length == 0 || items == undefined) {
-    image = <img className="def-img" src="../../public/animenoto_logo.png" />;
+    image = (
+      <img className="def-img" src="../../AnimeNoto/animenoto_logo_main.jpeg" />
+    );
   } else if (items!.length > 3) {
     image = items!.slice(0, 4).map((item) => {
       return <img className="collage-img" src={item.images.jpg.image_url} />;
