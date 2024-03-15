@@ -44,7 +44,7 @@ export default function SearchResultsView({
       <header className="header">
         <nav className="navbar">
           <div className="navbar-left">
-            <a className="logo-wrapper" href="/">
+            <a className="logo-wrapper" href="/AnimeNoto">
               <img
                 className="anime-noto"
                 src="/AnimeNoto/animenoto_logo_main.jpeg"

@@ -41,10 +41,10 @@ export default function MultiListView({
       <header className="mlv-header">
         <nav className="navbar">
           <div className="navbar-left">
-            <a className="logo-wrapper" href="/">
+            <a className="logo-wrapper" href="/AnimeNoto">
               <img
                 className="anime-noto"
-                src="AnimeNoto/animenoto_logo_main.jpeg"
+                src="/AnimeNoto/animenoto_logo_main.jpeg"
                 alt="AnimeNoto Logo"
               ></img>
               <b className="logo-text">AnimeNoto</b>
