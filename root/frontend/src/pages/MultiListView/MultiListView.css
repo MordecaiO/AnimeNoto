@@ -40,12 +40,14 @@
   min-height: 33px;
 }
 .mlv-lists-container {
-  min-width: 700px;
+  min-width: 800px;
+  min-height: 500px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   margin: 20px 0px;
   z-index: 1;
+  overflow-y: auto;
 }
 .mlv-title {
   font-family: "Patrick Hand SC", cursive;
@@ -79,7 +81,7 @@
   border-bottom-left-radius: 10px;
   background-color: #f61067;
   border: none;
-  /* z-index: 100; */
+  z-index: 2;
 }
 
 .add-button:hover {
