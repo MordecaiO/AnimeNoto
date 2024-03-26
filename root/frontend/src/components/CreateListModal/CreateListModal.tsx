@@ -18,7 +18,7 @@ export default function CreateListModal({
     setOpen(false);
   };
   return (
-    <div className="background">
+    <div className="modal-background">
       <div className="modal-container">
         <section className="modal">
           <button className="close-btn" onClick={() => setOpen(!isOpen)}>

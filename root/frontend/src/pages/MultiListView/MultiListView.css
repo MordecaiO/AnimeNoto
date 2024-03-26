@@ -1,16 +1,3 @@
-.mlv-header {
-  height: 75px;
-  width: 100%;
-  padding: 15px 0px;
-  margin-bottom: 5px;
-  background-color: white;
-  border-bottom: solid 1px lightgray;
-  font-weight: bolder;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
-
 .navbar {
   margin: auto;
   max-width: 1400px;
@@ -39,8 +26,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
-  padding: 20px;
-  margin: 20px 0px;
+  margin: 20px 30px;
   z-index: 1;
 }
 .mlv-title {
