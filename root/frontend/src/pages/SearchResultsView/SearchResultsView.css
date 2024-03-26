@@ -7,7 +7,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
-  padding: 0;
+  padding-top: 105px;
 }
 
 .header {
@@ -17,8 +17,9 @@
   background-color: white;
   border-bottom: solid 1px lightgray;
   font-weight: bolder;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
 }
 
