@@ -24,8 +24,8 @@
   min-width: 800px;
   min-height: 500px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  grid-column-gap: 10px;
   margin: 20px 30px;
   z-index: 1;
 }
