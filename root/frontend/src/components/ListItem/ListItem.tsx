@@ -36,7 +36,7 @@ export default function ListItem({
           })}
         </div>
       </div>
-      <div className="xright inner-item-wrapper">
+      <div className="xright">
         <button
           className="item-delete"
           onClick={() => handleDeleteAnime(listId, anime, lists)}

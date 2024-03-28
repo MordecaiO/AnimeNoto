@@ -13,7 +13,7 @@ export const TileItem = ({
   lists,
 }: TileItemProps): JSX.Element => {
   return (
-    <div className="menu-container">
+    <div className="outer-tile-container">
       <article className="tile-container">
         <div className="tile-preview">
           <img src={imgUrl} alt="preview" />
@@ -33,12 +33,15 @@ export const TileItem = ({
           <span className="tile-status">{status}</span>
         </div>{" "}
       </article>
-      <TileItemMenu
-        anime={anime}
-        lists={lists}
-        handleAddAnime={handleAddAnime}
-        isAnimeInList={isAnimeInList}
-      />
+      <div className="tile-menu-container">
+        <TileItemMenu
+          anime={anime}
+          lists={lists}
+          handleAddAnime={handleAddAnime}
+          isAnimeInList={isAnimeInList}
+        />
+        <span className="tooltip">More</span>
+      </div>
     </div>
   );
 };
