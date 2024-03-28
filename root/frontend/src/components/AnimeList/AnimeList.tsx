@@ -51,13 +51,16 @@ export const AnimeList = ({
         <span className="def-list-flag">
           {list.defList ? "default list" : ""}
         </span>
-        <AnimeListMenu
-          lists={lists}
-          handleDeleteList={handleDeleteList}
-          list={list}
-          setEditing={setEditing}
-          setSelectedList={setSelectedList}
-        />
+        <div className="tile-menu-container">
+          <AnimeListMenu
+            lists={lists}
+            handleDeleteList={handleDeleteList}
+            list={list}
+            setEditing={setEditing}
+            setSelectedList={setSelectedList}
+          />
+          <span className="tooltip">More</span>
+        </div>
       </div>
     </div>
   );
