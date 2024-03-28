@@ -43,12 +43,15 @@ export default function ListItem({
         >
           X
         </button>{" "}
-        <TileItemMenu
-          anime={anime}
-          lists={lists}
-          handleAddAnime={handleAddAnime}
-          isAnimeInList={isAnimeInList}
-        />
+        <div className="tile-menu-container">
+          <TileItemMenu
+            anime={anime}
+            lists={lists}
+            handleAddAnime={handleAddAnime}
+            isAnimeInList={isAnimeInList}
+          />
+          <span className="tooltip">More</span>
+        </div>
       </div>
     </article>
   );
