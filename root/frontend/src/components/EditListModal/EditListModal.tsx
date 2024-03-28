@@ -19,7 +19,7 @@ export default function EditListModal({
     setEditing(false);
   };
   return (
-    <aside className="background">
+    <div className="modal-background">
       <div className="modal-container">
         <section className="modal">
           <button className="close-btn" onClick={() => setEditing(!isEditing)}>
@@ -61,6 +61,6 @@ export default function EditListModal({
           </form>
         </section>
       </div>
-    </aside>
+    </div>
   );
 }

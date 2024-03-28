@@ -28,17 +28,16 @@ export default function MultiListView({
           handleCreateList={handleCreateList}
         />
       )}
+      {isEditing && (
+        <EditListModal
+          isEditing={isEditing}
+          setEditing={setEditing}
+          selectedList={selectedList}
+          handleEditList={handleEditList}
+          lists={lists}
+        />
+      )}
       <div className="main">
-        {isEditing && (
-          <EditListModal
-            isEditing={isEditing}
-            setEditing={setEditing}
-            selectedList={selectedList}
-            handleEditList={handleEditList}
-            lists={lists}
-          />
-        )}
-
         <header className="header">
           <nav className="navbar">
             <div className="navbar-left">
