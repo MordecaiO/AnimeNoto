@@ -12,10 +12,15 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  min-width: 1000px;
 }
 
 .hero-img-wrapper {
   width: 50%;
+}
+
+.hero-img {
+  width: 100%;
 }
 
 .auth-container {
@@ -56,4 +61,11 @@
 
 .auth-btn-container > button:hover {
   background-color: #03a8ff;
+}
+
+.hero-img-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  text-align: center;
 }

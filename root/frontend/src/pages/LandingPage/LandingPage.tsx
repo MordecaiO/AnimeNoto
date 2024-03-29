@@ -21,7 +21,10 @@ export const LandingPage = () => {
       </header>
       <main className="landing-page-content">
         <div className="hero-img-wrapper">
-          <img className="hero-img" />
+          <h2 className="hero-img-text">
+            Search, Track and Organise <br></br>your favourite Anime!
+          </h2>
+          <img className="hero-img" src="/animenoto_hero.png" />
         </div>
         <section className="auth-container">
           <div className="auth-content">
