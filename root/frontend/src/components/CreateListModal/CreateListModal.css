@@ -82,6 +82,7 @@
   padding-left: 5px;
   height: 48px;
   width: 250px;
+  resize: none;
 }
 
 .btn-container {

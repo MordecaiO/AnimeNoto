@@ -74,6 +74,11 @@ nav.navbar {
   color: white;
   border: none;
   border-radius: 30px;
+  transition: 0.4s;
+}
+
+.lists-button:hover {
+  background-color: #03a8ff;
 }
 
 .searchbar-wrapper * {
