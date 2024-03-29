@@ -1,0 +1,59 @@
+.landing-page.main {
+  height: 100vh;
+  padding: 0;
+}
+
+.landing-page.header {
+  position: static;
+}
+
+.landing-page-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-img-wrapper {
+  width: 50%;
+}
+
+.auth-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-content {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text-wrapper {
+  text-align: center;
+}
+
+.auth-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-btn-container > button {
+  height: 60px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-bg-color);
+  color: white;
+  transition: 0.4s;
+}
+
+.auth-btn-container > button:hover {
+  background-color: #03a8ff;
+}

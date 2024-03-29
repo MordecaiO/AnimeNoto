@@ -6,6 +6,7 @@ import { animeLists } from "./pages/MultiListView/testDB.ts";
 import MultiListView from "./pages/MultiListView/MultiListView.tsx";
 import DetailedListView from "./pages/DetailedListView/DetailedListView.tsx";
 import { RouterProvider, createHashRouter } from "react-router-dom";
+import { LandingPage } from "./pages/LandingPage/LandingPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,10 @@ function App() {
           isAnimeInList={isAnimeInList}
         />
       ),
+    },
+    {
+      path: "lp",
+      element: <LandingPage />,
     },
   ]);
 
