@@ -40,7 +40,7 @@ export const TileItem = ({
           handleAddAnime={handleAddAnime}
           isAnimeInList={isAnimeInList}
         />
-        <span className="tooltip">More</span>
+        <span className="tile-item tooltip">More</span>
       </div>
     </div>
   );

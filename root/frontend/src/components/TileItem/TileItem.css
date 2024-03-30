@@ -96,8 +96,9 @@ img {
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  transition: 0.2s;
 }
 
-.tile-menu-container:hover .tooltip {
+.tile-menu-container:hover .tile-item.tooltip {
   visibility: visible;
 }

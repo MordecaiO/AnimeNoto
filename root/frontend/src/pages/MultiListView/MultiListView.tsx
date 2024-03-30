@@ -19,7 +19,7 @@ export default function MultiListView({
   const [isOpen, setOpen] = useState(false);
   const [isEditing, setEditing] = useState(false);
   const [selectedList, setSelectedList] = useState(animeLists[0]);
-  const { logout, user } = useAuth0();
+  const { logout } = useAuth0();
   return (
     <>
       {isOpen && (
