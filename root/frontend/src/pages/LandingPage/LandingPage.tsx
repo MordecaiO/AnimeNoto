@@ -1,6 +1,8 @@
 import "../LandingPage/LandingPage.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const LandingPage = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <div className="landing-page main">
       <header className="landing-page header">
@@ -32,7 +34,12 @@ export const LandingPage = () => {
               <h3>Login or Sign up to AnimeNoto</h3>
             </div>
             <div className="auth-btn-container">
-              <button className="auth-login">Login</button>
+              <button
+                onClick={() => loginWithRedirect()}
+                className="auth-login"
+              >
+                Login
+              </button>
               <button className="auth-signup">Sign up</button>
             </div>
           </div>
