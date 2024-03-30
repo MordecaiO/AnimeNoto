@@ -40,7 +40,16 @@ export const LandingPage = () => {
               >
                 Login
               </button>
-              <button className="auth-signup">Sign up</button>
+              <button
+                onClick={() =>
+                  loginWithRedirect({
+                    authorizationParams: { screen_hint: "signup" },
+                  })
+                }
+                className="auth-signup"
+              >
+                Sign up
+              </button>
             </div>
           </div>
         </section>

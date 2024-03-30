@@ -122,12 +122,16 @@ nav.navbar {
   flex-wrap: wrap;
 }
 
-.login {
+.logout-link {
   font-family: "Patrick Hand SC", cursive;
   display: inline-block;
 }
 
-.sign-up {
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+.profile-link {
   font-family: "Patrick Hand SC", cursive;
   display: inline-block;
 }

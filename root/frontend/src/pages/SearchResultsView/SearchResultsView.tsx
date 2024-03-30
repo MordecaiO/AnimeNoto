@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
 import { useNavigate } from "react-router-dom";
 import { TileItem } from "../../components/TileItem/TileItem";
-
+import { useAuth0 } from "@auth0/auth0-react";
 export default function SearchResultsView({
   lists,
   handleAddAnime,
@@ -38,7 +38,7 @@ export default function SearchResultsView({
     e.currentTarget.reset();
     e.currentTarget.focus();
   };
-
+  const { logout, user, isAuthenticated, isLoading } = useAuth0();
   return (
     <div className="main">
       <header className="header">
@@ -85,8 +85,24 @@ export default function SearchResultsView({
               Lists
             </button>
 
-            <a className="login">Login</a>
-            <a className="sign-up">Sign up</a>
+            <a onClick={() => logout()} className="logout-link">
+              Logout
+            </a>
+            <svg
+              className="user-icon"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
           </div>
         </nav>
       </header>
