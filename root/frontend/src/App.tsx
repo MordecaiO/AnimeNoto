@@ -29,7 +29,7 @@ function App() {
       path: "/",
       element: (
         <QueryClientProvider client={queryClient}>
-          <ProtectedSearchResultsView
+          <SearchResultsView
             lists={lists}
             handleAddAnime={handleAddAnime}
             handleDeleteAnime={handleDeleteAnime}
