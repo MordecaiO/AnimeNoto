@@ -9,8 +9,6 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const queryClient = new QueryClient();
-const ProtectedSearchResultsView =
-  withAuthenticationRequired(SearchResultsView);
 const ProtectedMultiListView = withAuthenticationRequired(MultiListView);
 const ProtectedDetailedListView = withAuthenticationRequired(DetailedListView);
 function App() {
