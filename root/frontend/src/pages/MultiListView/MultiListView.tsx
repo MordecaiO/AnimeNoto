@@ -57,7 +57,12 @@ export default function MultiListView({
               <button className="home-button" onClick={() => navigate("/")}>
                 Home
               </button>
-              <a onClick={() => logout()} className="logout-link">
+              <a
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+                className="logout-link"
+              >
                 Logout
               </a>
               <div className="user-icon-container">

@@ -5,6 +5,7 @@ import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
 import { useNavigate } from "react-router-dom";
 import { TileItem } from "../../components/TileItem/TileItem";
 import { useAuth0 } from "@auth0/auth0-react";
+import { LandingPage } from "../LandingPage/LandingPage";
 export default function SearchResultsView({
   lists,
   handleAddAnime,
@@ -39,6 +40,11 @@ export default function SearchResultsView({
     e.currentTarget.focus();
   };
   const { logout, user, isAuthenticated } = useAuth0();
+
+  if (!isAuthenticated) {
+    return <LandingPage />;
+  }
+
   return (
     <div className="main">
       <header className="header">
@@ -85,7 +91,12 @@ export default function SearchResultsView({
               Lists
             </button>
 
-            <a onClick={() => logout()} className="logout-link">
+            <a
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+              className="logout-link"
+            >
               Logout
             </a>
             <div className="user-icon-container">
