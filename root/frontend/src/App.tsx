@@ -6,9 +6,12 @@ import { animeLists } from "./pages/MultiListView/testDB.ts";
 import MultiListView from "./pages/MultiListView/MultiListView.tsx";
 import DetailedListView from "./pages/DetailedListView/DetailedListView.tsx";
 import { RouterProvider, createHashRouter } from "react-router-dom";
+import { LandingPage } from "./pages/LandingPage/LandingPage.tsx";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const queryClient = new QueryClient();
+const ProtectedSearchResultsView =
+  withAuthenticationRequired(SearchResultsView);
 const ProtectedMultiListView = withAuthenticationRequired(MultiListView);
 const ProtectedDetailedListView = withAuthenticationRequired(DetailedListView);
 function App() {
@@ -24,10 +27,10 @@ function App() {
 
   const router = createHashRouter([
     {
-      path: "/",
+      path: "search",
       element: (
         <QueryClientProvider client={queryClient}>
-          <SearchResultsView
+          <ProtectedSearchResultsView
             lists={lists}
             handleAddAnime={handleAddAnime}
             handleDeleteAnime={handleDeleteAnime}
@@ -58,6 +61,10 @@ function App() {
           isAnimeInList={isAnimeInList}
         />
       ),
+    },
+    {
+      path: "/",
+      element: <LandingPage />,
     },
   ]);
 

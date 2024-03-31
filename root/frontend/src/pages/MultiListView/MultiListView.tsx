@@ -59,7 +59,11 @@ export default function MultiListView({
               </button>
               <a
                 onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
+                  logout({
+                    logoutParams: {
+                      returnTo: "https://mordecaio.github.io/AnimeNoto/#",
+                    },
+                  })
                 }
                 className="logout-link"
               >
