@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       domain="dev-4sy8w3ealzodpv4t.us.auth0.com"
       clientId="zY6SIWTn5duLPuKysTh8PAXkvNhRu6Hn"
       authorizationParams={{
-        redirect_uri: "http://localhost:5173/AnimeNoto/#/",
+        redirect_uri: "https://mordecaio.github.io/AnimeNoto/#/",
       }}
     >
       <App />
