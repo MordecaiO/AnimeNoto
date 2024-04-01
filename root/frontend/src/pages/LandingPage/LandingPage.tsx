@@ -28,7 +28,7 @@ export const LandingPage = () => {
           </h2>
           <img
             className="hero-img"
-            src="https://mordecaio.github.io/animenoto_hero.png"
+            src="https://mordecaio.github.io/AnimeNoto/animenoto_hero.png"
           />
         </div>
         <section className="auth-container">
