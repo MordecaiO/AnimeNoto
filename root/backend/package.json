@@ -6,5 +6,8 @@
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node --env-file=config.env server"
   }
 }
