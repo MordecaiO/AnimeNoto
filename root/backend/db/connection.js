@@ -1,4 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config();
 const uri = process.env.ATLAS_URI || "";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -20,6 +22,6 @@ try {
   console.error(err);
 }
 
-let db = client.db();
+let db = client.db("sample_mflix");
 
 export default db;

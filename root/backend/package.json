@@ -8,6 +8,6 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "node --env-file=config.env server"
+    "start": "nodemon server.js"
   }
 }
