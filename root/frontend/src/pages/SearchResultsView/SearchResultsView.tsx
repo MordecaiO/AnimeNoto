@@ -116,7 +116,7 @@ export default function SearchResultsView({
                 <circle cx="12" cy="7" r="4" />
               </svg>
               {isAuthenticated && (
-                <span className="user tooltip"> {user?.email} </span>
+                <span className="user tooltip"> {user?.name} </span>
               )}
             </div>
           </div>
