@@ -66,7 +66,40 @@ router.patch("/:listId", async (req, res) => {
   }
 });
 // 5. Add an anime to a list
-
+router.patch("/addAnime/:listId", async (req, res) => {
+  try {
+    const query = { _id: new ObjectId(req.params.listId) };
+    const newAnime = {
+      mal_id: req.body.mal_id,
+      title: req.body.title,
+      status: req.body.status,
+      synopsis: req.body.synopsis,
+      genres: req.body.genres,
+      images: req.body.images,
+    };
+    const updates = { $push: { items: newAnime } };
+    let collection = db.collection("lists");
+    let result = await collection.updateOne(query, updates);
+    res.send(result).status(200);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error adding anime to list");
+  }
+});
 // 6. Delete an anime from a list
+router.patch("/delAnime/:listId/:mal_id", async (req, res) => {
+  try {
+    const query = { _id: new ObjectId(req.params.listId) };
+    const updates = {
+      $pull: { items: { mal_id: parseInt(req.params.mal_id) } },
+    };
 
+    let collection = db.collection("lists");
+    let result = await collection.updateOne(query, updates);
+    res.send(result).status(200);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error deleting anime from list");
+  }
+});
 export default router;
