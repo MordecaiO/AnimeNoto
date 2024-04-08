@@ -22,6 +22,6 @@ try {
   console.error(err);
 }
 
-let db = client.db("sample_mflix");
+let db = client.db("testCollection");
 
 export default db;
