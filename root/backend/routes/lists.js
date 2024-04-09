@@ -6,7 +6,7 @@ const router = express.Router();
 
 // 1. Get all lists for user
 router.get("/:userId", async (req, res) => {
-  let query = { userAuthId: req.params.userIdd.toString() };
+  let query = { userAuthId: req.params.userId.toString() };
   let collection = db.collection("lists");
   let results = await collection.find(query).toArray();
 

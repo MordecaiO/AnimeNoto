@@ -6,7 +6,7 @@ const router = express.Router();
 
 // GET a user (and all data) by auth0 user_id
 router.get("/:id", async (req, res) => {
-  let query = { authUserId: req.params.id };
+  let query = { userAuthId: req.params.id };
 
   let collection = db.collection("users");
   let results = await collection.findOne(query);
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
     let newDocument = {
       name: req.body.name,
       email: req.body.email,
-      authUserId: req.body.user_id,
+      userAuthId: req.body.user_id,
       lists: [
         {
           name: "Want to Watch",
