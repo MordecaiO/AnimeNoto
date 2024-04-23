@@ -1,22 +1,28 @@
-import { EditListModalProps } from "../../vite-env";
+import { useContext } from "react";
+import { EditListModalProps, ListsContextType } from "../../vite-env";
 import "../EditListModal/EditListModal.css";
+import ListsContext from "../../ListsContext";
+import { useAuth0 } from "@auth0/auth0-react";
 export default function EditListModal({
   setEditing,
   isEditing,
-  lists,
-  handleEditList,
   selectedList,
 }: EditListModalProps): JSX.Element {
+  const { user } = useAuth0();
+  const { editList, getLists, setLists } = useContext(
+    ListsContext
+  ) as ListsContextType;
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const target = event.currentTarget;
     const nameData = target.listName.value;
     const descData = target.listDesc.value;
-    //setFormData({ name: nameData, description: descData });
-    console.log("descData", descData);
-    console.log("nameData", nameData);
-    handleEditList(lists, selectedList.id, nameData, descData);
+    editList(selectedList._id, nameData, descData);
     setEditing(false);
+  };
+  const startFetching = async () => {
+    const fetchedLists = await getLists(user?.sub);
+    setLists(fetchedLists);
   };
   return (
     <div className="modal-background">
@@ -26,7 +32,15 @@ export default function EditListModal({
             X
           </button>
           <h4 className="modal-header">Edit List</h4>
-          <form className="modal-form" onSubmit={(e) => handleSubmit(e)}>
+          <form
+            className="modal-form"
+            onSubmit={(e) => {
+              handleSubmit(e);
+              setTimeout(() => {
+                startFetching();
+              }, 200);
+            }}
+          >
             <div className="name-group">
               <label className="name-label">Name</label>
               <input

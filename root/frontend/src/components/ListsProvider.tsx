@@ -1,80 +1,12 @@
+import ListsContext from "../ListsContext";
 import { AnimeListProps, AnimeProps } from "../vite-env";
-import { createContext, useState } from "react";
-
-export type ListsContextType = {
-  lists: AnimeListProps[] | [];
-  getLists: (userAuthId: string | undefined) => void;
-  addAnime: (targetListId: string, targetAnime: AnimeProps) => void;
-  deleteAnime: (targetListId: string, targetAnime: AnimeProps) => void;
-  createList: (
-    userAuthId: string | undefined,
-    newListName: string,
-    newListDesc: string
-  ) => void;
-  deleteList: (targetListId: string) => void;
-  editList: (
-    targetListId: string,
-    newListName: string,
-    newListDesc: string
-  ) => void;
-};
-
-export const ListsContext = createContext<ListsContextType | null>(null);
+import { useState } from "react";
 
 type ContextProviderProps = {
   children: React.ReactNode;
 };
 const ListsProvider = ({ children }: ContextProviderProps) => {
-  const [lists, setLists] = useState<AnimeListProps[]>([
-    {
-      id: "",
-      name: "Want to Watch",
-      description: "",
-      items: [
-        {
-          mal_id: 3,
-          title: "Naruto Shipudden",
-          status: "Completed",
-          genres: [
-            {
-              mal_id: 27,
-              type: "anime",
-              name: "Shounen",
-              url: "www.google.com",
-            },
-          ],
-          images: {
-            jpg: {
-              image_url:
-                "https://cdn.myanimelist.net/images/anime/2/50745l.jpg",
-            },
-          },
-        },
-      ],
-
-      lastUpdated: "",
-      createdAt: null,
-      defList: true,
-    },
-    {
-      id: "",
-      name: "Currently Watching",
-      description: "",
-      items: [],
-      lastUpdated: "",
-      createdAt: null,
-      defList: true,
-    },
-    {
-      id: "",
-      name: "Completed",
-      description: "",
-      items: [],
-      lastUpdated: "",
-      createdAt: null,
-      defList: true,
-    },
-  ]);
+  const [lists, setLists] = useState<AnimeListProps[]>([]);
 
   const getLists = async (userAuthId: string | undefined) => {
     const baseURL = "http://localhost:5050/lists/";
@@ -83,8 +15,8 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         `${baseURL}${userAuthId?.substring(6) || ""}`
       );
       const fetchedLists: AnimeListProps[] = await response.json();
-      console.log(fetchedLists);
-      setLists(fetchedLists);
+      console.log("fetched lists getList fn", fetchedLists);
+      return fetchedLists;
     } catch (error) {
       console.error;
     }
@@ -94,6 +26,8 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
     targetListId: string,
     targetAnime: AnimeProps
   ): Promise<void> => {
+    console.log("targetListId", targetListId);
+    console.log("targetAnime", targetAnime);
     const options = {
       method: "PATCH",
       headers: {
@@ -111,7 +45,7 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
     };
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_API_URL}addAnime/${targetListId}`,
+        `${import.meta.env.VITE_BASE_API_URL}lists/addAnime/${targetListId}`,
         options
       );
       console.log(response);
@@ -133,7 +67,7 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
     };
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_API_URL}delAnime/${targetListId}/${
+        `${import.meta.env.VITE_BASE_API_URL}lists/delAnime/${targetListId}/${
           targetAnime.mal_id
         }`,
         options
@@ -149,27 +83,30 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
     newListName: string,
     newListDesc: string
   ): Promise<void> => {
+    const newList: AnimeListProps = {
+      _id: "",
+      name: newListName,
+      description: newListDesc,
+      items: [],
+      lastUpdated: "",
+      createdAt: new Date(Date.now()).toISOString(),
+      defList: false,
+      userAuthId: userAuthId,
+    };
     const options = {
       method: "POST",
       headers: {
         "Content-type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({
-        name: newListName,
-        description: newListDesc,
-        items: [],
-        lastUpdated: "",
-        createdAt: new Date(Date.now()).toISOString(),
-        defList: true,
-        userAuthId: userAuthId,
-      }),
+      body: JSON.stringify(newList),
     };
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_API_URL}/lists/${userAuthId}`,
+        `${import.meta.env.VITE_BASE_API_URL}lists/${userAuthId}`,
         options
       );
+
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -221,9 +158,22 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
       console.error(error);
     }
   };
+
+  const isAnimeInList = (
+    targetAnime: AnimeProps,
+    targetList: AnimeListProps
+  ): boolean => {
+    const targetAnimeId = targetAnime.mal_id;
+
+    return targetList.items?.findIndex((x) => x.mal_id == targetAnimeId) != -1
+      ? true
+      : false;
+  };
+
   return (
     <ListsContext.Provider
       value={{
+        setLists,
         lists,
         getLists,
         addAnime,
@@ -231,6 +181,7 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         createList,
         deleteList,
         editList,
+        isAnimeInList,
       }}
     >
       {children}

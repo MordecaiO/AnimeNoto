@@ -1,19 +1,19 @@
 import "./DetailedListView.css";
 import ListItem from "../../components/ListItem/ListItem";
-import { AnimeProps } from "../../vite-env";
+import { AnimeProps, ListsContextType } from "../../vite-env";
 import { useLocation, useNavigate } from "react-router-dom";
-import { DetailedListViewProps } from "../../vite-env";
 import { CollageImage } from "../../components/CollageImage/CollageImage";
+import { useContext } from "react";
+import ListsContext from "../../ListsContext";
 
-function DetailedListView({
-  lists,
-  handleAddAnime,
-  handleDeleteAnime,
-  isAnimeInList,
-}: DetailedListViewProps): JSX.Element {
+function DetailedListView(): JSX.Element {
   const navigate = useNavigate();
-  let { state } = useLocation();
-  // const d = new Date(state.lastUpdated).toDateString();
+  const location = useLocation();
+  const { lists } = useContext(ListsContext) as ListsContextType;
+  const currentList = lists.filter(
+    (list) => list._id === location.state.listId
+  )[0];
+  console.log("current list", currentList);
   return (
     <div className="container">
       <button className="back-button" onClick={() => navigate(-1)}>
@@ -23,25 +23,20 @@ function DetailedListView({
       <div className="dlv-container">
         <header className="dlv-header">
           <div className="img-container">
-            <CollageImage
-              items={lists.filter((list) => list.id == state.listId)[0].items!}
-            />
+            <CollageImage items={currentList.items} />
           </div>
           <section className="header-items">
-            <p className="list-type">
-              {/* {state.defaultList ? "Default List" : "User List"} */}
-            </p>
+            <p className="list-type"></p>
             <div className="details-container">
-              <h1 className="list-name">{state.listName}</h1>
-              <p className="list-desc">{state.listDescription}</p>
+              <h1 className="list-name">{currentList.name}</h1>
+              <p className="list-desc">{currentList.description}</p>
             </div>
             <p className="updated-text">{`Last updated: `}</p>
           </section>
         </header>
         <main className="list-items-container">
-          {lists
-            .filter((list) => list.id == state.listId)[0]
-            .items!.map((listitem: AnimeProps, i: number) => {
+          {currentList.items ? (
+            currentList.items.map((listitem: AnimeProps, i: number) => {
               return (
                 <ListItem
                   key={i}
@@ -51,15 +46,14 @@ function DetailedListView({
                   status={listitem.status}
                   description={listitem.synopsis}
                   genres={listitem.genres}
-                  lists={lists}
                   anime={listitem}
-                  listId={state.listId}
-                  handleDeleteAnime={handleDeleteAnime}
-                  handleAddAnime={handleAddAnime}
-                  isAnimeInList={isAnimeInList}
+                  listId={currentList._id}
                 />
               );
-            })}
+            })
+          ) : (
+            <h2>Go back to the homepage and Add some Anime to this list!</h2>
+          )}
         </main>
       </div>
     </div>

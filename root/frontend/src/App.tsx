@@ -1,8 +1,6 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SearchResultsView from "./pages/SearchResultsView/SearchResultsView.tsx";
-import { useLists } from "./hooks/useLists.tsx";
-import { animeLists } from "./pages/MultiListView/testDB.ts";
 import MultiListView from "./pages/MultiListView/MultiListView.tsx";
 import DetailedListView from "./pages/DetailedListView/DetailedListView.tsx";
 import { RouterProvider, createHashRouter } from "react-router-dom";
@@ -14,53 +12,29 @@ const ProtectedSearchResultsView =
   withAuthenticationRequired(SearchResultsView);
 const ProtectedMultiListView = withAuthenticationRequired(MultiListView);
 const ProtectedDetailedListView = withAuthenticationRequired(DetailedListView);
-function App() {
-  const [
-    lists,
-    handleAddAnime,
-    handleDeleteAnime,
-    isAnimeInList,
-    handleCreateList,
-    handleDeleteList,
-    handleEditList,
-  ] = useLists(animeLists);
 
+function App() {
   const router = createHashRouter([
     {
       path: "search",
       element: (
         <QueryClientProvider client={queryClient}>
-          <ProtectedSearchResultsView
-            lists={lists}
-            handleAddAnime={handleAddAnime}
-            handleDeleteAnime={handleDeleteAnime}
-            isAnimeInList={isAnimeInList}
-          />
+          <ProtectedSearchResultsView />
         </QueryClientProvider>
       ),
     },
     {
       path: "lists",
       element: (
-        <ProtectedMultiListView
-          lists={lists}
-          handleDeleteList={handleDeleteList}
-          handleCreateList={handleCreateList}
-          handleEditList={handleEditList}
-        />
+        <QueryClientProvider client={queryClient}>
+          <ProtectedMultiListView />
+        </QueryClientProvider>
       ),
     },
 
     {
       path: "lists/:listName",
-      element: (
-        <ProtectedDetailedListView
-          lists={lists}
-          handleAddAnime={handleAddAnime}
-          handleDeleteAnime={handleDeleteAnime}
-          isAnimeInList={isAnimeInList}
-        />
-      ),
+      element: <ProtectedDetailedListView />,
     },
     {
       path: "/",

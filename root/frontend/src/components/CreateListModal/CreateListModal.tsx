@@ -1,33 +1,53 @@
-import { CreateListModalProps } from "../../vite-env";
+import { useContext, useEffect } from "react";
+import { CreateListModalProps, ListsContextType } from "../../vite-env";
 import "../CreateListModal/CreateListModal.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import ListsContext from "../../ListsContext";
 export default function CreateListModal({
   setOpen,
   isOpen,
-  lists,
-  handleCreateList,
 }: CreateListModalProps): JSX.Element {
+  const { user } = useAuth0();
+  const { createList, getLists, setLists, lists } = useContext(
+    ListsContext
+  ) as ListsContextType;
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const target = event.currentTarget;
     const nameData = target.listName.value;
     const descData = target.listDesc.value;
-    //setFormData({ name: nameData, description: descData });
-    console.log("descData", descData);
-    console.log("nameData", nameData);
-    handleCreateList(lists, nameData, descData);
+    createList(user?.sub?.substring(6), nameData, descData);
+    console.log("submitted");
     setOpen(false);
   };
+  const startFetching = async () => {
+    const fetchedLists = await getLists(user?.sub);
+    console.log("fetched lists CLM", fetchedLists);
+    setLists(fetchedLists);
+    console.log("lists after state update CLM", lists);
+  };
+
   return (
     <div className="modal-background">
       <div className="modal-container">
         <section className="modal">
-          <button className="close-btn" onClick={() => setOpen(!isOpen)}>
+          <button
+            className="close-btn"
+            onClick={() => {
+              setOpen(!isOpen);
+            }}
+          >
             X
           </button>
           <h4 className="modal-header">New List</h4>
           <form
             className="modal-form"
-            onSubmit={(e) => handleSubmit(e)}
+            onSubmit={(e) => {
+              handleSubmit(e);
+              setTimeout(() => {
+                startFetching();
+              }, 200);
+            }}
             autoComplete="off"
           >
             <div className="name-group">

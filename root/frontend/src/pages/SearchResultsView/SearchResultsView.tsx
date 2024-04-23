@@ -1,17 +1,13 @@
 import "./SearchResultsView.css";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { AnimeProps, SearchResultsViewProps } from "../../vite-env";
+import { AnimeProps, ListsContextType } from "../../vite-env";
 import { useNavigate } from "react-router-dom";
 import { TileItem } from "../../components/TileItem/TileItem";
 import { useAuth0 } from "@auth0/auth0-react";
-
-export default function SearchResultsView({
-  lists,
-  handleAddAnime,
-  handleDeleteAnime,
-  isAnimeInList,
-}: SearchResultsViewProps) {
+import checkIncomingUser from "./checkIncomingUser";
+import ListsContext from "../../ListsContext";
+export default function SearchResultsView() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState(1);
@@ -31,7 +27,6 @@ export default function SearchResultsView({
 
   const animes = data?.data ?? [];
   const hasNextPage = data?.pagination?.has_next_page ?? false;
-  console.log(data);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -40,6 +35,14 @@ export default function SearchResultsView({
     e.currentTarget.focus();
   };
   const { logout, user, isAuthenticated } = useAuth0();
+  const baseUrl = "http://localhost:5050/";
+  useEffect(() => {
+    checkIncomingUser(user, baseUrl);
+  }, [user]);
+  const { getLists } = useContext(ListsContext) as ListsContextType;
+  useEffect(() => {
+    getLists(user?.sub);
+  }, []);
 
   return (
     <div className="main">
@@ -105,9 +108,9 @@ export default function SearchResultsView({
                 fill="none"
                 height="24"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -133,10 +136,6 @@ export default function SearchResultsView({
               status={anime.status}
               genres={anime.genres}
               imgUrl={anime.images.jpg.image_url}
-              lists={lists}
-              handleAddAnime={handleAddAnime}
-              handleDeleteAnime={handleDeleteAnime}
-              isAnimeInList={isAnimeInList}
             />
           );
         })}

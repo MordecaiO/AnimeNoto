@@ -8,9 +8,6 @@ export const TileItem = ({
   genres,
   status,
   imgUrl,
-  handleAddAnime,
-  isAnimeInList,
-  lists,
 }: TileItemProps): JSX.Element => {
   return (
     <div className="outer-tile-container">
@@ -34,12 +31,7 @@ export const TileItem = ({
         </div>{" "}
       </article>
       <div className="tile-menu-container">
-        <TileItemMenu
-          anime={anime}
-          lists={lists}
-          handleAddAnime={handleAddAnime}
-          isAnimeInList={isAnimeInList}
-        />
+        <TileItemMenu anime={anime} />
         <span className="tile-item tooltip">More</span>
       </div>
     </div>

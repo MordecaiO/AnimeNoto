@@ -1,15 +1,25 @@
 import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/core.css";
-import { AnimeListProps, TileItemMenuProps } from "../../vite-env";
+import {
+  AnimeListProps,
+  ListsContextType,
+  TileItemMenuProps,
+} from "../../vite-env";
 import "./TileItemMenu.css";
+import { useContext } from "react";
+import ListsContext from "../../ListsContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
-export const TileItemMenu = ({
-  anime,
-  lists,
-  handleAddAnime,
-  isAnimeInList,
-}: TileItemMenuProps): JSX.Element => {
+export const TileItemMenu = ({ anime }: TileItemMenuProps): JSX.Element => {
+  const { user } = useAuth0();
+  const { addAnime, isAnimeInList, setLists, getLists, lists } = useContext(
+    ListsContext
+  ) as ListsContextType;
+  const startFetching = async () => {
+    const fetchedLists = await getLists(user?.sub);
+    setLists(fetchedLists);
+  };
   return (
     <Menu transition menuButton={<MenuButton>...</MenuButton>} direction="top">
       <MenuItem>More Info</MenuItem>
@@ -17,11 +27,14 @@ export const TileItemMenu = ({
         {lists.map((list: AnimeListProps) => {
           return (
             <MenuItem
-              key={list.id}
+              key={list._id}
               className="add-menu-item"
               disabled={isAnimeInList(anime, list)}
               onClick={(e) => {
-                handleAddAnime(list.id, anime, lists);
+                addAnime(list._id, anime);
+                setTimeout(() => {
+                  startFetching();
+                }, 200);
                 e.keepOpen = false;
               }}
             >

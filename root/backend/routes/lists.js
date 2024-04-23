@@ -21,7 +21,7 @@ router.post("/:userId", async (req, res) => {
       items: [],
       lastUpdated: "",
       createdAt: new Date(Date.now()).toISOString(),
-      defList: true,
+      defList: false,
       userAuthId: req.params.userId.toString(),
     };
     let collection = db.collection("lists");
