@@ -1,6 +1,9 @@
-import { ListItemProps } from "../../vite-env";
+import { ListItemProps, ListsContextType } from "../../vite-env";
 import "./ListItem.css";
 import { TileItemMenu } from "../TileItemMenu/TileItemMenu";
+import { useContext } from "react";
+import ListsContext from "../../ListsContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function ListItem({
   index,
@@ -9,13 +12,17 @@ export default function ListItem({
   status,
   description,
   genres,
-  handleDeleteAnime,
-  isAnimeInList,
-  handleAddAnime,
   anime,
   listId,
-  lists,
 }: ListItemProps): JSX.Element {
+  const { user } = useAuth0();
+  const { deleteAnime, getLists, setLists } = useContext(
+    ListsContext
+  ) as ListsContextType;
+  const startFetching = async () => {
+    const fetchedLists = await getLists(user?.sub);
+    setLists(fetchedLists);
+  };
   return (
     <article className="item-container">
       <div className="xleft inner-item-wrapper">
@@ -39,17 +46,17 @@ export default function ListItem({
       <div className="xright">
         <button
           className="item-delete"
-          onClick={() => handleDeleteAnime(listId, anime, lists)}
+          onClick={() => {
+            deleteAnime(listId ? listId : "", anime);
+            setTimeout(() => {
+              startFetching();
+            }, 200);
+          }}
         >
           X
         </button>{" "}
         <div className="tile-menu-container">
-          <TileItemMenu
-            anime={anime}
-            lists={lists}
-            handleAddAnime={handleAddAnime}
-            isAnimeInList={isAnimeInList}
-          />
+          <TileItemMenu anime={anime} />
           <span className="tooltip">More</span>
         </div>
       </div>

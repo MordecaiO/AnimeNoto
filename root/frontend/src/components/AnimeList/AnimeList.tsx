@@ -1,26 +1,12 @@
 import { Link } from "react-router-dom";
-import { AnimeListProps } from "../../vite-env";
+import { AnimeListComponentProps } from "../../vite-env";
 import { CollageImage } from "../CollageImage/CollageImage";
 
 import "./AnimeList.css";
 import { AnimeListMenu } from "../AnimeListMenu/AnimeListMenu";
-import { Dispatch, SetStateAction } from "react";
 
-type AnimeListComponentProps = {
-  list: AnimeListProps;
-  handleDeleteList: (
-    currentLists: AnimeListProps[],
-    targetListId: number
-  ) => void;
-  isEditing: boolean;
-  setEditing: Dispatch<SetStateAction<boolean>>;
-  lists: AnimeListProps[];
-  setSelectedList: Dispatch<SetStateAction<AnimeListProps>>;
-};
 export const AnimeList = ({
   list,
-  handleDeleteList,
-  lists,
   setEditing,
   setSelectedList,
 }: AnimeListComponentProps): JSX.Element => {
@@ -30,7 +16,7 @@ export const AnimeList = ({
         className="al-link"
         to={list.name}
         state={{
-          listId: list.id,
+          listId: list._id,
           listItems: list.items,
           listName: list.name,
           listLastUpdated: list.lastUpdated,
@@ -53,8 +39,6 @@ export const AnimeList = ({
         </span>
         <div className="tile-menu-container">
           <AnimeListMenu
-            lists={lists}
-            handleDeleteList={handleDeleteList}
             list={list}
             setEditing={setEditing}
             setSelectedList={setSelectedList}

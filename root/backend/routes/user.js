@@ -21,32 +21,6 @@ router.post("/", async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       userAuthId: req.body.user_id,
-      lists: [
-        {
-          name: "Want to Watch",
-          description: "",
-          items: [],
-          lastUpdated: "",
-          createdAt: "",
-          defList: true,
-        },
-        {
-          name: "Currently Watching",
-          description: "",
-          items: [],
-          lastUpdated: "",
-          createdAt: "",
-          defList: true,
-        },
-        {
-          name: "Watched",
-          description: "",
-          items: [],
-          lastUpdated: "",
-          createdAt: "",
-          defList: true,
-        },
-      ],
     };
     let collection = db.collection("users");
     let result = await collection.insertOne(newDocument);

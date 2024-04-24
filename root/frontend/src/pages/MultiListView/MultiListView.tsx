@@ -1,42 +1,48 @@
 import "./MultiListView.css";
 import { useNavigate } from "react-router-dom";
 import { AnimeList } from "../../components/AnimeList/AnimeList";
-import { MultiListViewProps } from "../../vite-env";
-import { AnimeListProps } from "../../vite-env";
+import { AnimeListProps, ListsContextType } from "../../vite-env";
 import CreateListModal from "../../components/CreateListModal/CreateListModal";
 import "../../components/CreateListModal/CreateListModal.css";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { animeLists } from "./testDB";
 import EditListModal from "../../components/EditListModal/EditListModal";
 import { useAuth0 } from "@auth0/auth0-react";
-export default function MultiListView({
-  lists,
-  handleCreateList,
-  handleDeleteList,
-  handleEditList,
-}: MultiListViewProps): JSX.Element {
+import ListsContext from "../../ListsContext";
+
+export default function MultiListView(): JSX.Element {
   const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
   const [isEditing, setEditing] = useState(false);
   const [selectedList, setSelectedList] = useState(animeLists[0]);
   const { logout, isAuthenticated, user } = useAuth0();
+  const { lists, getLists, setLists } = useContext(
+    ListsContext
+  ) as ListsContextType;
+  useEffect(() => {
+    let ignore = false;
+    async function startFetching() {
+      const fetchedLists = await getLists(user?.sub);
+      console.log("fetched lists MLV", fetchedLists);
+      if (!ignore) {
+        setLists(fetchedLists);
+        console.log("lists after state update MLV", lists);
+      }
+    }
+    startFetching();
+    return () => {
+      ignore = true;
+    };
+  }, [user?.sub, lists.length]);
+
   return (
     <>
-      {isOpen && (
-        <CreateListModal
-          setOpen={setOpen}
-          isOpen={isOpen}
-          lists={lists}
-          handleCreateList={handleCreateList}
-        />
-      )}
+      {isOpen && <CreateListModal setOpen={setOpen} isOpen={isOpen} />}
       {isEditing && (
         <EditListModal
           isEditing={isEditing}
           setEditing={setEditing}
           selectedList={selectedList}
-          handleEditList={handleEditList}
-          lists={lists}
         />
       )}
       <div className="main">
@@ -54,7 +60,10 @@ export default function MultiListView({
             </div>
             <div className="navbar-middle"></div>
             <div className="navbar-right">
-              <button className="home-button" onClick={() => navigate("/")}>
+              <button
+                className="home-button"
+                onClick={() => navigate("/search")}
+              >
                 Home
               </button>
               <a
@@ -75,9 +84,9 @@ export default function MultiListView({
                   fill="none"
                   height="24"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
                   width="24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,10 +110,8 @@ export default function MultiListView({
               <AnimeList
                 key={index}
                 list={list}
-                handleDeleteList={handleDeleteList}
                 isEditing={isEditing}
                 setEditing={setEditing}
-                lists={lists}
                 setSelectedList={setSelectedList}
               />
             );
