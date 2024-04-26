@@ -35,7 +35,8 @@ export default function SearchResultsView() {
     e.currentTarget.focus();
   };
   const { logout, user, isAuthenticated } = useAuth0();
-  const baseUrl = "http://localhost:5050/";
+  const baseUrl = import.meta.env.VITE_BASE_API_URL;
+
   useEffect(() => {
     checkIncomingUser(user, baseUrl);
   }, [user]);

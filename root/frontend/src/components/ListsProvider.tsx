@@ -9,7 +9,7 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
   const [lists, setLists] = useState<AnimeListProps[]>([]);
 
   const getLists = async (userAuthId: string | undefined) => {
-    const baseURL = "http://localhost:5050/lists/";
+    const baseURL = "https://animenoto.onrender.com/lists/";
     try {
       const response = await fetch(
         `${baseURL}${userAuthId?.substring(6) || ""}`
