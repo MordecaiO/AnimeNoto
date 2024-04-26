@@ -1,5 +1,3 @@
-# AnimeNoto
-A web app designed to help you keep track of all the anime series you have watched, are currently watching, and wish to watch in the future.
 
 <h1 align="center">
   <br>
@@ -8,3 +6,14 @@ A web app designed to help you keep track of all the anime series you have watch
 AnimeNoto
 <br>
 </h1>
+
+## About
+
+AnimeNoto is a web app designed to help you keep track of all the anime series you have watched, are currently watching, and wish to watch in the future.
+
+## Features
+- Search and add anime from [My Anime List](https://myanimelist.net/)
+- Create custom lists 
+- Move anime between lists
+
+## Usage
