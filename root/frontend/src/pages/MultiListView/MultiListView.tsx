@@ -23,10 +23,9 @@ export default function MultiListView(): JSX.Element {
     let ignore = false;
     async function startFetching() {
       const fetchedLists = await getLists(user?.sub);
-      console.log("fetched lists MLV", fetchedLists);
+
       if (!ignore) {
         setLists(fetchedLists);
-        console.log("lists after state update MLV", lists);
       }
     }
     startFetching();
@@ -49,7 +48,7 @@ export default function MultiListView(): JSX.Element {
         <header className="header">
           <nav className="navbar">
             <div className="navbar-left">
-              <a className="logo-wrapper" href="/AnimeNoto">
+              <a className="logo-wrapper" href="/AnimeNoto/#/search">
                 <img
                   className="anime-noto"
                   src="/AnimeNoto/animenoto_logo_main.jpeg"

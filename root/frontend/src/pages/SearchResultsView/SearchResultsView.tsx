@@ -50,7 +50,7 @@ export default function SearchResultsView() {
       <header className="header">
         <nav className="navbar">
           <div className="navbar-left">
-            <a className="logo-wrapper" href="/AnimeNoto">
+            <a className="logo-wrapper" href="/AnimeNoto/#/search">
               <img
                 className="anime-noto"
                 src="/AnimeNoto/animenoto_logo_main.jpeg"

@@ -17,14 +17,13 @@ export default function CreateListModal({
     const nameData = target.listName.value;
     const descData = target.listDesc.value;
     createList(user?.sub?.substring(6), nameData, descData);
-    console.log("submitted");
+
     setOpen(false);
   };
   const startFetching = async () => {
     const fetchedLists = await getLists(user?.sub);
-    console.log("fetched lists CLM", fetchedLists);
+
     setLists(fetchedLists);
-    console.log("lists after state update CLM", lists);
   };
 
   return (

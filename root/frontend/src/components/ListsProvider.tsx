@@ -15,7 +15,7 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         `${baseURL}${userAuthId?.substring(6) || ""}`
       );
       const fetchedLists: AnimeListProps[] = await response.json();
-      console.log("fetched lists getList fn", fetchedLists);
+
       return fetchedLists;
     } catch (error) {
       console.error;
@@ -26,8 +26,6 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
     targetListId: string,
     targetAnime: AnimeProps
   ): Promise<void> => {
-    console.log("targetListId", targetListId);
-    console.log("targetAnime", targetAnime);
     const options = {
       method: "PATCH",
       headers: {
@@ -72,7 +70,6 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         }`,
         options
       );
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -106,8 +103,6 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         `${import.meta.env.VITE_BASE_API_URL}lists/${userAuthId}`,
         options
       );
-
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -126,7 +121,6 @@ const ListsProvider = ({ children }: ContextProviderProps) => {
         `${import.meta.env.VITE_BASE_API_URL}lists/${targetListId}`,
         options
       );
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
