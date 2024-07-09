@@ -18,3 +18,7 @@ AnimeNoto
 
 ## Usage
 <img src="https://github.com/MordecaiO/AnimeNoto/blob/main/root/frontend/public/anime_noto_sign_in.gif" alt="sign-in" width="800">
+<br>
+<img src="https://github.com/MordecaiO/AnimeNoto/blob/main/root/frontend/public/create-list1.gif" alt="create-list1" width="800">
+<br>
+<img src="https://github.com/MordecaiO/AnimeNoto/blob/main/root/frontend/public/create-list2.gif" alt="create-list2" width="800">
