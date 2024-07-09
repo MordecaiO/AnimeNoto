@@ -17,4 +17,4 @@ AnimeNoto is a web app designed to help you keep track of all the anime series y
 - Move anime between lists
 
 ## Usage
-<img src="https://github.com/MordecaiO/AnimeNoto/blob/main/root/frontend/public/anime_noto_sign_in.gif" alt="sign-in" width="250">
+<img src="https://github.com/MordecaiO/AnimeNoto/blob/main/root/frontend/public/anime_noto_sign_in.gif" alt="sign-in" width="800">
