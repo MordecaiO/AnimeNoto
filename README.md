@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-<img src="https://raw.githubusercontent.com/MordecaiO/AnimeNoto/main/root/frontend/public/animenoto_logo_main.png" alt="AnimeNoto" width="250">
+<a href="https://mordecaio.github.io/AnimeNoto/#"><img src="https://raw.githubusercontent.com/MordecaiO/AnimeNoto/main/root/frontend/public/animenoto_logo_main.png" alt="AnimeNoto" width="250"></a>
 <br>
 AnimeNoto
 <br>
